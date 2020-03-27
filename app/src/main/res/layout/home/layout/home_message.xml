@@ -9,7 +9,7 @@
         android:layout_height="60dp">
         <ImageView
             android:id="@+id/iv_home_message"
-            android:background="@drawable/message"
+            android:background="@drawable/home_tztx"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="10dp"
             android:layout_width="40dp"
@@ -60,7 +60,7 @@
         </LinearLayout>
         <Button
             android:id="@+id/bt_home_message_detail"
-            android:background="@drawable/next"
+            android:background="@drawable/home_jyxx_next"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_width="16dp"

@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp">
             <ImageView
-                android:src="@drawable/jyxx"
+                android:src="@drawable/home_jyxx"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="5dp"
                 android:layout_width="30dp"

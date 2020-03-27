@@ -15,7 +15,7 @@
             android:layout_height="80dp">
             <Button
                 android:id="@+id/bt_home_wsqd"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_wsqd"
                 android:textSize="14dp"
                 android:background="@null"
@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/bt_home_rcbg"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_rcbg"
                 android:textSize="14dp"
                 android:background="@null"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/bt_home_jyxx"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_jyxx"
                 android:textSize="14dp"
                 android:background="@null"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/bt_home_ycbf"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_ycbf"
                 android:textSize="14dp"
                 android:background="@null"
@@ -57,7 +57,7 @@
             android:layout_height="80dp">
             <Button
                 android:id="@+id/bt_home_wcqj"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_wcqj"
                 android:textSize="14dp"
                 android:background="@null"
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/bt_home_zjwbj"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_zjwbj"
                 android:textSize="14dp"
                 android:background="@null"
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/bt_home_jzdbg"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_jzdbg"
                 android:textSize="14dp"
                 android:background="@null"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/bt_home_gyhd"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_gyhd"
                 android:textSize="14dp"
                 android:background="@null"
@@ -98,14 +98,8 @@
             android:layout_width="match_parent"
             android:layout_height="80dp">
             <Button
-                android:background="@null"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"/>
-            <Button
                 android:id="@+id/bt_home_jstx"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_jstx"
                 android:textSize="14dp"
                 android:background="@null"
@@ -114,13 +108,19 @@
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/bt_home_xlzx"
-                android:drawableTop="@drawable/bt_backgroung"
+                android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_xlzx"
                 android:textSize="14dp"
                 android:background="@null"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
+            <Button
+                android:background="@null"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"/>
             <Button
                 android:background="@null"
                 android:layout_weight="1"
