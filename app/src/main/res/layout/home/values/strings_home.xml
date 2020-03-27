@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--home页面通知提醒数据-->
+    <string name="home_messae_1_cotent">你已越界，请尽快返回。</string>
+    <string name="home_messae_1_time">1分钟前</string>
+    <string name="home_messae_2_cotent">你的请假审批已通过。</string>
+    <string name="home_messae_2_time">30分钟前</string>
+
+    <!--home页面按钮-->
+    <string name="home_bt_tztx">通知提醒</string>
+    <string name="home_bt_wsqd">网上签到</string>
+    <string name="home_bt_rcbg">日常报告</string>
+    <string name="home_bt_jyxx">教育学习</string>
+
+    <string name="home_bt_ycbf">远程帮扶</string>
+    <string name="home_bt_wcqj">外出请假</string>
+    <string name="home_bt_zjwbj">暂监外病检</string>
+    <string name="home_bt_jzdbg">居住地变更</string>
+
+    <string name="home_bt_gyhd">公益活动</string>
+    <string name="home_bt_jstx">即时通信</string>
+    <string name="home_bt_xlzx">心理咨询</string>
+
+    <!--home教育学习数据-->
+    <string name="home_tv_jyxx">最新课程</string>
+    <string name="home_bt_jyxx_next">全部课程></string>
+    <string name="home_jyxx1_cotent">交通法规系列讲座</string>
+    <string name="home_jyxx1_time">学时：48分钟</string>
+    <string name="home_jyxx2_cotent">社区矫正法系列讲座</string>
+    <string name="home_jyxx2_time">学时：48分钟</string>
+
+
+</resources>
