@@ -59,4 +59,6 @@ dependencies {
     implementation 'me.jessyan:autosize:1.2.1'
     /*底部导航栏*/
     implementation 'com.google.android.material:material:1.1.0'
+
+    implementation 'com.youth.banner:banner:2.0.0-beta01'
 }
