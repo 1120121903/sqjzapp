@@ -22,5 +22,6 @@
         <activity android:name=".MainActivity">
         </activity>
     </application>
+    <!--图片循环播放-->
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
