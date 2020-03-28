@@ -1,4 +1,4 @@
-package com.sys8.sqjzapp.main;
+package com.sys8.sqjzapp.main.tztx;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import com.sys8.sqjzapp.R;
 
-public class FragMine extends Fragment {
+public class FragTztx_Tx extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,6 @@ public class FragMine extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag_mine, container, false);
+        return inflater.inflate(R.layout.frag_tztx_tx, container, false);
     }
 }

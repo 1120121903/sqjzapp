@@ -2,28 +2,23 @@ package com.sys8.sqjzapp;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.adapters.MainFragmentAdapter;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.main.FragHome;
-import com.sys8.sqjzapp.main.FragMine;
-import com.sys8.sqjzapp.main.FragTztx;
+import com.sys8.sqjzapp.main.mine.FragMine;
+import com.sys8.sqjzapp.main.tztx.FragTztx;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
-import static com.sys8.sqjzapp.baseClass.ActivityCollector.removeActivity;
 
 /**
  * date:2020/3/27

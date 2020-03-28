@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tztx_tz">通知消息</string>
+    <string name="tztx_tx">提醒消息</string>
+</resources>
