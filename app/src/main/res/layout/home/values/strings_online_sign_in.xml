@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--网上签到页面-->
+    <string name="onlinesignin_titlebar">网上签到</string>
+</resources>
