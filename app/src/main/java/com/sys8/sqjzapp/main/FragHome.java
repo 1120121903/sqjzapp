@@ -12,10 +12,9 @@ import android.widget.VideoView;
 
 import androidx.fragment.app.Fragment;
 
-import com.sys8.sqjzapp.MainActivity;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.ImageAdapter;
-import com.sys8.sqjzapp.subModule.wsqd.WsqdActivity;
+import com.sys8.sqjzapp.subModule.onlineSignIn.OnlineSignInActivity;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -32,8 +31,8 @@ public class FragHome extends Fragment {
     ImageView ivHomeMessage;
     @BindView(R.id.bt_home_message_detail)
     Button btHomeMessageDetail;
-    @BindView(R.id.bt_home_wsqd)
-    Button btHomeWsqd;
+    @BindView(R.id.bt_home_onlinesignin)
+    Button btHomeOnlinesignin;
     @BindView(R.id.bt_home_rcbg)
     Button btHomeRcbg;
     @BindView(R.id.bt_home_jyxx)
@@ -86,9 +85,9 @@ public class FragHome extends Fragment {
         bannerHomeTop.setAdapter(new ImageAdapter(list));
         return view;
     }
-    @OnClick(R.id.bt_home_wsqd)
-    public void toSubModuleWsqd(View view){
-        Intent intent = new Intent(this.getActivity(), WsqdActivity.class);
+    @OnClick(R.id.bt_home_onlinesignin)
+    public void toSubModuleOnlineSignIn(View view){
+        Intent intent = new Intent(this.getActivity(), OnlineSignInActivity.class);
         this.startActivity(intent);
     }
 

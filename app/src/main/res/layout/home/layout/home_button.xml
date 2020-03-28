@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp">
             <Button
-                android:id="@+id/bt_home_wsqd"
+                android:id="@+id/bt_home_onlinesignin"
                 android:drawableTop="@drawable/home_bt_backgroung"
                 android:text="@string/home_bt_wsqd"
                 android:textSize="14dp"
