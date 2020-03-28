@@ -1,10 +1,13 @@
 package com.sys8.sqjzapp.main;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.fragment.app.Fragment;
 
@@ -17,10 +20,49 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class FragHome extends Fragment {
     @BindView(R.id.banner_home_top)
     Banner bannerHomeTop;
+    @BindView(R.id.iv_home_message)
+    ImageView ivHomeMessage;
+    @BindView(R.id.bt_home_message_detail)
+    Button btHomeMessageDetail;
+    @BindView(R.id.bt_home_wsqd)
+    Button btHomeWsqd;
+    @BindView(R.id.bt_home_rcbg)
+    Button btHomeRcbg;
+    @BindView(R.id.bt_home_jyxx)
+    Button btHomeJyxx;
+    @BindView(R.id.bt_home_ycbf)
+    Button btHomeYcbf;
+    @BindView(R.id.bt_home_wcqj)
+    Button btHomeWcqj;
+    @BindView(R.id.bt_home_zjwbj)
+    Button btHomeZjwbj;
+    @BindView(R.id.bt_home_jzdbg)
+    Button btHomeJzdbg;
+    @BindView(R.id.bt_home_gyhd)
+    Button btHomeGyhd;
+    @BindView(R.id.bt_home_jstx)
+    Button btHomeJstx;
+    @BindView(R.id.bt_home_xlzx)
+    Button btHomeXlzx;
+    @BindView(R.id.bt_home_jyxx_next)
+    Button btHomeJyxxNext;
+    @BindView(R.id.vv_home_jyxx1)
+    VideoView vvHomeJyxx1;
+    @BindView(R.id.tv_home_jyxx1_cotent)
+    TextView tvHomeJyxx1Cotent;
+    @BindView(R.id.tv_home_jyxx1_time)
+    TextView tvHomeJyxx1Time;
+    @BindView(R.id.vv_home_jyxx2)
+    VideoView vvHomeJyxx2;
+    @BindView(R.id.tv_home_jyxx2_cotent)
+    TextView tvHomeJyxx2Cotent;
+    @BindView(R.id.tv_home_jyxx2_time)
+    TextView tvHomeJyxx2Time;
     private View view;
 
     @Override
@@ -41,5 +83,10 @@ public class FragHome extends Fragment {
         bannerHomeTop.setAdapter(new ImageAdapter(list));
         return view;
     }
+    @OnClick(R.id.bt_home_wsqd)
+    public void toHomeWsqd(View view){
+            
+    }
+
 
 }
