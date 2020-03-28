@@ -2,4 +2,5 @@
 <resources>
     <!--网上签到页面-->
     <string name="onlinesignin_titlebar">网上签到</string>
+    <string name="onlinesignin_tv_mylocation">我的位置:</string>
 </resources>
