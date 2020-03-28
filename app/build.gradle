@@ -64,4 +64,6 @@ dependencies {
     /*Rxjava异步*/
     implementation 'io.reactivex.rxjava2:rxjava:2.1.4'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    /*TitleBar*/
+    implementation 'com.hjq:titlebar:6.0'
 }
