@@ -1,5 +1,6 @@
 package com.sys8.sqjzapp.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +12,10 @@ import android.widget.VideoView;
 
 import androidx.fragment.app.Fragment;
 
+import com.sys8.sqjzapp.MainActivity;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.ImageAdapter;
+import com.sys8.sqjzapp.subModule.wsqd.WsqdActivity;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -84,8 +87,9 @@ public class FragHome extends Fragment {
         return view;
     }
     @OnClick(R.id.bt_home_wsqd)
-    public void toHomeWsqd(View view){
-            
+    public void toSubModuleWsqd(View view){
+        Intent intent = new Intent(this.getActivity(), WsqdActivity.class);
+        this.startActivity(intent);
     }
 
 
