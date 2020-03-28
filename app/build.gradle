@@ -65,4 +65,6 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     /*地图*/
     implementation files('libs/AMap2DMap_6.0.0_AMapLocation_4.9.0_20200302.jar')
+    /*TitleBar*/
+    implementation 'com.hjq:titlebar:6.0'
 }

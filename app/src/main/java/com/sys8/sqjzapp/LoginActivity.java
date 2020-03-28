@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import com.sys8.sqjzapp.baseClass.BaseActivity;
-
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -17,7 +15,7 @@ import butterknife.OnClick;
  * author:wy
  * description:用户登录
  */
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.et_login_name)
     EditText etLoginName;
@@ -39,6 +37,7 @@ public class LoginActivity extends BaseActivity {
     public void login(View v) {
         Intent intent = new Intent(this,MainActivity.class);
         this.startActivity(intent);
+        finish();
     }
 
     @OnClick(R.id.bt_login_clear)

@@ -2,22 +2,28 @@ package com.sys8.sqjzapp;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.hjq.bar.OnTitleBarListener;
+import com.hjq.bar.TitleBar;
+import com.sys8.sqjzapp.adapters.MainFragmentAdapter;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.main.FragHome;
-import com.sys8.sqjzapp.main.FragTztx;
 import com.sys8.sqjzapp.main.FragMine;
-import com.sys8.sqjzapp.adapters.MainFragmentAdapter;
+import com.sys8.sqjzapp.main.FragTztx;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
+import static com.sys8.sqjzapp.baseClass.ActivityCollector.removeActivity;
 
 /**
  * date:2020/3/27
@@ -28,6 +34,8 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.vp_main_pager)
     ViewPager vpMainPager;
+    @BindView(R.id.tb_main_title)
+    TitleBar tbMainTitle;
     private ArrayList<Fragment> mMainFragmentList;
     @BindView(R.id.bottom_nav_view)
     BottomNavigationView bnvMainBottom;
@@ -37,12 +45,13 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+//        TitleCilckListener(tbMainTitle,this);/*title按钮监听*/
         initMainData(); /* 底部标签页绑定布局 */
     }
 
     /**
-     *description:底部标签页绑定布局，实现滑动切换效果
-    */
+     * description:底部标签页绑定布局，实现滑动切换效果
+     */
     private void initMainData() {
         mMainFragmentList = new ArrayList<>(3);
         mMainFragmentList.add(new FragHome());
