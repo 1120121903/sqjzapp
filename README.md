@@ -9,6 +9,7 @@
     - [2、标题栏 -TitleBar（自定义插件）](#2%e6%a0%87%e9%a2%98%e6%a0%8f--titlebar%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8f%92%e4%bb%b6)
     - [3、动态权限申请 -Rxpremission](#3%e5%8a%a8%e6%80%81%e6%9d%83%e9%99%90%e7%94%b3%e8%af%b7--rxpremission)
     - [4、布局模块阴影 -自定义shape文件](#4%e5%b8%83%e5%b1%80%e6%a8%a1%e5%9d%97%e9%98%b4%e5%bd%b1--%e8%87%aa%e5%ae%9a%e4%b9%89shape%e6%96%87%e4%bb%b6)
+    - [5、优化按钮样式 -自定义Button](#5%e4%bc%98%e5%8c%96%e6%8c%89%e9%92%ae%e6%a0%b7%e5%bc%8f--%e8%87%aa%e5%ae%9a%e4%b9%89button)
 
 ##   代码规范
 ### 1、layout.xml中的元素id命名
@@ -124,3 +125,20 @@ rxPermissions.request(Manifest.permission.ACCESS_COARSE_LOCATION,
         android:orientation="vertical"
         android:background="@drawable/shape_shadow">
 ```
+
+### 5、优化按钮样式 -自定义Button
+添加自定义的attr.xml文件和CommonShapeButton类
+
+使用方法参考：签到按钮
+```java
+                <com.sys8.sqjzapp.common.design.CommonShapeButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="签 到"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:csb_fillColor="@color/green"
+            app:csb_cornerRadius="80dp"/>
+```
+更多使用方法参考：https://github.com/michaelxs/Android-CommonShapeButton<br>
+以及sqjzsst项目中的temp_button_style_example.xml

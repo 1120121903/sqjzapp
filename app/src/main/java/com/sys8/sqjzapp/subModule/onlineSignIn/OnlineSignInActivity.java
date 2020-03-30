@@ -3,6 +3,7 @@ package com.sys8.sqjzapp.subModule.onlineSignIn;
 import android.Manifest;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
@@ -21,10 +22,12 @@ import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.ActivityCollector;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
+import com.sys8.sqjzapp.common.design.CommonShapeButton;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class OnlineSignInActivity extends BaseActivity implements AMapLocationListener,
         LocationSource {
@@ -37,6 +40,8 @@ public class OnlineSignInActivity extends BaseActivity implements AMapLocationLi
     MapView mapView;
     @BindView(R.id.tv_onlinesignin_currentlocation)
     TextView tvOnlinesigninCurrentlocation;
+    @BindView(R.id.bt_onlinesignin_signin)
+    CommonShapeButton btOnlinesigninSignin;
 
     //地图
     private AMap aMap;
@@ -81,7 +86,7 @@ public class OnlineSignInActivity extends BaseActivity implements AMapLocationLi
     /**
      * 初始化定位
      */
-    private void initLoc(){
+    private void initLoc() {
         //设置显示定位按钮 并且可以点击
         UiSettings settings = aMap.getUiSettings();
         //设置定位监听
@@ -101,23 +106,23 @@ public class OnlineSignInActivity extends BaseActivity implements AMapLocationLi
     /**
      * 权限检测-动态申请权限
      */
-    private void requestLocPremission(){
+    private void requestLocPremission() {
         /**          SDK在Android 6.0以上的版本需要进行运行检测的动态权限如下：
-        /*                Manifest.permission.ACCESS_COARSE_LOCATION,   粗略定位
-        /*               Manifest.permission.ACCESS_FINE_LOCATION,     精细定位
+         /*                Manifest.permission.ACCESS_COARSE_LOCATION,   粗略定位
+         /*               Manifest.permission.ACCESS_FINE_LOCATION,     精细定位
          */
         rxPermissions.request(Manifest.permission.ACCESS_COARSE_LOCATION,
-                              Manifest.permission.ACCESS_FINE_LOCATION)
-                    .subscribe(granted ->{
-                        if(granted){
-                            Log.i("permissions", Manifest.permission.ACCESS_COARSE_LOCATION + "：" + "获取成功");
-                            Log.i("permissions", Manifest.permission.ACCESS_FINE_LOCATION + "：" + "获取成功");
-                            initLoc();
-                        }else{
-                            Log.i("permissions", Manifest.permission.ACCESS_COARSE_LOCATION + "：" + "获取失败");
-                            Log.i("permissions", Manifest.permission.ACCESS_FINE_LOCATION + "：" + "获取失败");
-                        }
-                    });
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                .subscribe(granted -> {
+                    if (granted) {
+                        Log.i("permissions", Manifest.permission.ACCESS_COARSE_LOCATION + "：" + "获取成功");
+                        Log.i("permissions", Manifest.permission.ACCESS_FINE_LOCATION + "：" + "获取成功");
+                        initLoc();
+                    } else {
+                        Log.i("permissions", Manifest.permission.ACCESS_COARSE_LOCATION + "：" + "获取失败");
+                        Log.i("permissions", Manifest.permission.ACCESS_FINE_LOCATION + "：" + "获取失败");
+                    }
+                });
     }
 
     //定位回调i函数
@@ -206,5 +211,10 @@ public class OnlineSignInActivity extends BaseActivity implements AMapLocationLi
         super.onSaveInstanceState(outState);
         //在activity执行onSaveInstanceState时执行mMapView.onSaveInstanceState (outState)，保存地图当前的状态
         mapView.onSaveInstanceState(outState);
+    }
+    @OnClick(R.id.bt_onlinesignin_signin)
+    public void login(View v) {
+
+        finish();
     }
 }
