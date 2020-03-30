@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bt_mine_wdsc">我的收藏</string>
+    <string name="bt_mine_wdqd">我的签到</string>
+    <string name="bt_mine_wdqj">我的请假</string>
+    <string name="bt_mine_jzxz">矫正小组</string>
+    <string name="bt_mine_jzjl">矫正记录</string>
+    <string name="bt_mine_bbgx">版本更新  V1.0</string>
+</resources>
