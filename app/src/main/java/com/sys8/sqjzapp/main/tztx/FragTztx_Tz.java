@@ -4,19 +4,22 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.FrameLayout;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.sys8.sqjzapp.R;
 
 import butterknife.BindView;
-import butterknife.OnClick;
+import butterknife.ButterKnife;
+
+import static com.sys8.sqjzapp.main.tztx.ListData.list_TZ;
 
 public class FragTztx_Tz extends Fragment {
+
+
+    @BindView(R.id.lv_tztx_tz)
+    ListView lvTztxTz;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,11 @@ public class FragTztx_Tz extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.frag_tztx_tz, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag_tztx_tz, container, false);
+        ButterKnife.bind(this, view);
+        TztxMainListViewAdapter adapter = new TztxMainListViewAdapter(getView(),getContext(),list_TZ,"TZ",getActivity());
+        lvTztxTz.setAdapter(adapter);
+        return view;
     }
 }

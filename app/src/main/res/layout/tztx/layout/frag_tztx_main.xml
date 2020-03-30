@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray">
@@ -19,8 +20,8 @@
             android:layout_weight="1"/>
         <View
             android:background="@color/white"
-            android:layout_width="2dp"
-            android:layout_height="40dp"/>
+            android:layout_width="1dp"
+            android:layout_height="30dp"/>
         <Button
             android:id="@+id/bt_tztx_tx"
             android:text="提醒"
@@ -33,6 +34,26 @@
     <FrameLayout
         android:id="@+id/fl_tztx"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/line_tztx_main_list"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/lv_tztx"
+                android:divider="#686867"
+                android:dividerHeight="1.0dp"
+                android:scrollbars="none"
+                android:cacheColorHint="@android:color/transparent"
+                android:fadingEdge="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </ListView>
+        </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>

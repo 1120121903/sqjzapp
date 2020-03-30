@@ -42,6 +42,8 @@ activity_login.xml中填写name的EditText元素的命名为：et_login_name
 
 ### 1、页面元素绑定 -butterknife
  页面元素绑定使用butterknife插件，在创建完layout.xml文件后，在create文件中绑定layout。
+ FRagment使用：ButterKnife.bind(this, view);
+ Activity使用：ButterKnife.bind(this);
  ```java
  setContentView(R.layout.activity_onlinesignin);
  ```

@@ -3,12 +3,12 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:background="@color/white">
+    android:background="@drawable/shape_shadow">
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="330dp"
-        android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
         <!--标题-->
         <LinearLayout
             android:orientation="horizontal"
@@ -22,12 +22,12 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
-                android:id="@+id/tztx_type"
+                android:id="@+id/tv_tztx_type"
                 android:text="通知消息"
                 android:layout_width="180dp"
                 android:layout_height="20dp"/>
             <TextView
-                android:id="@+id/tztx_time"
+                android:id="@+id/tv_tztx_time"
                 android:text="2020-3-23 9:00"
                 android:layout_width="150dp"
                 android:layout_height="20dp"/>
@@ -37,8 +37,18 @@
             android:id="@+id/tv_tztx_cotent"
             android:text="测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
+        <!--详情-->
+        <Button
+            android:id="@+id/bt_tzxx_detail"
+            android:text="@string/tztx_bt_detail"
+            android:background="@null"
+            android:layout_marginRight="10dp"
+            android:gravity="right|center_vertical"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
     </LinearLayout>
 </LinearLayout>

@@ -10,7 +10,6 @@
         android:layout_marginBottom="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <include layout="@layout/tz_list_item"/>
         <ListView
             android:id="@+id/lv_tztx_tz"
             android:divider="#686867"
