@@ -56,12 +56,16 @@ public class FragTztx extends Fragment {
 
     @OnClick(R.id.bt_tztx_tz)
     public void tzFragment() {
+        btTztxTz.setTextSize(15);
+        btTztxTx.setTextSize(13);
         lineTztxMainList.setVisibility(View.GONE);
         replaceFragment(new FragTztx_Tz());
     }
 
     @OnClick(R.id.bt_tztx_tx)
     public void txFragment() {
+        btTztxTz.setTextSize(13);
+        btTztxTx.setTextSize(15);
         lineTztxMainList.setVisibility(View.GONE);
         replaceFragment(new FragTztx_Tx());
     }
@@ -72,7 +76,7 @@ public class FragTztx extends Fragment {
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.fl_tztx, fragment,"");
+        transaction.replace(R.id.fl_tztx, fragment);
         transaction.commit();
     }
 

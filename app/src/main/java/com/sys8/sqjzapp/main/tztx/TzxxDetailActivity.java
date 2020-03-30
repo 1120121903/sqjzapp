@@ -1,12 +1,9 @@
 package com.sys8.sqjzapp.main.tztx;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
@@ -26,6 +23,8 @@ public class TzxxDetailActivity extends BaseActivity {
     TextView tvTzxxDetailContent;
     @BindView(R.id.tv_tzxx_detail_time)
     TextView tvTzxxDetailTime;
+    @BindView(R.id.tv_tzxx_detail_dep)
+    TextView tvTzxxDetailDep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,30 +37,37 @@ public class TzxxDetailActivity extends BaseActivity {
     }
 
     /**
-     *description:解析获取的参数
-    */
-    private void bindData(){
+     * description:解析获取的参数
+     */
+    private void bindData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         String content = intent.getStringExtra("content");
         String time = intent.getStringExtra("time");
+        String dep = intent.getStringExtra("dep");
         tvTzxxDetailTitle.setText(title);
         tvTzxxDetailContent.setText(content);
         tvTzxxDetailTime.setText(time);
+        tvTzxxDetailDep.setText(dep);
     }
 
     /**
-     *description:Title返回按钮监听函数
+     * description:Title返回按钮监听函数
      */
-    private  void TitleCilckListenerTzxx(TitleBar titleBar){
+    private void TitleCilckListenerTzxx(TitleBar titleBar) {
         titleBar.setOnTitleBarListener(new OnTitleBarListener() {
             @Override
             public void onLeftClick(View v) {
                 finish();
             }
+
             @Override
-            public void onTitleClick(View v) { }
+            public void onTitleClick(View v) {
+            }
+
             @Override
-            public void onRightClick(View v) { }});
+            public void onRightClick(View v) {
+            }
+        });
     }
 }

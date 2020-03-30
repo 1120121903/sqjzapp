@@ -24,7 +24,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/shape_shadow">
             <!--标题-->
             <LinearLayout
@@ -50,11 +50,23 @@
                 android:id="@+id/tv_tzxx_detail_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+            <!--司法所-->
+            <TextView
+                android:id="@+id/tv_tzxx_detail_dep"
+                android:gravity="right"
+                android:text="445654"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <!--时间-->
             <TextView
                 android:id="@+id/tv_tzxx_detail_time"
+                android:text="21212"
+                android:gravity="right"
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"/>
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
     </LinearLayout>

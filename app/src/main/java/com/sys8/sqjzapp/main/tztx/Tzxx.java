@@ -5,12 +5,22 @@ public class Tzxx {
     String time;
     String title;
     String content;
+    String dep;//发送单位
 
-    public Tzxx(String type,String  time,String title,String content){
+    public Tzxx(String type,String  time,String title,String content,String dep){
         this.time = time;
         this.type = type;
         this.title = title;
         this.content = content;
+        this.dep = dep;
+    }
+
+    public String getDep() {
+        return dep;
+    }
+
+    public void setDep(String dep) {
+        this.dep = dep;
     }
 
     public String getType() {
