@@ -77,7 +77,7 @@ public class TztxMainListViewAdapter extends BaseAdapter
         viewHolder.tztx_type.setText(tzxx.getType());
         viewHolder.tztx_time.setText(tzxx.getTime());
         if(tzxx.getType().substring(0,2).equals("通知")){
-            viewHolder.tztx_cotent.setText(tzxx.getTitle());
+            viewHolder.tztx_cotent.setText(tzxx.getContent());
             viewHolder.tzxx_detail.setVisibility(View.VISIBLE);
             viewHolder.tzxx_detail.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -87,6 +87,7 @@ public class TztxMainListViewAdapter extends BaseAdapter
                     bundle.putString("title", tzxx.getTitle()); //放入所需要传递的值
                     bundle.putString("content", tzxx.getContent());
                     bundle.putString("time", tzxx.getTime());
+                    bundle.putString("dep", tzxx.getDep());
                     intent.putExtras(bundle);
                     activity.startActivity(intent); //这里一定要获取到所在Activity再startActivity()；
                 }
