@@ -60,11 +60,15 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     /*图片循环播放*/
     implementation 'com.youth.banner:banner:2.0.0-beta01'
-    /*Rxjava异步*/
+    /*Rxjava2异步*/
     implementation 'io.reactivex.rxjava2:rxjava:2.1.4'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    /*RxPremission 申请权限 (需要与Rxjava2配套使用)*/
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
     /*地图*/
     implementation files('libs/AMap2DMap_6.0.0_AMapLocation_4.9.0_20200302.jar')
     /*TitleBar*/
     implementation 'com.hjq:titlebar:6.0'
+
+
 }

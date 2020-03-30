@@ -1,5 +1,6 @@
 package com.sys8.sqjzapp.subModule.onlineSignIn;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.ActivityCollector;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +30,7 @@ public class OnlineSignInActivity extends BaseActivity implements AMapLocationLi
         LocationSource {
 
     private static final int WRITE_COARSE_LOCATION_REQUEST_CODE = 1;
+    final RxPermissions rxPermissions = new RxPermissions(this);
     @BindView(R.id.tb_onlinesignin_titlebar)
     TitleBar tbOnlinesigninTitlebar;
     @BindView(R.id.map)
@@ -56,22 +59,13 @@ public class OnlineSignInActivity extends BaseActivity implements AMapLocationLi
         mapView.onCreate(savedInstanceState);
         //初始化地图控制器
         initMap();
-        //设置显示定位按钮 并且可以点击
-        UiSettings settings = aMap.getUiSettings();
-        //设置定位监听
-        aMap.setLocationSource(this);
-        // 是否显示定位按钮
-        settings.setMyLocationButtonEnabled(false);
-        // 是否可触发定位并显示定位层
-        aMap.setMyLocationEnabled(true);
-        //定位的小图标
-        MyLocationStyle myLocationStyle = new MyLocationStyle();
-        myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher_background));
-        myLocationStyle.radiusFillColor(android.R.color.transparent);
-        myLocationStyle.strokeColor(android.R.color.transparent);
-        aMap.setMyLocationStyle(myLocationStyle);
+        //获取定位权限
+        requestLocPremission();
     }
 
+    /**
+     * 初始化地图
+     */
     private void initMap() {
         if (aMap == null) {
             aMap = mapView.getMap();
@@ -82,6 +76,48 @@ public class OnlineSignInActivity extends BaseActivity implements AMapLocationLi
         CameraUpdate cu = CameraUpdateFactory.zoomTo(18);
         // 设置地图的默认放大级别
         aMap.moveCamera(cu);
+    }
+
+    /**
+     * 初始化定位
+     */
+    private void initLoc(){
+        //设置显示定位按钮 并且可以点击
+        UiSettings settings = aMap.getUiSettings();
+        //设置定位监听
+        aMap.setLocationSource(this);
+        // 是否显示定位按钮
+        settings.setMyLocationButtonEnabled(true);
+        // 是否可触发定位并显示定位层
+        aMap.setMyLocationEnabled(true);
+        //定位的小图标
+        MyLocationStyle myLocationStyle = new MyLocationStyle();
+        myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher_background));
+        myLocationStyle.radiusFillColor(android.R.color.transparent);
+        myLocationStyle.strokeColor(android.R.color.transparent);
+        aMap.setMyLocationStyle(myLocationStyle);
+    }
+
+    /**
+     * 权限检测-动态申请权限
+     */
+    private void requestLocPremission(){
+        /**          SDK在Android 6.0以上的版本需要进行运行检测的动态权限如下：
+        /*                Manifest.permission.ACCESS_COARSE_LOCATION,   粗略定位
+        /*               Manifest.permission.ACCESS_FINE_LOCATION,     精细定位
+         */
+        rxPermissions.request(Manifest.permission.ACCESS_COARSE_LOCATION,
+                              Manifest.permission.ACCESS_FINE_LOCATION)
+                    .subscribe(granted ->{
+                        if(granted){
+                            Log.i("permissions", Manifest.permission.ACCESS_COARSE_LOCATION + "：" + "获取成功");
+                            Log.i("permissions", Manifest.permission.ACCESS_FINE_LOCATION + "：" + "获取成功");
+                            initLoc();
+                        }else{
+                            Log.i("permissions", Manifest.permission.ACCESS_COARSE_LOCATION + "：" + "获取失败");
+                            Log.i("permissions", Manifest.permission.ACCESS_FINE_LOCATION + "：" + "获取失败");
+                        }
+                    });
     }
 
     //定位回调i函数
