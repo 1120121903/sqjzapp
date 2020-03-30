@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".subModule.onlineSignIn.OnlineSignInActivity">
+    tools:context=".subModule.onlineSignIn.OnlineSignInActivity"
+    android:background="@color/gray">
     <!--顶部标题栏-->
     <com.hjq.bar.TitleBar
         android:visibility="visible"
@@ -23,22 +24,37 @@
     <com.amap.api.maps2d.MapView
         android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="300dp"/>
+        android:layout_height="250dp"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="vertical">
-        <TextView
+        android:layout_height="75dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_shadow">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/onlinesignin_tv_mylocation"/>
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/onlinesignin_location_gray"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:text="@string/onlinesignin_tv_mylocation"/>
+        </LinearLayout>
         <TextView
+            android:layout_gravity="center"
             android:id="@+id/tv_onlinesignin_currentlocation"
             android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginLeft="55dp"/>
     </LinearLayout>
 
 </LinearLayout>

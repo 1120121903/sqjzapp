@@ -92,7 +92,7 @@ public class OnlineSignInActivity extends BaseActivity implements AMapLocationLi
         aMap.setMyLocationEnabled(true);
         //定位的小图标
         MyLocationStyle myLocationStyle = new MyLocationStyle();
-        myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher_background));
+        myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.drawable.onlinesignin_location));
         myLocationStyle.radiusFillColor(android.R.color.transparent);
         myLocationStyle.strokeColor(android.R.color.transparent);
         aMap.setMyLocationStyle(myLocationStyle);

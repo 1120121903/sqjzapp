@@ -8,6 +8,7 @@
     - [1、页面元素绑定 -butterknife](#1%e9%a1%b5%e9%9d%a2%e5%85%83%e7%b4%a0%e7%bb%91%e5%ae%9a--butterknife)
     - [2、标题栏 -TitleBar（自定义插件）](#2%e6%a0%87%e9%a2%98%e6%a0%8f--titlebar%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8f%92%e4%bb%b6)
     - [3、动态权限申请 -Rxpremission](#3%e5%8a%a8%e6%80%81%e6%9d%83%e9%99%90%e7%94%b3%e8%af%b7--rxpremission)
+    - [4、布局模块阴影 -自定义shape文件](#4%e5%b8%83%e5%b1%80%e6%a8%a1%e5%9d%97%e9%98%b4%e5%bd%b1--%e8%87%aa%e5%ae%9a%e4%b9%89shape%e6%96%87%e4%bb%b6)
 
 ##   代码规范
 ### 1、layout.xml中的元素id命名
@@ -112,4 +113,14 @@ rxPermissions.request(Manifest.permission.ACCESS_COARSE_LOCATION,
                         }
                     });
                     });
+```
+### 4、布局模块阴影 -自定义shape文件
+
+将模块的background定义为"@drawable/shape_shadow"
+```java
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_shadow">
 ```
