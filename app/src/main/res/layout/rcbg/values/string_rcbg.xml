@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="rcbg_tb_title">日常报告</string>
+    <string name="rcbg_bt_txbg">填写报告</string>
+    <string name="rcbg_bt_wdbg">我的报告</string>
+    <string name="rcbg_tv_wdbg_title">标题</string>
+    <string name="rcbg_tv_wdbg_content">内容</string>
 </resources>
