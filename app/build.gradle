@@ -76,5 +76,7 @@ dependencies {
     implementation 'com.github.CGmaybe10:FocusSurfaceView:v1.0.1'
     /*控件自定义SuperShapeView*/
     implementation 'com.kingja.supershapeview:supershapeview:1.2.0'
+    /*时间轴*/
+    implementation 'com.orient:Orient-Ui:1.0.0'
 
 }

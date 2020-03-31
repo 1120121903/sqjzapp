@@ -8,8 +8,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.adapters.TimeLineAdapter;
+import com.sys8.sqjzapp.module.TimelineItem;
+import com.sys8.sqjzapp.utils.Constant;
+
+import java.util.List;
+
+import javax.sql.DataSource;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,6 +39,10 @@ public class SignInFragment extends Fragment {
 
     private Unbinder unbinder;
 
+
+        private RecyclerView timelineRv;
+        private TimeLineAdapter adapter;
+        private List<TimelineItem> mData;
     public SignInFragment() {
         // Required empty public constructor
     }
@@ -65,7 +78,23 @@ public class SignInFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
         tvOnlinesigninSigntime.setText(mSignInTime);
         tvOnlinesigninSignaddress.setText(mSignInAddress);
+        intRv();
+        getListData();
+        setupAdapter();
         return view;
+    }
+
+    private void setupAdapter() {
+        adapter = new TimeLineAdapter(getView().getContext(),mData);
+        timelineRv.setAdapter(adapter);
+    }
+
+    private void getListData(){
+        mData = com.sys8.sqjzapp.utils.DataSource.getTimelineData();
+    }
+    private void intRv(){
+        timelineRv = getView().findViewById(R.id.recycler_onlinesignin_location_history);
+        timelineRv.setLayoutManager(new LinearLayoutManager(getView().getContext()));
     }
 
     @Override
