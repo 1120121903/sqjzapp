@@ -72,5 +72,7 @@ dependencies {
     implementation 'com.hjq:titlebar:6.0'
     /*个人中心*/
     implementation 'com.lixiaohui8636:clause-view:1.0'
+    //自由选择框拍照，可能弃用
+    implementation 'com.github.CGmaybe10:FocusSurfaceView:v1.0.1'
 
 }
