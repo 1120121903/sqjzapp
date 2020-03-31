@@ -17,6 +17,7 @@ import static com.sys8.sqjzapp.main.tztx.ListData.list_TZ;
 
 public class FragTztx_Tz extends Fragment {
 
+    private static FragTztx_Tz fragTztzInstanse = null;
 
     @BindView(R.id.lv_tztx_tz)
     ListView lvTztxTz;
@@ -36,4 +37,14 @@ public class FragTztx_Tz extends Fragment {
         lvTztxTz.setAdapter(adapter);
         return view;
     }
+
+    private FragTztx_Tz(){}
+
+    public static FragTztx_Tz getInstance(){
+        if(fragTztzInstanse == null){
+            fragTztzInstanse = new FragTztx_Tz();
+        }
+        return  fragTztzInstanse;
+    }
+
 }

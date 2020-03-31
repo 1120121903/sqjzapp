@@ -59,7 +59,7 @@ public class FragTztx extends Fragment {
         btTztxTz.setTextSize(15);
         btTztxTx.setTextSize(13);
         lineTztxMainList.setVisibility(View.GONE);
-        replaceFragment(new FragTztx_Tz());
+        replaceFragment(FragTztx_Tz.getInstance());
     }
 
     @OnClick(R.id.bt_tztx_tx)
@@ -67,7 +67,7 @@ public class FragTztx extends Fragment {
         btTztxTz.setTextSize(13);
         btTztxTx.setTextSize(15);
         lineTztxMainList.setVisibility(View.GONE);
-        replaceFragment(new FragTztx_Tx());
+        replaceFragment(FragTztx_Tx.getInstance());
     }
 
     /**
