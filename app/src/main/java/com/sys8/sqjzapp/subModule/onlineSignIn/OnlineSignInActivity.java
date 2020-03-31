@@ -16,6 +16,8 @@ public class OnlineSignInActivity extends BaseActivity  {
     final RxPermissions rxPermissions = new RxPermissions(this);
     private FragmentManager fragmentManager;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
