@@ -1,81 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
     android:background="@color/gray">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:layout_weight="3">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_shadow"
+        >
         <!--标题-->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp">
             <ImageView
                 android:src="@drawable/rcbg_star"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
-            <TextView
-                android:layout_gravity="center"
-                android:text="@string/rcbg_tv_wdbg_title"
-                android:textSize="16dp"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
             <EditText
-                android:layout_marginLeft="10dp"
+                android:hint="@string/rcbg_tv_wdbg_title"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"/>
-            <ImageButton
-                android:id="@+id/bt_rcbg_title_delete"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:src="@drawable/rcbg_bt_delete"
-                android:background="@null"
-                android:layout_margin="10dp"
-                android:layout_width="15dp"
-                android:layout_height="15dp"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:layout_marginLeft="10dp"/>
         </LinearLayout>
         <!--内容-->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="500dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_margin="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_margin="15dp"
+                android:layout_height="match_parent">
                 <ImageView
                     android:src="@drawable/rcbg_star"
-                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
-                <TextView
-                    android:layout_gravity="center"
-                    android:text="@string/rcbg_tv_wdbg_content"
-                    android:textSize="16dp"
-                    android:layout_margin="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
+                <com.kingja.supershapeview.view.SuperShapeEditText
+                    android:id="@+id/et_rcbg_content"
+                    android:gravity="top"
+                    android:hint="@string/rcbg_tv_wdbg_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/black"
+                    app:super_dashWidth="2dp"
+                    app:super_solidColor="@color/white"
+                    app:super_strokeColor="@color/black"
+                    app:super_strokeWidth="1dp"/>
             </LinearLayout>
         </LinearLayout>
+        <Button
+            android:layout_gravity="center"
+            android:text="提交"
+            android:layout_width="80dp"
+            android:layout_height="50dp"/>
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3">
-
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/shape_shadow"
+        >
+        <!--签到时间-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/clock"/>
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_margin="5dp"
+                android:text="时间"/>
+            <TextClock
+                android:id="@+id/tc_rcbg_time"
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format24Hour ="yyyy-MM-dd  HH:mm:ss"
+                android:format12Hour ="yyyy-MM-dd  HH:mm:ss"
+                android:layout_marginLeft="10dp"
+                />
+        </LinearLayout>
+        <!--签到地点-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/onlinesignin_location_gray"/>
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="18dp"
+                android:text="地点"/>
+            <TextView
+                android:id="@+id/tv_rcbg_place"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="华北计算技术研究所"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

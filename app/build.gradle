@@ -74,5 +74,7 @@ dependencies {
     implementation 'com.lixiaohui8636:clause-view:1.0'
     //自由选择框拍照，可能弃用
     implementation 'com.github.CGmaybe10:FocusSurfaceView:v1.0.1'
+    /*控件自定义SuperShapeView*/
+    implementation 'com.kingja.supershapeview:supershapeview:1.2.0'
 
 }
