@@ -1,43 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:background="@color/green">
-        <com.sys8.sqjzapp.common.design.CommonShapeButton
-            android:id="@+id/bt_mine_head"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:text="头像"
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            app:csb_fillColor="@color/white"
-            app:csb_cornerRadius="80dp"/>
-        <TextView
-            android:id="@+id/tv_mine_name"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:text="张海洋"
-            android:textSize="22dp"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/tv_mine_days"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:text="剩余矫正期：55天"
-            android:textSize="18dp"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        android:layout_weight="3">
+        <include layout="@layout/frag_mine_head"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

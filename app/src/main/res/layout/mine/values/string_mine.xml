@@ -5,5 +5,6 @@
     <string name="bt_mine_wdqj">我的请假</string>
     <string name="bt_mine_jzxz">矫正小组</string>
     <string name="bt_mine_jzjl">矫正记录</string>
-    <string name="bt_mine_bbgx">版本更新  V1.0</string>
+    <string name="bt_mine_bbgx">版本更新</string>
+    <string name="bt_mine_bbgx_detail">V1.0</string>
 </resources>
