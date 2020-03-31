@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.ImageAdapter;
+import com.sys8.sqjzapp.common.FaceVerifyActivity;
 import com.sys8.sqjzapp.subModule.onlineSignIn.OnlineSignInActivity;
 import com.youth.banner.Banner;
 
@@ -88,6 +89,15 @@ public class FragHome extends Fragment {
     @OnClick(R.id.bt_home_onlinesignin)
     public void toSubModuleOnlineSignIn(View view){
         Intent intent = new Intent(this.getActivity(), OnlineSignInActivity.class);
+        this.startActivity(intent);
+    }
+    /* 日常报告 */
+    @OnClick(R.id.bt_home_rcbg)
+    public void toSubModuleRcbg(View view){
+        Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("SubModuleName", "rcbg"); //放入所需要传递的值
+        intent.putExtras(bundle);
         this.startActivity(intent);
     }
 

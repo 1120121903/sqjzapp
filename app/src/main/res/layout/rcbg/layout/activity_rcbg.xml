@@ -9,7 +9,7 @@
     <!--顶部标题栏-->
     <com.hjq.bar.TitleBar
         android:visibility="visible"
-        android:id="@+id/tb_rcbg_title"
+        android:id="@+id/tb_rcbg"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="@color/green"
@@ -19,6 +19,6 @@
         app:barStyle="transparent"
         app:leftTitle="@string/title_back"
         app:rightSize="0dp"
-        app:title="@string/onlinesignin_titlebar" />
+        app:title="@string/rcbg_tb_title" />
 
 </LinearLayout>
