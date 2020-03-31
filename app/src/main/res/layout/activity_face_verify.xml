@@ -72,7 +72,6 @@
     </LinearLayout>
     <Button
         android:id="@+id/bt_faceVerify"
-        android:text="进入日常报告"
         android:textSize="20dp"
         android:textColor="@color/white"
         android:background="@null"

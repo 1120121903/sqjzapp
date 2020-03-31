@@ -20,5 +20,45 @@
         app:leftTitle="@string/title_back"
         app:rightSize="0dp"
         app:title="@string/rcbg_tb_title" />
-
+    <!--中间内容-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <include layout="@layout/frag_rcbg_txbg"/>
+        <FrameLayout
+            android:id="@+id/fl_rcbg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <!--底部标题栏-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:background="@color/green">
+        <Button
+            android:id="@+id/bt_tztx_tz"
+            android:text="@string/rcbg_bt_txbg"
+            android:textColor="@color/white"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <View
+            android:background="@color/white"
+            android:layout_width="1dp"
+            android:layout_height="30dp"/>
+        <Button
+            android:id="@+id/bt_tztx_tx"
+            android:text="@string/rcbg_bt_wdbg"
+            android:textColor="@color/white"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </LinearLayout>

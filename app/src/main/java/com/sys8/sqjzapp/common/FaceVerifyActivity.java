@@ -26,6 +26,7 @@ public class FaceVerifyActivity extends BaseActivity {
     FocusSurfaceView previewSv;
     @BindView(R.id.bt_faceVerify)
     Button btFaceVerify;
+    String subMoudleName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +34,11 @@ public class FaceVerifyActivity extends BaseActivity {
         setContentView(R.layout.activity_face_verify);
         ButterKnife.bind(this);
         TitleCilckListener(tbRlsb, this);/*title按钮监听*/
+        subMoudleName = getSubModuleName();
     }
 
     @OnClick(R.id.bt_faceVerify)
     public void gotoSubModuleName(){
-        String subMoudleName = getSubModuleName();
         switch (subMoudleName){
             case "rcbg":
                 finish();
@@ -56,6 +57,13 @@ public class FaceVerifyActivity extends BaseActivity {
         Intent intent = getIntent();
         String text = intent.getStringExtra("SubModuleName");
         System.out.println("SubModuleNamet" + text);
+        switch (text){
+            case "rcbg":
+                btFaceVerify.setText("进入日常报告");
+                break;
+            default:
+                break;
+        }
         return text;
     }
 
