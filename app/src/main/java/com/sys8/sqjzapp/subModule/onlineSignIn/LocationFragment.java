@@ -1,17 +1,15 @@
 package com.sys8.sqjzapp.subModule.onlineSignIn;
 
-import android.Manifest;
-import android.content.Context;
-import android.net.Uri;
+
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextClock;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -25,11 +23,8 @@ import com.amap.api.maps2d.MapView;
 import com.amap.api.maps2d.UiSettings;
 import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.MyLocationStyle;
-import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.baseClass.ActivityCollector;
 import com.sys8.sqjzapp.common.design.CommonShapeButton;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,15 +32,15 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class LocationFragment extends Fragment implements AMapLocationListener,
-        LocationSource{
-    @BindView(R.id.tb_onlinesignin_titlebar)
-    TitleBar tbOnlinesigninTitlebar;
+        LocationSource {
     @BindView(R.id.map)
     MapView mapView;
     @BindView(R.id.tv_onlinesignin_currentlocation)
     TextView tvOnlinesigninCurrentlocation;
     @BindView(R.id.bt_onlinesignin_signin)
     CommonShapeButton btOnlinesigninSignin;
+    @BindView(R.id.tc_onlinesignin_currenttime)
+    TextClock tcOnlinesigninCurrenttime;
 
     //地图
     private AMap aMap;
@@ -53,8 +48,8 @@ public class LocationFragment extends Fragment implements AMapLocationListener,
     //定位
     private AMapLocationClient mLocationClient = null;//定位发起端
     private AMapLocationClientOption mLocationOption = null;//定位参数
-    private LocationSource.OnLocationChangedListener mListener = null;//定位监听器
-
+    private OnLocationChangedListener mListener = null;//定位监听器
+    private OnlineSignInActivity parentActivity = null;
 
     private Unbinder unbinder;
 
@@ -62,9 +57,8 @@ public class LocationFragment extends Fragment implements AMapLocationListener,
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_location, container, false);
-
         unbinder = ButterKnife.bind(this, view);
-        ActivityCollector.TitleCilckListener(tbOnlinesigninTitlebar, getActivity());
+        parentActivity = (OnlineSignInActivity) getActivity();
         //获取地图控件引用
         mapView.onCreate(savedInstanceState);
         //初始化地图控制器
@@ -87,6 +81,7 @@ public class LocationFragment extends Fragment implements AMapLocationListener,
         // 设置地图的默认放大级别
         aMap.moveCamera(cu);
     }
+
     /**
      * 初始化定位
      */
@@ -108,7 +103,6 @@ public class LocationFragment extends Fragment implements AMapLocationListener,
     }
 
 
-
     //定位回调i函数
     @Override
     public void onLocationChanged(AMapLocation amapLocation) {
@@ -128,6 +122,7 @@ public class LocationFragment extends Fragment implements AMapLocationListener,
             }
         }
     }
+
     //激活定位
     @Override
     public void activate(OnLocationChangedListener onLocationChangedListener) {
@@ -168,7 +163,9 @@ public class LocationFragment extends Fragment implements AMapLocationListener,
     public void onDestroy() {
         super.onDestroy();
         //在activity执行onDestroy时执行mapView.onDestroy()，销毁地图
-        mapView.onDestroy();
+        if (null != mapView) {
+            mapView.onDestroy();
+        }
         if (null != mLocationClient) {
             mLocationClient.onDestroy();
         }
@@ -198,7 +195,8 @@ public class LocationFragment extends Fragment implements AMapLocationListener,
 
     @OnClick(R.id.bt_onlinesignin_signin)
     public void login(View v) {
-        getActivity().finish();
+        //getActivity().finish();
+        parentActivity.replaceFragment(SignInFragment.newInstance(tcOnlinesigninCurrenttime.getText().toString(), tvOnlinesigninCurrentlocation.getText().toString()));
     }
 
     @Override

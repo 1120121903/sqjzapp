@@ -6,20 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".subModule.onlineSignIn.LocationFragment"
     android:orientation="vertical">
-    <!--顶部标题栏-->
-    <com.hjq.bar.TitleBar
-        android:visibility="visible"
-        android:id="@+id/tb_onlinesignin_titlebar"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:background="@color/green"
-        app:titleColor="@null"
-        app:leftBackground="@null"
-        app:rightBackground="@null"
-        app:barStyle="transparent"
-        app:leftTitle="@string/title_back"
-        app:rightSize="0dp"
-        app:title="@string/onlinesignin_titlebar" />
     <!--地图-->
     <com.amap.api.maps2d.MapView
         android:id="@+id/map"
@@ -76,6 +62,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/clock"/>
             <TextClock
+                android:id="@+id/tc_onlinesignin_currenttime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:format24Hour ="yyyy-MM-dd  HH:mm:ss"

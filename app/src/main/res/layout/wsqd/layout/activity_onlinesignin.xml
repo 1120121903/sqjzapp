@@ -7,10 +7,25 @@
     android:orientation="vertical"
     tools:context=".subModule.onlineSignIn.OnlineSignInActivity"
     android:background="@color/gray">
+    <!--顶部标题栏-->
+    <com.hjq.bar.TitleBar
+        android:visibility="visible"
+        android:id="@+id/tb_onlinesignin_titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/green"
+        app:titleColor="@null"
+        app:leftBackground="@null"
+        app:rightBackground="@null"
+        app:barStyle="transparent"
+        app:leftTitle="@string/title_back"
+        app:rightSize="0dp"
+        app:title="@string/onlinesignin_titlebar" />
     <FrameLayout
         android:id="@+id/frag_onlinesignin_main_page"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_width="match_parent"
+        android:background="@color/gray"
         />
 </LinearLayout>

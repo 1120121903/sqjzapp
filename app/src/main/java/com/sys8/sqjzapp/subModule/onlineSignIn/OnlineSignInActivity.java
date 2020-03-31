@@ -6,17 +6,24 @@ import android.util.Log;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.baseClass.ActivityCollector;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class OnlineSignInActivity extends BaseActivity  {
+public class OnlineSignInActivity extends BaseActivity {
+    @BindView(R.id.tb_onlinesignin_titlebar)
+    TitleBar tbOnlinesigninTitlebar;
+
     final RxPermissions rxPermissions = new RxPermissions(this);
     private FragmentManager fragmentManager;
-
-
+    private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +31,9 @@ public class OnlineSignInActivity extends BaseActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onlinesignin);
         ButterKnife.bind(this);
+        ActivityCollector.TitleCilckListener(tbOnlinesigninTitlebar, this);
         fragmentManager = getSupportFragmentManager();
+        fragmentTransaction=fragmentManager.beginTransaction();
         //获取定位权限
         requestLocPremission();
     }
@@ -41,7 +50,7 @@ public class OnlineSignInActivity extends BaseActivity  {
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 .subscribe(granted -> {
                     if (granted) {
-                        addFragment(new LocationFragment());
+                        replaceFragment(new LocationFragment());
                     } else {
                         Log.i("permissions", Manifest.permission.ACCESS_COARSE_LOCATION + "：" + "获取失败");
                         Log.i("permissions", Manifest.permission.ACCESS_FINE_LOCATION + "：" + "获取失败");
@@ -50,12 +59,15 @@ public class OnlineSignInActivity extends BaseActivity  {
                 });
     }
 
-    void addFragment(Fragment fragment){
-        fragmentManager.beginTransaction().add(R.id.frag_onlinesignin_main_page,fragment).commit();
-    }
-
-    void replaceFragment(Fragment fragment){
-        fragmentManager.beginTransaction().replace(R.id.frag_onlinesignin_main_page,fragment).commit();
+    /**
+     * description:替换Fragment
+     */
+    public void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.frag_onlinesignin_main_page, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 }
