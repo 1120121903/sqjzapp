@@ -24,16 +24,15 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
+                    'src/main/res/layout/gyhd',
                     'src/main/res/layout/jyxx',
                     'src/main/res/layout/xlzx',
                     'src/main/res/layout/jstx',
-                    'src/main/res/layout/layout',
                     'src/main/res/layout/jzdbg',
                     'src/main/res/layout/zjwbj',
                     'src/main/res/layout/wcqj',
                     'src/main/res/layout/tztx',
                     'src/main/res/layout/ycbf',
-                    'src/main/res/layout/home',
                     'src/main/res/layout/rcbg',
                     'src/main/res/layout/wsqd',
                     'src/main/res/layout/home',
