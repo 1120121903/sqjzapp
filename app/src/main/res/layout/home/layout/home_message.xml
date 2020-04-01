@@ -9,7 +9,7 @@
         android:layout_height="60dp">
         <ImageView
             android:id="@+id/iv_home_message"
-            android:background="@drawable/home_tztx"
+            android:background="@drawable/ic_icon_notify"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="10dp"
             android:layout_width="40dp"
