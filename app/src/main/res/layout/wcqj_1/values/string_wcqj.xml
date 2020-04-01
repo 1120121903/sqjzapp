@@ -1,0 +1,5 @@
+<resources>
+    <string name="wcqj_tb_title">外出请假</string>
+    <string name="wcqj_bt_wyqj">我要请假</string>
+    <string name="wcqj_bt_qjjl">请假记录</string>
+</resources>
