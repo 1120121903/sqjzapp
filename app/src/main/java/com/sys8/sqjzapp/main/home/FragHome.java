@@ -1,4 +1,4 @@
-package com.sys8.sqjzapp.main;
+package com.sys8.sqjzapp.main.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -100,7 +100,16 @@ public class FragHome extends Fragment {
     public void toSubModuleRcbg(View view){
         Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putString("SubModuleName", "rcbg"); //放入所需要传递的值
+        bundle.putString("SubModuleName", "rcbg"); //日常报告
+        intent.putExtras(bundle);
+        this.startActivity(intent);
+    }
+    /* 外出请假 */
+    @OnClick(R.id.bt_home_wcqj)
+    public void toSubModuleWcqj(View view){
+        Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("SubModuleName", "wcqj"); //外出请假
         intent.putExtras(bundle);
         this.startActivity(intent);
     }
