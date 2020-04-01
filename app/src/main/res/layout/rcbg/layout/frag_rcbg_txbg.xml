@@ -26,6 +26,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <EditText
+                android:id="@+id/tv_rcbg_wdbg_title"
                 android:hint="@string/rcbg_tv_wdbg_title"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
@@ -50,7 +51,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
                 <com.kingja.supershapeview.view.SuperShapeEditText
-                    android:id="@+id/et_rcbg_content"
+                    android:id="@+id/et_rcbg_wdbg_content"
                     android:gravity="top"
                     android:hint="@string/rcbg_tv_wdbg_content"
                     android:layout_width="match_parent"
@@ -65,6 +66,7 @@
             </LinearLayout>
         </LinearLayout>
         <Button
+            android:id="@+id/bt_rcbg_txbg_save"
             android:layout_gravity="center"
             android:text="提交"
             android:layout_width="80dp"
@@ -93,12 +95,10 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
                 android:layout_margin="5dp"
                 android:text="时间"/>
             <TextClock
-                android:id="@+id/tc_rcbg_time"
-                android:textSize="18dp"
+                android:id="@+id/tc_rcbg_wdbg_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:format24Hour ="yyyy-MM-dd  HH:mm:ss"
@@ -121,11 +121,9 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:textSize="18dp"
                 android:text="地点"/>
             <TextView
-                android:id="@+id/tv_rcbg_place"
-                android:textSize="18dp"
+                android:id="@+id/tv_rcbg_wdbg_place"
                 android:textColor="@color/black"
                 android:text="华北计算技术研究所"
                 android:layout_marginLeft="10dp"

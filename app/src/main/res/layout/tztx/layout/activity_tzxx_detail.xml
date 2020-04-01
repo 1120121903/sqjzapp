@@ -20,7 +20,7 @@
             app:barStyle="transparent"
             app:leftTitle="@string/title_back"
             app:rightSize="0dp"
-            app:title="@string/tztx_bt_detail_title" />
+            app:title="@string/tztx_tb_detail_title" />
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"

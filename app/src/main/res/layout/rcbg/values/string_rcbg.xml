@@ -5,4 +5,5 @@
     <string name="rcbg_bt_wdbg">我的报告</string>
     <string name="rcbg_tv_wdbg_title">标题</string>
     <string name="rcbg_tv_wdbg_content">内容</string>
+    <string name="rcbg_bt_detail_title">详细内容</string>
 </resources>
