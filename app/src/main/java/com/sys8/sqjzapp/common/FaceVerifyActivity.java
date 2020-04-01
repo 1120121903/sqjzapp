@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.cymaybe.foucsurfaceview.FocusSurfaceView;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
-import com.sys8.sqjzapp.subModule.RcbgActivity;
+import com.sys8.sqjzapp.subModule.rcbg.RcbgActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
