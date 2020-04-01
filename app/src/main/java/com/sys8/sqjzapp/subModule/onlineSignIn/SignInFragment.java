@@ -36,7 +36,7 @@ public class SignInFragment extends Fragment {
 
     private String mSignInTime;
     private String mSignInAddress;
-
+    View view;
     private Unbinder unbinder;
 
 
@@ -74,18 +74,20 @@ public class SignInFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sign_in, container, false);
+        view = inflater.inflate(R.layout.fragment_sign_in, container, false);
         unbinder = ButterKnife.bind(this, view);
         tvOnlinesigninSigntime.setText(mSignInTime);
         tvOnlinesigninSignaddress.setText(mSignInAddress);
+
         intRv();
         getListData();
+        System.out.println("Get Data"+mData.size());
         setupAdapter();
         return view;
     }
 
     private void setupAdapter() {
-        adapter = new TimeLineAdapter(getView().getContext(),mData);
+        adapter = new TimeLineAdapter(view.getContext(),mData);
         timelineRv.setAdapter(adapter);
     }
 
@@ -93,8 +95,8 @@ public class SignInFragment extends Fragment {
         mData = com.sys8.sqjzapp.utils.DataSource.getTimelineData();
     }
     private void intRv(){
-        timelineRv = getView().findViewById(R.id.recycler_onlinesignin_location_history);
-        timelineRv.setLayoutManager(new LinearLayoutManager(getView().getContext()));
+        timelineRv = view.findViewById(R.id.recycler_onlinesignin_location_history);
+        timelineRv.setLayoutManager(new LinearLayoutManager(view.getContext()));
     }
 
     @Override

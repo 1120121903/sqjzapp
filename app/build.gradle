@@ -78,5 +78,8 @@ dependencies {
     implementation 'com.kingja.supershapeview:supershapeview:1.2.0'
     /*时间轴*/
     implementation 'com.orient:Orient-Ui:1.0.0'
+    /*glide*/
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
 }

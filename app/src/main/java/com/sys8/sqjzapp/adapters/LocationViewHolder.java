@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
@@ -28,7 +29,6 @@ public class LocationViewHolder extends BaseViewHolder {
         LocationItem locationItem = item.getLocationItem();
         tvAddress.setText(locationItem.getAddress());
         tvTime.setText(locationItem.getTime());
-       // Glide.with();
-        //imageUser.setImageBitmap(itemView.getContext().load(locationItem.getImgUser()));
+        Glide.with(itemView.getContext()).load(locationItem.getImgUser()).into(imageUser);
     }
 }
