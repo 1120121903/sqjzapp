@@ -17,18 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@color/gray_line_color" />
-
-    <TextView
-        android:background="@color/bg_white"
-        android:id="@+id/item_location_time_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="22:10"
-        app:layout_constraintEnd_toEndOf="@+id/line"
-        app:layout_constraintStart_toStartOf="@+id/line"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/item_location_img"
         android:layout_width="40dp"
@@ -41,7 +29,7 @@
     <TextView
         android:background="@drawable/txt_card_bg"
         android:lineSpacingExtra="8dp"
-        android:id="@+id/item_location_address"
+        android:id="@+id/item_timeline_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

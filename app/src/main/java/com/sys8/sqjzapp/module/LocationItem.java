@@ -2,25 +2,17 @@ package com.sys8.sqjzapp.module;
 
 public class LocationItem {
 
-    private String address;
-    private String time;
-    private int imgUser;
+    private String timeLineText;//时间线右边的文字
+    private int imgUser;//时间线上的图片
 
-    public String getAddress() {
-        return address;
+    public String getTimeLineText() {
+        return timeLineText;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setTimeLineTex(String text) {
+        this.timeLineText = text;
     }
 
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
 
     public int getImgUser() {
         return imgUser;
@@ -30,9 +22,8 @@ public class LocationItem {
         this.imgUser = imgUser;
     }
 
-    public LocationItem(String address, String time, int imgUser) {
-        this.address = address;
-        this.time = time;
+    public LocationItem(String text,int imgUser) {
+        this.timeLineText = text;
         this.imgUser = imgUser;
     }
 }

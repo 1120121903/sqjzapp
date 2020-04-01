@@ -11,14 +11,12 @@ import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 
 public class LocationViewHolder extends BaseViewHolder {
-        private TextView tvAddress;
-        private TextView tvTime;
+        private TextView tvTimeLineText;
         private ImageView imageUser;
 
     public LocationViewHolder(@NonNull View itemView) {
         super(itemView);
-        tvTime = itemView.findViewById(R.id.item_location_time_text);
-        tvAddress = itemView.findViewById(R.id.item_location_address);
+        tvTimeLineText = itemView.findViewById(R.id.item_timeline_text);
         imageUser = itemView.findViewById(R.id.item_location_img);
 
     }
@@ -26,8 +24,7 @@ public class LocationViewHolder extends BaseViewHolder {
     @Override
     void setData(TimelineItem item) {
         LocationItem locationItem = item.getLocationItem();
-        tvAddress.setText(locationItem.getAddress());
-        tvTime.setText(locationItem.getTime());
+        tvTimeLineText.setText(locationItem.getTimeLineText());
         Glide.with(itemView.getContext()).load(locationItem.getImgUser()).into(imageUser);
     }
 }

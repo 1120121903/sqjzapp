@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -15,13 +16,13 @@ import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
-import com.sys8.sqjzapp.utils.Constant;
 import com.sys8.sqjzapp.utils.DataSource;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class SignInFragment extends Fragment {
@@ -33,16 +34,19 @@ public class SignInFragment extends Fragment {
     TextView tvOnlinesigninSigntime;
     @BindView(R.id.tv_onlinesignin_signaddress)
     TextView tvOnlinesigninSignaddress;
+    @BindView(R.id.recycler_onlinesignin_location_history)
+    RecyclerView recyclerOnlinesigninLocationHistory;
+    @BindView(R.id.bt_onlinesignin_submit)
+    Button btOnlinesigninSubmit;
 
     private String mSignInTime;
     private String mSignInAddress;
     View view;
     private Unbinder unbinder;
 
+    private TimeLineAdapter adapter;
+    private List<TimelineItem> mData;
 
-        private RecyclerView timelineRv;
-        private TimeLineAdapter adapter;
-        private List<TimelineItem> mData;
     public SignInFragment() {
         // Required empty public constructor
     }
@@ -86,21 +90,29 @@ public class SignInFragment extends Fragment {
     }
 
     private void setupAdapter() {
-        adapter = new TimeLineAdapter(view.getContext(),DataSource.getRevertTimeLineData(mData));
-        timelineRv.setAdapter(adapter);
+        adapter = new TimeLineAdapter(view.getContext(), DataSource.getRevertTimeLineData(mData));
+        recyclerOnlinesigninLocationHistory.setAdapter(adapter);
     }
 
-    private void getListData(){
-        mData = com.sys8.sqjzapp.utils.DataSource.getTimelineData();
+    private void getListData() {
+        mData = DataSource.getTimelineData();
+    }
 
-        LocationItem itemLocation = new LocationItem(mSignInTime+"\n"+mSignInAddress,"", R.drawable.location_timeline_imguser);
+    private void intRv() {
+        recyclerOnlinesigninLocationHistory.setLayoutManager(new LinearLayoutManager(view.getContext()));
+    }
+
+    @OnClick(R.id.bt_onlinesignin_submit)
+    public void submitSignInRecord(View v){
+        LocationItem itemLocation = new LocationItem(mSignInTime + "\n" + mSignInAddress, R.drawable.location_timeline_imguser);
         TimelineItem locationTimelintItem = new TimelineItem(itemLocation);
         mData.add(locationTimelintItem);
+        setupAdapter();
+        btOnlinesigninSubmit.setText("已提交");
+        btOnlinesigninSubmit.setEnabled(false);
+        //btOnlinesigninSubmit.setVisibility(View.GONE);
     }
-    private void intRv(){
-        timelineRv = view.findViewById(R.id.recycler_onlinesignin_location_history);
-        timelineRv.setLayoutManager(new LinearLayoutManager(view.getContext()));
-    }
+
 
     @Override
     public void onDestroyView() {
