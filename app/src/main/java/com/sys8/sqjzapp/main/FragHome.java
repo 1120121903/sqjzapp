@@ -86,9 +86,13 @@ public class FragHome extends Fragment {
         bannerHomeTop.setAdapter(new ImageAdapter(list));
         return view;
     }
+    /*网上签到*/
     @OnClick(R.id.bt_home_onlinesignin)
     public void toSubModuleOnlineSignIn(View view){
-        Intent intent = new Intent(this.getActivity(), OnlineSignInActivity.class);
+        Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("SubModuleName", "wsqd"); //网上签到
+        intent.putExtras(bundle);
         this.startActivity(intent);
     }
     /* 日常报告 */

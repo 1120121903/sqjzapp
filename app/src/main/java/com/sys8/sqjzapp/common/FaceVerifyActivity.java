@@ -8,6 +8,7 @@ import com.cymaybe.foucsurfaceview.FocusSurfaceView;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
+import com.sys8.sqjzapp.subModule.onlineSignIn.OnlineSignInActivity;
 import com.sys8.sqjzapp.subModule.rcbg.RcbgActivity;
 
 import butterknife.BindView;
@@ -37,15 +38,19 @@ public class FaceVerifyActivity extends BaseActivity {
 
     @OnClick(R.id.bt_faceVerify)
     public void gotoSubModuleName(){
+        Intent intent = null;
+        finish();
         switch (subMoudleName){
             case "rcbg":
-                finish();
-                Intent intent = new Intent(this, RcbgActivity.class);
-                this.startActivity(intent);
+                intent = new Intent(this, RcbgActivity.class);
+                break;
+            case "wsqd":
+                intent = new Intent(this, OnlineSignInActivity.class);
                 break;
             default:
                 break;
         }
+        this.startActivity(intent);
     }
 
     /**
@@ -58,6 +63,9 @@ public class FaceVerifyActivity extends BaseActivity {
         switch (text){
             case "rcbg":
                 btFaceVerify.setText("进入日常报告");
+                break;
+            case "wsqd":
+                btFaceVerify.setText("进入网上签到");
                 break;
             default:
                 break;
