@@ -57,6 +57,7 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <Button
+            android:id="@+id/bt_onlinesignin_submit"
             android:layout_gravity="center"
             android:text="提交"
             android:layout_width="100dp"
