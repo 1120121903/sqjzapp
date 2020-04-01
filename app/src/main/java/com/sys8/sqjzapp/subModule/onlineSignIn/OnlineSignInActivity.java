@@ -65,7 +65,7 @@ public class OnlineSignInActivity extends BaseActivity {
     public void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(R.id.frag_onlinesignin_main_page, fragment);
+        transaction.replace(R.id.frag_onlinesignin_main_page, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }

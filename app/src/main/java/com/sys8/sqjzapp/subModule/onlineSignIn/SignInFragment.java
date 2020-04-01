@@ -13,12 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
+import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.utils.Constant;
+import com.sys8.sqjzapp.utils.DataSource;
 
 import java.util.List;
-
-import javax.sql.DataSource;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -81,18 +81,21 @@ public class SignInFragment extends Fragment {
 
         intRv();
         getListData();
-        System.out.println("Get Data"+mData.size());
         setupAdapter();
         return view;
     }
 
     private void setupAdapter() {
-        adapter = new TimeLineAdapter(view.getContext(),mData);
+        adapter = new TimeLineAdapter(view.getContext(),DataSource.getRevertTimeLineData(mData));
         timelineRv.setAdapter(adapter);
     }
 
     private void getListData(){
         mData = com.sys8.sqjzapp.utils.DataSource.getTimelineData();
+
+        LocationItem itemLocation = new LocationItem(mSignInTime+"\n"+mSignInAddress,"", R.drawable.location_timeline_imguser);
+        TimelineItem locationTimelintItem = new TimelineItem(itemLocation);
+        mData.add(locationTimelintItem);
     }
     private void intRv(){
         timelineRv = view.findViewById(R.id.recycler_onlinesignin_location_history);

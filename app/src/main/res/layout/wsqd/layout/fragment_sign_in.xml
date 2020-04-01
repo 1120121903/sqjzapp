@@ -11,9 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="50dp"
+        android:paddingLeft="30dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:paddingRight="30dp"
         android:background="@drawable/shape_shadow">
         <!--签到时间-->
         <LinearLayout
@@ -55,15 +56,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
+        <Button
+            android:layout_gravity="center"
+            android:text="提交"
+            android:layout_width="100dp"
+            android:layout_height="50dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@drawable/shape_shadow">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_onlinesignin_location_history"
+            android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
     </LinearLayout>
 </LinearLayout>

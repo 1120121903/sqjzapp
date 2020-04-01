@@ -33,12 +33,11 @@
         android:id="@+id/item_location_img"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/line"
         app:layout_constraintStart_toStartOf="@+id/line"
-        app:layout_constraintTop_toBottomOf="@+id/item_location_time_text"
+        app:layout_constraintTop_toTopOf="@+id/line"
         tools:srcCompat="@tools:sample/avatars" />
-
     <TextView
         android:background="@drawable/txt_card_bg"
         android:lineSpacingExtra="8dp"
