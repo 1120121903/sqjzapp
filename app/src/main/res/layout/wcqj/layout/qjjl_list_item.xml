@@ -91,7 +91,6 @@
         <!--审批状态-->
         <TextView
             android:id="@+id/tv_qjjl_listItem_state"
-            android:text="审批中"
             android:layout_marginRight="10dp"
             android:gravity="right|center_vertical"
             android:textColor="@color/green"

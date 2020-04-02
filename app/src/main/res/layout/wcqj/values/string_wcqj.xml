@@ -9,4 +9,5 @@
     <string name="wcqj_et_wyqj_wcly">外出理由：</string>
     <string name="wcqj_tv_wyqj_wcly">请填写外出理由(不超过300个字)</string>
     <string name="wcqj_tv_wyqj_zmwj">证明文件：</string>
+    <string name="wcqj_bt_detail_title">详细内容</string>
 </resources>

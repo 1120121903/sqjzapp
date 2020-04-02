@@ -1,9 +1,11 @@
 package com.sys8.sqjzapp.subModule.wcqj;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
@@ -14,10 +16,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_Qjjl;
+import static com.sys8.sqjzapp.utils.DataSource.getRevertTimeLineData;
 
 public class FragWcqj_qjjl extends Fragment {
 
     private static FragWcqj_qjjl fragInstanse = null;
+    private QjjlListViewAdapter adapter;
     @BindView(R.id.lv_qjjl)
     ListView lvQjjl;
     private WcqjActivity parentActivity = null;
@@ -34,14 +38,38 @@ public class FragWcqj_qjjl extends Fragment {
         // Inflate the layout for this fragment
         parentActivity = (WcqjActivity) getActivity();
         ButterKnife.bind(this, view);
+        bindData();
         return view;
+    }
+
+    private void bindData(){
+        adapter = new QjjlListViewAdapter(getView(),getContext(),list_Qjjl,getActivity());
+        lvQjjl.setAdapter(adapter);
+        //设置列表监听事件
+        lvQjjl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getActivity(),WcqjDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+                Bundle bundle = new Bundle();
+                Qjjl qjjl = (Qjjl) getRevertTimeLineData(list_Qjjl).get(position);
+                bundle.putString("title",qjjl.getTitle() ); //放入所需要传递的值
+                bundle.putString("timeApply", qjjl.getTimeApply());
+                bundle.putString("timeStart", qjjl.getTimeStart());
+                bundle.putString("timeEnd", qjjl.getTimeEnd());
+                bundle.putString("days", qjjl.getDays());
+                bundle.putString("place", qjjl.getPlace());
+                bundle.putString("reason", qjjl.getReason());
+                System.out.println("onItemClick:"+qjjl.getReason());
+                intent.putExtras(bundle);
+                getActivity().startActivity(intent);
+            }
+        });
     }
 
     @Override
     public void onResume() {
         super.onResume();
         /* 刷新数据 */
-        QjjlListViewAdapter adapter = new QjjlListViewAdapter(getView(),getContext(),list_Qjjl,getActivity());
         lvQjjl.setAdapter(adapter);
     }
 
