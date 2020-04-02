@@ -4,16 +4,22 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
 import com.sys8.sqjzapp.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_Qjjl;
 
 public class FragWcqj_qjjl extends Fragment {
 
     private static FragWcqj_qjjl fragInstanse = null;
+    @BindView(R.id.lv_qjjl)
+    ListView lvQjjl;
     private WcqjActivity parentActivity = null;
 
     @Override
@@ -29,6 +35,14 @@ public class FragWcqj_qjjl extends Fragment {
         parentActivity = (WcqjActivity) getActivity();
         ButterKnife.bind(this, view);
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        /* 刷新数据 */
+        QjjlListViewAdapter adapter = new QjjlListViewAdapter(getView(),getContext(),list_Qjjl,getActivity());
+        lvQjjl.setAdapter(adapter);
     }
 
     private FragWcqj_qjjl() {

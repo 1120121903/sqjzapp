@@ -142,7 +142,9 @@
     </LinearLayout>
     <Button
         android:id="@+id/bt_wcqj_wyqj_save"
+        android:visibility="visible"
         android:layout_gravity="center"
+        android:clickable="true"
         android:text="提交"
         android:layout_width="100dp"
         android:layout_height="50dp"/>

@@ -24,12 +24,16 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_Qjjl;
 import static com.sys8.sqjzapp.utils.DateUtils.calculateDaysFromTwoDateString;
 import static com.sys8.sqjzapp.utils.DateUtils.dateToString;
+import static com.sys8.sqjzapp.utils.DateUtils.getDate;
+import static com.sys8.sqjzapp.utils.DateUtils.getUserName;
 
 public class FragWcqj_wyqj extends Fragment {
 
     private static FragWcqj_wyqj fragInstanse = null;
+    private static boolean SAVE_CLICK_UNABLE;//保存按钮的状态
     @BindView(R.id.et_wcqj_wyqj_kssj)
     EditText etWcqjWyqjKssj;
     @BindView(R.id.et_wcqj_wyqj_jssj)
@@ -41,7 +45,7 @@ public class FragWcqj_wyqj extends Fragment {
     @BindView(R.id.et_wcqj_wyqj_wcly)
     SuperShapeEditText etWcqjWyqjWcly;
     @BindView(R.id.bt_wcqj_wyqj_save)
-    Button btWcqjWyqjSave;
+    Button btWcqjWyqjSaveAble;
     private WcqjActivity parentActivity = null;
     private Calendar kssjCalendarStart;
     private Calendar kssjCalendarEnd;
@@ -51,6 +55,7 @@ public class FragWcqj_wyqj extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SAVE_CLICK_UNABLE = false;
     }
 
     @Override
@@ -62,6 +67,10 @@ public class FragWcqj_wyqj extends Fragment {
         parentActivity = (WcqjActivity) getActivity();
         etWcqjWyqjKssj.setInputType(InputType.TYPE_NULL);
         etWcqjWyqjJssj.setInputType(InputType.TYPE_NULL);
+        if(SAVE_CLICK_UNABLE){
+            btWcqjWyqjSaveAble.setText("已保存");
+            btWcqjWyqjSaveAble.setClickable(false);
+        }
         return view;
     }
 
@@ -73,7 +82,7 @@ public class FragWcqj_wyqj extends Fragment {
         TimePickerView pvTime = new TimePickerBuilder(getContext(), new OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {
-                etWcqjWyqjKssj.setText(dateToString(date, "yyyy年MM月dd日"));
+                etWcqjWyqjKssj.setText(dateToString(date, "yyyy-MM-dd"));
                 jssjCalendarStart = Calendar.getInstance();
                 jssjCalendarStart.setTime(date);
                 etWcqjWyqjJssj.setText("");
@@ -95,8 +104,8 @@ public class FragWcqj_wyqj extends Fragment {
         TimePickerView pvTime = new TimePickerBuilder(getContext(), new OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {
-                etWcqjWyqjJssj.setText(dateToString(date, "yyyy年MM月dd日"));
-                etWcqjWyqjWcsc.setText(calculateDaysFromTwoDateString(etWcqjWyqjKssj.getText().toString(),etWcqjWyqjJssj.getText().toString()));
+                etWcqjWyqjJssj.setText(dateToString(date, "yyyy-MM-dd"));
+                etWcqjWyqjWcsc.setText(calculateDaysFromTwoDateString(etWcqjWyqjKssj.getText().toString(), etWcqjWyqjJssj.getText().toString(), "yyyy-MM-dd"));
             }
         })
                 .setRangDate(jssjCalendarStart, jssjCalendarEnd)//设置起始时间和结束时间
@@ -105,7 +114,18 @@ public class FragWcqj_wyqj extends Fragment {
     }
 
     @OnClick(R.id.bt_wcqj_wyqj_save)
-    public void saveData(){
+    public void saveData() {
+        list_Qjjl.add(new Qjjl(
+                getUserName() + "提交的请假",
+                getDate("yyyy-MM-dd"),
+                etWcqjWyqjKssj.getText().toString(),
+                etWcqjWyqjJssj.getText().toString(),
+                etWcqjWyqjWcsc.getText().toString(),
+                etWcqjWyqjWcdd.getText().toString(),
+                etWcqjWyqjWcly.getText().toString(),
+                "审批中"
+        ));
+        SAVE_CLICK_UNABLE = true;//保存按钮不可点击
         parentActivity.wcqjQjjlFragment();
     }
 

@@ -1,10 +1,13 @@
 package com.sys8.sqjzapp.utils;
 
+import java.security.PublicKey;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtils {
+
+    public static String USER_NAME = "张海洋";
 
     // formatType格式为yyyy-MM-dd HH:mm:ss//yyyy年MM月dd日 HH时mm分ss秒
     public static String dateToString(Date data, String formatType) {
@@ -23,9 +26,37 @@ public class DateUtils {
         return null;
     }
 
-    public static String calculateDaysFromTwoDateString(String string1,String string2){
-        Date date1 = stringToDate(string1,"yyyy年MM月dd日");
-        Date date2 = stringToDate(string2,"yyyy年MM月dd日");
+    /**
+     *description:获取用户名
+     */
+    public static String getUserName() {
+        return USER_NAME;
+    }
+
+    /**
+     *description:获取当前日期
+     */
+    public static String getDate( String formatType) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(formatType);
+        //获取当前时间
+        Date date = new Date(System.currentTimeMillis());
+        return simpleDateFormat.format(date);
+    }
+
+    /**
+     *description:获取当前时间
+     */
+    public static String getTime( String formatType) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(formatType);
+        //获取当前时间
+        Date date = new Date(System.currentTimeMillis());
+        return simpleDateFormat.format(date);
+    }
+
+    //计算两个日期之间的天数
+    public static String calculateDaysFromTwoDateString(String string1,String string2,String formatType){
+        Date date1 = stringToDate(string1,formatType);
+        Date date2 = stringToDate(string2,formatType);
 
         Calendar fromCalendar = Calendar.getInstance();
         fromCalendar.setTime(date1);
