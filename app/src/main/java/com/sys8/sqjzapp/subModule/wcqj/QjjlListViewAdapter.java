@@ -82,10 +82,12 @@ public class QjjlListViewAdapter extends BaseAdapter
         viewHolder.qjjl_timeEnd.setText(qjjl.getTimeEnd());
         viewHolder.qjjl_place.setText(qjjl.getPlace());
         viewHolder.qjjl_state.setText(qjjl.getState());
-//        viewHolder.tztx_cotent.setTextSize(18);
 
         return convertView;
     }
+
+
+
     public static class ViewHolder{
         public TextView qjjl_title;
         public TextView qjjl_timeApply;
