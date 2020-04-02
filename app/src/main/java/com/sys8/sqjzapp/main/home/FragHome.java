@@ -104,6 +104,17 @@ public class FragHome extends Fragment {
         intent.putExtras(bundle);
         this.startActivity(intent);
     }
+
+    /*教育学习*/
+    @OnClick(R.id.bt_home_jyxx)
+    public void toSubModuleJyxx(View view){
+        Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("SubModuleName", "jyxx"); //教育学习
+        intent.putExtras(bundle);
+        this.startActivity(intent);
+
+    }
     /* 外出请假 */
     @OnClick(R.id.bt_home_wcqj)
     public void toSubModuleWcqj(View view){

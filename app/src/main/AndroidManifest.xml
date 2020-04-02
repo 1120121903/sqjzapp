@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".subModule.educationLearning.EducationLearningActivity"></activity>
         <activity android:name=".subModule.wcqj.WcqjDetailActivity"></activity>
         <activity android:name=".subModule.wcqj.WcqjActivity" />
         <activity android:name=".subModule.rcbg.RcbgDetailActivity" />
