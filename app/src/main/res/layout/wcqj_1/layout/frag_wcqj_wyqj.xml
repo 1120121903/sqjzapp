@@ -27,6 +27,7 @@
             <EditText
                 android:id="@+id/et_wcqj_wyqj_kssj"
                 android:hint="点击选择开始时间"
+                android:focusable="false"
                 android:layout_gravity="left"
                 android:paddingLeft="12dp"
                 android:layout_marginLeft="10dp"
@@ -48,6 +49,7 @@
             <EditText
                 android:id="@+id/et_wcqj_wyqj_jssj"
                 android:hint="点击选择结束时间"
+                android:focusable="false"
                 android:layout_gravity="left"
                 android:paddingLeft="12dp"
                 android:layout_marginLeft="10dp"
@@ -69,6 +71,8 @@
             <EditText
                 android:id="@+id/et_wcqj_wyqj_wcsc"
                 android:layout_gravity="center"
+                android:enabled="false"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="12dp"
