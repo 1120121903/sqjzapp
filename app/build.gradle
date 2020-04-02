@@ -24,6 +24,7 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
+                    'src/main/res/layout/wcqj_1',
                     'src/main/res/layout/gyhd',
                     'src/main/res/layout/jyxx',
                     'src/main/res/layout/xlzx',
@@ -81,6 +82,6 @@ dependencies {
     /*glide*/
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-
-
+    /*时间选择控件*/
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
 }

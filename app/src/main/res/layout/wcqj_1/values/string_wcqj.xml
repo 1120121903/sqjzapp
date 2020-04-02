@@ -1,0 +1,12 @@
+<resources>
+    <string name="wcqj_tb_title">外出请假</string>
+    <string name="wcqj_bt_wyqj">我要请假</string>
+    <string name="wcqj_bt_qjjl">请假记录</string>
+    <string name="wcqj_et_wyqj_kssj">开始时间：</string>
+    <string name="wcqj_et_wyqj_jssj">结束时间：</string>
+    <string name="wcqj_et_wyqj_wcsc">外出时长：</string>
+    <string name="wcqj_et_wyqj_wcdd">外出地点：</string>
+    <string name="wcqj_et_wyqj_wcly">外出理由：</string>
+    <string name="wcqj_tv_wyqj_wcly">请填写外出理由(不超过300个字)</string>
+    <string name="wcqj_tv_wyqj_zmwj">证明文件：</string>
+</resources>

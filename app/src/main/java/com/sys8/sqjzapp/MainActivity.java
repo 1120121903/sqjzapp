@@ -11,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.adapters.MainFragmentAdapter;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
-import com.sys8.sqjzapp.main.FragHome;
+import com.sys8.sqjzapp.main.home.FragHome;
 import com.sys8.sqjzapp.main.mine.FragMine;
 import com.sys8.sqjzapp.main.tztx.FragTztx;
 
