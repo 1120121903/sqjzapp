@@ -4,16 +4,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.hjq.bar.TitleBar;
-import com.kingja.supershapeview.view.SuperShapeEditText;
 import com.kingja.supershapeview.view.SuperShapeTextView;
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
+import com.sys8.sqjzapp.module.TimelineItem;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
+import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_QjState;
+import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class WcqjDetailActivity extends BaseActivity {
 
@@ -33,6 +41,10 @@ public class WcqjDetailActivity extends BaseActivity {
     TextView tvWcqjDetailPlace;
     @BindView(R.id.tv_wcqj_detail_reason)
     SuperShapeTextView tvWcqjDetailReason;
+    @BindView(R.id.rv_wcqj_detail_history)
+    RecyclerView rvWcqjDetailHistory;
+    private TimeLineAdapter adapter;
+    private List<TimelineItem> list ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +53,7 @@ public class WcqjDetailActivity extends BaseActivity {
         ButterKnife.bind(this);
         TitleCilckListener(tbWcqjDetail, this);/*title按钮监听*/
         bindData();
+        initAdapter();
     }
 
     private void bindData() {
@@ -52,7 +65,16 @@ public class WcqjDetailActivity extends BaseActivity {
         String days = intent.getStringExtra("days");
         String place = intent.getStringExtra("place");
         String reason = intent.getStringExtra("reason");
-        System.out.println("bindData:"+reason);
+
+        for(QjState qjState: list_QjState){
+            if(qjState.getTimeApply().equals(timeApply)){
+                System.out.println("getTimeApply:"+qjState.getTimeApply());
+                System.out.println("qjj1"+qjState.getQjjl());
+                list = qjState.getQjjl();
+                break;
+            }
+        }
+
         tvWcqjDetailTitle.setText(title);
         tvWcqjDetailTimeApply.setText(timeApply);
         tvWcqjDetailTimeStart.setText(timeStart);
@@ -60,5 +82,11 @@ public class WcqjDetailActivity extends BaseActivity {
         tvWcqjDetailDays.setText(days);
         tvWcqjDetailPlace.setText(place);
         tvWcqjDetailReason.setText(reason);
+    }
+
+    private void initAdapter(){
+        rvWcqjDetailHistory.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new TimeLineAdapter(this,getRevertTimeLineData(list));
+        rvWcqjDetailHistory.setAdapter(adapter);
     }
 }

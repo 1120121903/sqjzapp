@@ -25,6 +25,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
+
 public class SignInFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -90,7 +92,7 @@ public class SignInFragment extends Fragment {
     }
 
     private void setupAdapter() {
-        adapter = new TimeLineAdapter(view.getContext(), DataSource.getRevertTimeLineData(mData));
+        adapter = new TimeLineAdapter(view.getContext(), getRevertTimeLineData(mData));
         recyclerOnlinesigninLocationHistory.setAdapter(adapter);
     }
 

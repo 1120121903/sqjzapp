@@ -16,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_Qjjl;
-import static com.sys8.sqjzapp.utils.DataSource.getRevertTimeLineData;
+import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class FragWcqj_qjjl extends Fragment {
 
@@ -59,7 +59,6 @@ public class FragWcqj_qjjl extends Fragment {
                 bundle.putString("days", qjjl.getDays());
                 bundle.putString("place", qjjl.getPlace());
                 bundle.putString("reason", qjjl.getReason());
-                System.out.println("onItemClick:"+qjjl.getReason());
                 intent.putExtras(bundle);
                 getActivity().startActivity(intent);
             }

@@ -16,6 +16,8 @@ import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.TimePickerView;
 import com.kingja.supershapeview.view.SuperShapeEditText;
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.module.LocationItem;
+import com.sys8.sqjzapp.module.TimelineItem;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -24,11 +26,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_QjState;
+import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_QjState3;
 import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_Qjjl;
-import static com.sys8.sqjzapp.utils.DateUtils.calculateDaysFromTwoDateString;
-import static com.sys8.sqjzapp.utils.DateUtils.dateToString;
-import static com.sys8.sqjzapp.utils.DateUtils.getDate;
-import static com.sys8.sqjzapp.utils.DateUtils.getUserName;
+import static com.sys8.sqjzapp.utils.DataUtils.calculateDaysFromTwoDateString;
+import static com.sys8.sqjzapp.utils.DataUtils.dateToString;
+import static com.sys8.sqjzapp.utils.DataUtils.getDate;
+import static com.sys8.sqjzapp.utils.DataUtils.getUserName;
 
 public class FragWcqj_wyqj extends Fragment {
 
@@ -125,6 +129,8 @@ public class FragWcqj_wyqj extends Fragment {
                 etWcqjWyqjWcly.getText().toString(),
                 "审批中"
         ));
+        list_QjState3.add(new TimelineItem(new LocationItem("张海洋提交请假申请"+"\n"+getDate("yyyy-MM-dd"), R.drawable.rcbg_list_title)));
+        list_QjState.add(new QjState(getDate("yyyy-MM-dd"),list_QjState3));
         SAVE_CLICK_UNABLE = true;//保存按钮不可点击
         parentActivity.wcqjQjjlFragment();
     }

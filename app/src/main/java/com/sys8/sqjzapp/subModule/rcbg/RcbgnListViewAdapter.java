@@ -12,12 +12,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.main.tztx.Tzxx;
-import com.sys8.sqjzapp.main.tztx.TzxxDetailActivity;
 
 import java.util.List;
 
-import static com.sys8.sqjzapp.utils.DataSource.getRevertTimeLineData;
+import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
+
 
 public class RcbgnListViewAdapter extends BaseAdapter
 {

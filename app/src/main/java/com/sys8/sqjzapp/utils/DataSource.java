@@ -33,11 +33,4 @@ public class DataSource {
 
         return mdata;
     }
-    public static List getRevertTimeLineData(List mdata){
-        List mRevertData = new ArrayList<>();
-        for(int i=mdata.size()-1;i>=0;i--){
-            mRevertData.add(mdata.get(i));
-        }
-        return mRevertData;
-    }
 }

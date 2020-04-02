@@ -2,12 +2,22 @@ package com.sys8.sqjzapp.utils;
 
 import java.security.PublicKey;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
-public class DateUtils {
+import static com.sys8.sqjzapp.utils.Constant.USER_NAME;
 
-    public static String USER_NAME = "张海洋";
+public class DataUtils {
+
+    public static List getRevertTimeLineData(List mdata){
+        List mRevertData = new ArrayList<>();
+        for(int i=mdata.size()-1;i>=0;i--){
+            mRevertData.add(mdata.get(i));
+        }
+        return mRevertData;
+    }
 
     // formatType格式为yyyy-MM-dd HH:mm:ss//yyyy年MM月dd日 HH时mm分ss秒
     public static String dateToString(Date data, String formatType) {
