@@ -21,42 +21,22 @@
         app:leftTitle="@string/title_back"
         app:rightSize="0dp"
         app:title="@string/educationlearning_titlebar" />
+    <!--中部页面显示内容-->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_educationlearning_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="13"
+        />
     <!--底部标签页滑动切换-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/btview_educationlearning_tab"
-        android:background="@color/white"
+        android:id="@+id/ecuation_bottom_nav_view"
+        android:background="@color/green"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:itemTextColor="@color/green"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_alignParentBottom="true"
         app:menu="@menu/education_learning_tab"
         app:labelVisibilityMode="labeled"
         />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:background="@color/white">
-        <Button
-            android:id="@+id/bt_educationlearning_video_tab"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:text="视频"/>
-        <Button
-            android:id="@+id/bt_educationlearning_audio_tab"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:text="音频"/>
-        <Button
-            android:id="@+id/bt_educationlearning_picture_tab"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:text="图文"/>
-    </LinearLayout>
 </LinearLayout>
