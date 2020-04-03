@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".subModule.educationLearning.VideoEducationFragment">
-
-    <TextView
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/education_top_tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="education" />
+        android:layout_height="34dp"
+        app:tabBackground = "@color/white"
+        app:tabIndicatorColor="@color/green"
+        app:tabIndicatorHeight="1dip"
+        app:tabMode="scrollable"
+        app:tabMinWidth="40dip"
+        app:tabPaddingStart="5dip"
+        app:tabPaddingEnd="5dip"
+        app:tabSelectedTextColor="@color/green"
+        app:tabTextColor="@color/black"
+        />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/education_view_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-</FrameLayout>
+</LinearLayout>

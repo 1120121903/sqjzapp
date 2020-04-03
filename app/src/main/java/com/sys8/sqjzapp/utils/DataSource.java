@@ -26,6 +26,7 @@ public class DataSource {
         locationTimelintItem = new TimelineItem(itemLocation);
         mdata.add(locationTimelintItem);
 
+
         //矫正记录2
         itemLocation = new LocationItem("2018年07月26日"+"\n第一次外出请假到辽宁沈阳", R.drawable.ic_local_airport_black_24dp);
         locationTimelintItem = new TimelineItem(itemLocation);
