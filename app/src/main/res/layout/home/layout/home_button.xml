@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_shadow">
     <LinearLayout
-        android:background="@color/gray"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_width="match_parent"
@@ -16,6 +16,7 @@
             <Button
                 android:id="@+id/bt_home_onlinesignin"
                 android:drawableTop="@drawable/ic_home_wsqd"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_wsqd"
                 android:textSize="14dp"
                 android:background="@null"
@@ -25,6 +26,7 @@
             <Button
                 android:id="@+id/bt_home_rcbg"
                 android:drawableTop="@drawable/ic_home_rcbg"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_rcbg"
                 android:textSize="14dp"
                 android:background="@null"
@@ -34,6 +36,7 @@
             <Button
                 android:id="@+id/bt_home_jyxx"
                 android:drawableTop="@drawable/ic_home_jyxx"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_jyxx"
                 android:textSize="14dp"
                 android:background="@null"
@@ -43,6 +46,7 @@
             <Button
                 android:id="@+id/bt_home_ycbf"
                 android:drawableTop="@drawable/ic_home_ycbf"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_ycbf"
                 android:textSize="14dp"
                 android:background="@null"
@@ -58,6 +62,7 @@
             <Button
                 android:id="@+id/bt_home_wcqj"
                 android:drawableTop="@drawable/ic_home_wcqj"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_wcqj"
                 android:textSize="14dp"
                 android:background="@null"
@@ -67,6 +72,7 @@
             <Button
                 android:id="@+id/bt_home_zjwbj"
                 android:drawableTop="@drawable/ic_homt_zjwbj"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_zjwbj"
                 android:textSize="14dp"
                 android:background="@null"
@@ -76,6 +82,7 @@
             <Button
                 android:id="@+id/bt_home_jzdbg"
                 android:drawableTop="@drawable/ic_homt_jzdbg"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_jzdbg"
                 android:textSize="14dp"
                 android:background="@null"
@@ -85,6 +92,7 @@
             <Button
                 android:id="@+id/bt_home_gyhd"
                 android:drawableTop="@drawable/ic_home_gyhd"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_gyhd"
                 android:textSize="14dp"
                 android:background="@null"
@@ -100,6 +108,7 @@
             <Button
                 android:id="@+id/bt_home_jstx"
                 android:drawableTop="@drawable/ic_homt_jstx"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_jstx"
                 android:textSize="14dp"
                 android:background="@null"
@@ -109,6 +118,7 @@
             <Button
                 android:id="@+id/bt_home_xlzx"
                 android:drawableTop="@drawable/ic_home_xlzx"
+                android:drawablePadding="5dp"
                 android:text="@string/home_bt_xlzx"
                 android:textSize="14dp"
                 android:background="@null"

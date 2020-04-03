@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/shape_shadow"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
@@ -12,8 +13,8 @@
             android:background="@drawable/ic_icon_notify"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="10dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
