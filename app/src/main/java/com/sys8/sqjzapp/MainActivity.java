@@ -1,5 +1,7 @@
 package com.sys8.sqjzapp;
 
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -9,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.hjq.bar.TitleBar;
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.sys8.sqjzapp.adapters.MainFragmentAdapter;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.main.home.FragHome;
@@ -29,11 +32,9 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.vp_main_pager)
     ViewPager vpMainPager;
-    @BindView(R.id.tb_main_title)
-    TitleBar tbMainTitle;
     private ArrayList<Fragment> mMainFragmentList;
     @BindView(R.id.bottom_nav_view)
-    BottomNavigationView bnvMainBottom;
+    BottomNavigationViewEx bnvMainBottom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class MainActivity extends BaseActivity {
      * description:底部标签页绑定布局，实现滑动切换效果
      */
     private void initMainData() {
+
         mMainFragmentList = new ArrayList<>(3);
         mMainFragmentList.add(new FragHome());
         mMainFragmentList.add(new FragTztx());
@@ -56,6 +58,14 @@ public class MainActivity extends BaseActivity {
         //viewpager初始化
         MainFragmentAdapter mainFragmentAdapter = new MainFragmentAdapter(getSupportFragmentManager(), mMainFragmentList);
         vpMainPager.setAdapter(mainFragmentAdapter);
+
+        //获取底部导航图标颜色，根据图标颜色设置文字颜色
+        Resources resource = getResources();
+        ColorStateList csl = resource.getColorStateList(R.color.bnav_setting_btn_selector);
+        bnvMainBottom.setItemTextColor(csl);
+//        bnvMainBottom.setItemIconTintList(csl);
+        //更换首次进入时home的图标
+        bnvMainBottom.getMenu().getItem(0).setIcon(R.drawable.ic_main_bottom_home_select);
 
         //viewpager滑动点击等监听
         bnvMainBottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -86,7 +96,26 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 //滑动到某页面让底部导航栏为选中状态
-                bnvMainBottom.getMenu().getItem(position).setChecked(true);
+                switch (position){
+                    case 0:
+                        bnvMainBottom.getMenu().getItem(0).setChecked(true);
+                        bnvMainBottom.getMenu().getItem(0).setIcon(R.drawable.ic_main_bottom_home_select);
+                        bnvMainBottom.getMenu().getItem(1).setIcon(R.drawable.ic_main_bottom_tztx_unselect);
+                        bnvMainBottom.getMenu().getItem(2).setIcon(R.drawable.ic_main_bottom_mine_unselect);
+                        break;
+                    case 1:
+                        bnvMainBottom.getMenu().getItem(1).setChecked(true);
+                        bnvMainBottom.getMenu().getItem(0).setIcon(R.drawable.ic_main_bottom_home_unselect);
+                        bnvMainBottom.getMenu().getItem(1).setIcon(R.drawable.ic_main_bottom_tztx_select);
+                        bnvMainBottom.getMenu().getItem(2).setIcon(R.drawable.ic_main_bottom_mine_unselect);
+                        break;
+                    case 2:
+                        bnvMainBottom.getMenu().getItem(2).setChecked(true);
+                        bnvMainBottom.getMenu().getItem(0).setIcon(R.drawable.ic_main_bottom_home_unselect);
+                        bnvMainBottom.getMenu().getItem(1).setIcon(R.drawable.ic_main_bottom_tztx_unselect);
+                        bnvMainBottom.getMenu().getItem(2).setIcon(R.drawable.ic_main_bottom_mine_select);
+                        break;
+                }
             }
 
             @Override
