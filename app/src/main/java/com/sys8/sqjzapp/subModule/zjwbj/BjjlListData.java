@@ -12,7 +12,7 @@ import java.util.List;
 public class BjjlListData {
 
     /**
-     *请假记录数据列表
+     *暂监外病检记录数据列表
      */
     public static final List<Bjjl> list_Bjjl=new ArrayList<Bjjl>(){
         {
@@ -33,7 +33,7 @@ public class BjjlListData {
         }
     };
     /**
-     *请假状态变化
+     *暂监外病检记录状态变化
      */
     public static final List<BjState> list_BjState = new ArrayList<BjState>(){
         {
