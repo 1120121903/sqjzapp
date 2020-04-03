@@ -133,6 +133,14 @@ public class FragHome extends Fragment {
         intent.putExtras(bundle);
         this.startActivity(intent);
     }
-
+    /* 暂监外病检 */
+    @OnClick(R.id.bt_home_jzdbg)
+    public void toSubModuleJzdbg(View view){
+        Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("SubModuleName", "jzdbg"); //外出请假
+        intent.putExtras(bundle);
+        this.startActivity(intent);
+    }
 
 }

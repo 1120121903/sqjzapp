@@ -9,6 +9,7 @@ import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.subModule.educationLearning.EducationLearningActivity;
+import com.sys8.sqjzapp.subModule.jzdbg.JzdbgActivity;
 import com.sys8.sqjzapp.subModule.onlineSignIn.OnlineSignInActivity;
 import com.sys8.sqjzapp.subModule.rcbg.RcbgActivity;
 import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
@@ -59,6 +60,9 @@ public class FaceVerifyActivity extends BaseActivity {
             case "zjwbj"://暂监外病检
                 intent = new Intent(this, ZjwbjActivity.class);
                 break;
+            case "jzdbg"://居住地变更
+                intent = new Intent(this, JzdbgActivity.class);
+                break;
             default:
                 break;
         }
@@ -87,6 +91,9 @@ public class FaceVerifyActivity extends BaseActivity {
                 break;
             case "zjwbj":
                 btFaceVerify.setText("进入暂监外病检");
+                break;
+            case "jzdbg":
+                btFaceVerify.setText("进入居住地变更");
                 break;
             default:
                 break;
