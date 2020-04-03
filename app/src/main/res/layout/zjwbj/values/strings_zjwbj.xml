@@ -1,1 +1,10 @@
-<resources></resources>
+<resources>
+    <string name="zjwbj_tb_title">暂监外病检</string>
+    <string name="zjwbj_bt_tbbj">填报病检</string>
+    <string name="zjwbj_bt_bjjl">病检记录</string>
+    <string name="zjwbj_set_tbbj_zjwbjsm">请填写暂监外病检说明(不超过300个字)</string>
+    <string name="zjwbj_tv_tbbj_zmwj">证明文件：</string>
+    <string name="zjwbj_tv_tbbj_bjsm">病检说明：</string>
+    <string name="zjwbj_tv_tbbj_bjsj">病检时间：</string>
+    <string name="zjwbj_bt_detail_title">详细信息</string>
+</resources>

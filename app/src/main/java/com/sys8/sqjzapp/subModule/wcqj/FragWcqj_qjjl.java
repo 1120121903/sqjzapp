@@ -24,7 +24,6 @@ public class FragWcqj_qjjl extends Fragment {
     private QjjlListViewAdapter adapter;
     @BindView(R.id.lv_qjjl)
     ListView lvQjjl;
-    private WcqjActivity parentActivity = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,6 @@ public class FragWcqj_qjjl extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_wcqj_qjjl, container, false);
         // Inflate the layout for this fragment
-        parentActivity = (WcqjActivity) getActivity();
         ButterKnife.bind(this, view);
         bindData();
         return view;

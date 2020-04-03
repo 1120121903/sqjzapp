@@ -68,8 +68,6 @@ public class WcqjDetailActivity extends BaseActivity {
 
         for(QjState qjState: list_QjState){
             if(qjState.getTimeApply().equals(timeApply)){
-                System.out.println("getTimeApply:"+qjState.getTimeApply());
-                System.out.println("qjj1"+qjState.getQjjl());
                 list = qjState.getQjjl();
                 break;
             }
