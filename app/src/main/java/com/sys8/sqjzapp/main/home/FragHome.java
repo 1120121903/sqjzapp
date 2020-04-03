@@ -124,6 +124,15 @@ public class FragHome extends Fragment {
         intent.putExtras(bundle);
         this.startActivity(intent);
     }
+    /* 暂监外病检 */
+    @OnClick(R.id.bt_home_zjwbj)
+    public void toSubModuleZjwbj(View view){
+        Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("SubModuleName", "zjwbj"); //外出请假
+        intent.putExtras(bundle);
+        this.startActivity(intent);
+    }
 
 
 }

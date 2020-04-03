@@ -55,6 +55,9 @@ public class FaceVerifyActivity extends BaseActivity {
             case "wcqj"://外出请假
                 intent = new Intent(this, WcqjActivity.class);
                 break;
+            case "zjwbj"://暂监外病检
+                intent = new Intent(this, WcqjActivity.class);
+                break;
             default:
                 break;
         }
