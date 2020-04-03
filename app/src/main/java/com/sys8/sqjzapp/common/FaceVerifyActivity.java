@@ -12,6 +12,7 @@ import com.sys8.sqjzapp.subModule.educationLearning.EducationLearningActivity;
 import com.sys8.sqjzapp.subModule.onlineSignIn.OnlineSignInActivity;
 import com.sys8.sqjzapp.subModule.rcbg.RcbgActivity;
 import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
+import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,7 +57,7 @@ public class FaceVerifyActivity extends BaseActivity {
                 intent = new Intent(this, WcqjActivity.class);
                 break;
             case "zjwbj"://暂监外病检
-                intent = new Intent(this, WcqjActivity.class);
+                intent = new Intent(this, ZjwbjActivity.class);
                 break;
             default:
                 break;
@@ -83,6 +84,9 @@ public class FaceVerifyActivity extends BaseActivity {
                 break;
             case "wcqj":
                 btFaceVerify.setText("进入外出请假");
+                break;
+            case "zjwbj":
+                btFaceVerify.setText("进入暂监外病检");
                 break;
             default:
                 break;
