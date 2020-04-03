@@ -35,7 +35,7 @@ public class JzdbgActivity extends BaseActivity {
         setContentView(R.layout.activity_jzdbg);
         ButterKnife.bind(this);
         TitleCilckListener(tbJzdbg, this);/*title按钮监听*/
-        replaceFragment(FragJzdbg_bgsq.getInstance());
+        addFragment(FragJzdbg_bgsq.getInstance());
     }
 
     @OnClick(R.id.bt_jzdbg_sqbj)
@@ -46,7 +46,7 @@ public class JzdbgActivity extends BaseActivity {
     }
 
     @OnClick(R.id.bt_jzdbg_lsbj)
-    public void  jzdbgBjjlFragment(){
+    public void  jzdbgBgjlFragment(){
         btJzdbgSqbj.setBackground(getDrawable(R.color.green_select));
         btJzdbgLsbj.setBackground(getDrawable(R.color.green));
         replaceFragment(FragJzdbg_bgjl.getInstance());
@@ -62,4 +62,12 @@ public class JzdbgActivity extends BaseActivity {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+    public void addFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fl_jzdbg, fragment);
+        transaction.commit();
+    }
+
 }

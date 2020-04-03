@@ -64,7 +64,7 @@ public class JzdbgListViewAdapter extends BaseAdapter
             viewHolder = new ViewHolder();
             convertView = inflater.inflate(R.layout.jzdbg_list_item, null);
             viewHolder.jzdbg_timeApply = convertView.findViewById(R.id.tv_jzdbg_listItem_timeApply);
-            viewHolder.jzdbg_jsdw =  convertView.findViewById(R.id.tv_zjwbj_listItem_time);
+            viewHolder.jzdbg_jsdw =  convertView.findViewById(R.id.tv_jzdbg_listItem_jsdw);
             viewHolder.jzdbg_xjzd = convertView.findViewById(R.id.tv_jzdbg_listItem_xjzd);
             viewHolder.jzdbg_state = convertView.findViewById(R.id.tv_jzdbg_listItem_state);
             convertView.setTag(viewHolder);

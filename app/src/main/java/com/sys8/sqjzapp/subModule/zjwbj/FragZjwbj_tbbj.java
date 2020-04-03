@@ -36,14 +36,14 @@ public class FragZjwbj_tbbj extends Fragment {
 
     private static FragZjwbj_tbbj fragInstanse = null;
     private static boolean SAVE_CLICK_UNABLE;//保存按钮的状态
+    private ZjwbjActivity parentActivity = null;
+    private Calendar bjsjCalendar;
     @BindView(R.id.et_zjwbj_tbbj_bjsj)
     EditText etZjwbjTbbjBjsj;
     @BindView(R.id.bt_zjwbj_tbbj_save)
     Button btZjwbjTbbjSave;
     @BindView(R.id.et_zjwbj_tbbj_bjsm)
     SuperShapeEditText etZjwbjTbbjBjsm;
-    private ZjwbjActivity parentActivity = null;
-    private Calendar bjsjCalendar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,6 @@ public class FragZjwbj_tbbj extends Fragment {
         }
         return view;
     }
-
 
     @OnClick(R.id.et_zjwbj_tbbj_bjsj)
     public void getBjsj() {

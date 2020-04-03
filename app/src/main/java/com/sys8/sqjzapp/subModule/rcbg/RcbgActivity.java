@@ -32,7 +32,7 @@ public class RcbgActivity extends BaseActivity {
         setContentView(R.layout.activity_rcbg);
         ButterKnife.bind(this);
         TitleCilckListener(tbRcbg, this);/*title按钮监听*/
-        replaceFragment(FragRcbg_txbg.getInstance());
+        addFragment(FragRcbg_txbg.getInstance());
     }
 
     @OnClick(R.id.bt_rcbg_txbg)
@@ -52,6 +52,13 @@ public class RcbgActivity extends BaseActivity {
      * description:替换Fragment
      */
     public void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fl_rcbg, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    public void addFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.fl_rcbg, fragment);

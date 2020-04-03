@@ -35,7 +35,7 @@ public class ZjwbjActivity extends BaseActivity {
         setContentView(R.layout.activity_zjwbj);
         ButterKnife.bind(this);
         TitleCilckListener(tbZjwbj, this);/*title按钮监听*/
-        replaceFragment(FragZjwbj_tbbj.getInstance());
+        addFragment(FragZjwbj_tbbj.getInstance());
     }
 
     @OnClick(R.id.bt_zjwbj_tbbj)
@@ -60,6 +60,12 @@ public class ZjwbjActivity extends BaseActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.fl_zjwbj, fragment);
         transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    public void addFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fl_zjwbj, fragment);
         transaction.commit();
     }
 }

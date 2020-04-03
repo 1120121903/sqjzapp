@@ -48,7 +48,7 @@
                 android:layout_margin="5dp"
                 />
             <TextView
-                android:id="@+id/tv_jzdbg_listItem_time"
+                android:id="@+id/tv_jzdbg_listItem_jsdw"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
         </LinearLayout>
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <TextView
-                android:text="@string/jzdbg_tv_sqbg_jsdw"
+                android:text="@string/jzdbg_tv_sqbg_xjzd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

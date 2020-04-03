@@ -1,7 +1,7 @@
 package com.sys8.sqjzapp.subModule.jzdbg;
 
 public class Jzdbg {
-    String timeApply;
+    String timeApply;//申请时间
     String jsdw;//接收单位
     String xjzd;//新居住地
     String bgyy;//变更原因

@@ -54,9 +54,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-        <!--病检说明-->
+        <!--变更原因-->
         <com.kingja.supershapeview.view.SuperShapeEditText
-            android:id="@+id/et_jzdbg_tbbj_bjsm"
+            android:id="@+id/et_jzdbg_sqbg_bgyy"
             android:gravity="top"
             android:hint="@string/jzdbg_set_sqbg_bgyy"
             android:layout_width="match_parent"

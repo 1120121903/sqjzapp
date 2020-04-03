@@ -35,7 +35,7 @@ public class WcqjActivity extends BaseActivity {
         setContentView(R.layout.activity_wcqj);
         ButterKnife.bind(this);
         TitleCilckListener(tbWcqj, this);/*title按钮监听*/
-        replaceFragment(FragWcqj_wyqj.getInstance());
+        addFragment(FragWcqj_wyqj.getInstance());
     }
 
     @OnClick(R.id.bt_wcqj_wyqj)
@@ -59,6 +59,12 @@ public class WcqjActivity extends BaseActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.fl_wcqj, fragment);
         transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    public void addFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fl_wcqj, fragment);
         transaction.commit();
     }
 }

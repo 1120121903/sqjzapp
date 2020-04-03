@@ -9,6 +9,7 @@
 
     <string name="jzdbg_tv_sqbg_jsdw">接收单位：</string>
     <string name="jzdbg_tv_sqbg_xjzd">新居住地：</string>
+    <string name="jzdbg_tv_bgls_detail_bgyy">变更原因：</string>
 
     <string name="jzdbg_bt_detail_title">详细信息</string>
 </resources>

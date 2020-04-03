@@ -24,9 +24,9 @@ public class JzdbgListData {
 
     public static final List<TimelineItem> list_JzdbgState1=new ArrayList<TimelineItem>(){
         {
-            add(new TimelineItem(new LocationItem("张海洋提交居住地变更申请"+"\n2020-03-04", R.drawable.zjwbj)));
-            add(new TimelineItem(new LocationItem("海淀区司法局审批通过"+"\n2020-03-05", R.drawable.zjwbj)));
-            add(new TimelineItem(new LocationItem("海淀区学院路司法所审批通过"+"\n2020-03-05", R.drawable.zjwbj)));
+            add(new TimelineItem(new LocationItem("张海洋提交居住地变更申请"+"\n2020-03-04", R.drawable.ic_homt_jzdbg)));
+            add(new TimelineItem(new LocationItem("海淀区司法局审批通过"+"\n2020-03-05", R.drawable.ic_homt_jzdbg)));
+            add(new TimelineItem(new LocationItem("海淀区学院路司法所审批通过"+"\n2020-03-05", R.drawable.ic_homt_jzdbg)));
         }
     };
     public static final List<TimelineItem> list_JzdbgState2=new ArrayList<TimelineItem>(){
@@ -38,8 +38,7 @@ public class JzdbgListData {
      */
     public static final List<JzdbgState> list_JzdbgState = new ArrayList<JzdbgState>(){
         {
-            add(new JzdbgState("2020-02-04",list_JzdbgState1));
-            add(new JzdbgState("2020-03-04",list_JzdbgState2));
+            add(new JzdbgState("2020-03-04",list_JzdbgState1));
         }
     };
 
