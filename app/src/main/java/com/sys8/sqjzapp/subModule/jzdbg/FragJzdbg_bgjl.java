@@ -11,14 +11,11 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.subModule.zjwbj.Bjjl;
-import com.sys8.sqjzapp.subModule.zjwbj.BjjlListViewAdapter;
-import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjDetailActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.sys8.sqjzapp.subModule.zjwbj.BjjlListData.list_Bjjl;
+import static com.sys8.sqjzapp.subModule.jzdbg.JzdbgListData.list_Jzdbg;
 import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class FragJzdbg_bgjl extends Fragment {
@@ -26,7 +23,7 @@ public class FragJzdbg_bgjl extends Fragment {
     private static FragJzdbg_bgjl fragInstanse = null;
     @BindView(R.id.lv_bgjl)
     ListView lvBgjl;
-    private BjjlListViewAdapter adapter;
+    private JzdbgListViewAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,23 +41,23 @@ public class FragJzdbg_bgjl extends Fragment {
     }
 
     private void bindData() {
-        adapter = new BjjlListViewAdapter(getView(), getContext(), list_Bjjl, getActivity());
+        adapter = new JzdbgListViewAdapter(getView(), getContext(), list_Jzdbg, getActivity());
         lvBgjl.setAdapter(adapter);
         //设置列表监听事件
-//        lvBgjl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(getActivity(), ZjwbjDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
-//                Bundle bundle = new Bundle();
-//                Jzdbg jzdbg = (Jzdbg) getRevertTimeLineData(list_Bjjl).get(position);
-//                bundle.putString("timeApply", jzdbg.getTimeApply());
-//                bundle.putString("jsdw", jzdbg.getJsdw());
-//                bundle.putString("xjzd", jzdbg.getXjzd());
-//                bundle.putString("bgyy", jzdbg.getBgyy());
-//                intent.putExtras(bundle);
-//                getActivity().startActivity(intent);
-//            }
-//        });
+        lvBgjl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), JzdbgDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+                Bundle bundle = new Bundle();
+                Jzdbg jzdbg = (Jzdbg) getRevertTimeLineData(list_Jzdbg).get(position);
+                bundle.putString("timeApply", jzdbg.getTimeApply());
+                bundle.putString("jsdw", jzdbg.getJsdw());
+                bundle.putString("xjzd", jzdbg.getXjzd());
+                bundle.putString("bgyy", jzdbg.getBgyy());
+                intent.putExtras(bundle);
+                getActivity().startActivity(intent);
+            }
+        });
     }
 
     @Override

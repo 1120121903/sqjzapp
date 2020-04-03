@@ -16,14 +16,14 @@ import java.util.List;
 import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 
-public class JzdbglListViewAdapter extends BaseAdapter
+public class JzdbgListViewAdapter extends BaseAdapter
 {
     View view;
     private List<Jzdbg> list;
     private LayoutInflater inflater;
     private Activity activity;
 
-    public JzdbglListViewAdapter(View view, Context context, List<Jzdbg> list, Activity activity)
+    public JzdbgListViewAdapter(View view, Context context, List<Jzdbg> list, Activity activity)
     {
         this.view = view;
         this.list = getRevertTimeLineData(list);
