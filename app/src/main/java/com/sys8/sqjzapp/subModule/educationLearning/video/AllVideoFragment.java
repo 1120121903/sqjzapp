@@ -12,7 +12,11 @@ import android.view.ViewGroup;
 
 import com.sys8.sqjzapp.R;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 public class AllVideoFragment extends Fragment {
+    private Unbinder unbinder;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +25,15 @@ public class AllVideoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_all_video, container, false);
+        View view = inflater.inflate(R.layout.fragment_all_video, container, false);
+        unbinder = ButterKnife.bind(this, view);
+        return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
 }

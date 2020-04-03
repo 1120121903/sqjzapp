@@ -22,8 +22,6 @@ public class OnlineSignInActivity extends BaseActivity {
     TitleBar tbOnlinesigninTitlebar;
 
     final RxPermissions rxPermissions = new RxPermissions(this);
-    private FragmentManager fragmentManager;
-    private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +30,6 @@ public class OnlineSignInActivity extends BaseActivity {
         setContentView(R.layout.activity_onlinesignin);
         ButterKnife.bind(this);
         ActivityCollector.TitleCilckListener(tbOnlinesigninTitlebar, this);
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction=fragmentManager.beginTransaction();
         //获取定位权限
         requestLocPremission();
     }

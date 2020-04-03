@@ -9,20 +9,27 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/education_top_tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="34dp"
-        app:tabBackground = "@color/white"
+        android:layout_height="wrap_content"
+        app:tabGravity="fill"
+        app:tabMaxWidth="0dp"
+        app:tabBackground="@color/white"
+        app:tabRippleColor="@color/white"
         app:tabIndicatorColor="@color/green"
-        app:tabIndicatorHeight="1dip"
-        app:tabMode="scrollable"
-        app:tabMinWidth="40dip"
-        app:tabPaddingStart="5dip"
-        app:tabPaddingEnd="5dip"
+        app:tabIndicatorFullWidth="false"
+        app:tabMode="fixed"
+        app:tabMinWidth="40dp"
+        app:tabPaddingStart="5dp"
+        app:tabPaddingEnd="5dp"
         app:tabSelectedTextColor="@color/green"
         app:tabTextColor="@color/black"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#E4E4E4"
+        ></View>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/education_view_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
 </LinearLayout>
