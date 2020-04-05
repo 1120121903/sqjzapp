@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".subModule.educationLearning.PictureEducationFragment">
+    tools:context=".subModule.educationLearning.learningClassification.AllFragment">
 
     <TextView
+        android:id="@+id/all_test_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="picture" />
+        android:text="@string/educationlearning_classification_all" />
 
 </FrameLayout>
