@@ -32,6 +32,9 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
             case(Constant.ITEM_LOCATION_VIEWTYPE):
                 view = LayoutInflater.from(mContext).inflate(R.layout.item_location,parent,false);
                 return new LocationViewHolder(view);
+            case(Constant.ITEM_EDUCATION_LEARNING_VIDEO):
+                view = LayoutInflater.from(mContext).inflate(R.layout.item_learning_video,parent,false);
+                return new LearningVideoViewHolder(view);
             default:throw new IllegalArgumentException();
         }
     }
