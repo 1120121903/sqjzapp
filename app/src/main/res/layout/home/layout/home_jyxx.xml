@@ -13,11 +13,11 @@
             android:layout_width="match_parent"
             android:layout_height="35dp">
             <ImageView
-                android:src="@drawable/home_jyxx_zxkc"
+                android:src="@drawable/ic_home_zxkc"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="5dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
             <TextView
                 android:text="@string/home_tv_jyxx"
                 android:textColor="@color/black"

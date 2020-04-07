@@ -2,6 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:background="@drawable/shape_shadow_transparent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.kingja.supershapeview.view.SuperShapeLinearLayout
         android:orientation="vertical"
@@ -10,7 +13,9 @@
         android:layout_height="250dp"
         android:layout_margin="5dp"
         app:super_dashWidth="2dp"
-        app:super_strokeColor="@color/blue2"
+        app:super_solidColor="@color/white"
+        app:super_strokeColor="@color/white"
+        app:super_cornerRadius="15dp"
         app:super_strokeWidth="1dp">
         <LinearLayout
             android:orientation="horizontal"

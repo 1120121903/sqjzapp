@@ -8,40 +8,40 @@
     <!--顶部标题栏-->
     <LinearLayout
         android:orientation="vertical"
-        android:background="@drawable/background_gradient1"
+        android:background="@drawable/home_background"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <com.hjq.bar.TitleBar
             android:visibility="visible"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             app:titleColor="@color/white"
             app:leftBackground="@null"
             app:rightBackground="@null"
             app:barStyle="transparent"
             app:backButton = "false"
             app:title="@string/main_bottom_home" />
-        <View
-            android:background="@color/blueDeep"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"/>
         <com.youth.banner.Banner
             android:id="@+id/banner_home_top"
             android:layout_marginBottom="5dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
             android:layout_height="150dp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:background="@drawable/background_gradient2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <!--通知提醒-->
         <include layout="@layout/home_message" />
         <!--按钮列表-->
         <include layout="@layout/home_button"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <View
+            android:background="@color/gray"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
         <!--视频列表-->
         <include layout="@layout/home_jyxx"/>
     </LinearLayout>
