@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,7 @@ import com.sys8.sqjzapp.adapters.LearningListViewHolder;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
+import com.sys8.sqjzapp.subModule.educationLearning.EducationLearningActivity;
 import com.sys8.sqjzapp.subModule.educationLearning.LearningClassificationBaseFragment;
 import com.sys8.sqjzapp.utils.DataSource;
 
@@ -32,7 +34,7 @@ public class AllFragment extends LearningClassificationBaseFragment {
 
     @BindView(R.id.recycler_learningeducation_page_all)
     RecyclerView recyclerLearningeducationPageAll;
-
+    private EducationLearningActivity parentActivity = null;
     private TimeLineAdapter adapter;
     private List<TimelineItem> mData;
     private Unbinder unbinder;
@@ -47,7 +49,7 @@ public class AllFragment extends LearningClassificationBaseFragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_learning_content_all, container, false);
         unbinder = ButterKnife.bind(this, view);
-
+        parentActivity = (EducationLearningActivity) getActivity();
         intRv();
         getListData();
         setupAdapter();
@@ -95,6 +97,7 @@ public class AllFragment extends LearningClassificationBaseFragment {
         setupAdapter();
 
     }
+
 
     @Override
     public void onDestroyView() {

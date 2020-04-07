@@ -95,6 +95,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public TimelineItem getItem(int position){
         return mdata.get(position);
     }
+    
 
 
 
