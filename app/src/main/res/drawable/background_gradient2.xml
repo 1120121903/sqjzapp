@@ -7,7 +7,7 @@
     android:angle="270"//效果是：是从上到下，按照开始颜色到结束颜色来渲染的
     -->
     <gradient
-        android:startColor="@color/blue2"
-        android:endColor="@color/blue3"
-        android:angle="270"/>
+        android:startColor="@color/blue1"
+        android:endColor="@color/title_text_color"
+        android:angle="360"/>
 </shape>

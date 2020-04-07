@@ -46,8 +46,8 @@ public class WcqjActivity extends BaseActivity {
     }
     @OnClick(R.id.bt_wcqj_qjjl)
     public void wcqjQjjlFragment(){
-        btWcqjQjjl.setBackground(getDrawable(R.color.blue1));
-        btWcqjWyqj.setBackground(getDrawable(R.color.blue));
+        btWcqjQjjl.setBackground(getDrawable(R.color.blue));
+        btWcqjWyqj.setBackground(getDrawable(R.color.blue1));
         replaceFragment(FragWcqj_qjjl.getInstance());
     }
 

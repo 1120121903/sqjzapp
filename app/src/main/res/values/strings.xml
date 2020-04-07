@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">在矫通</string>
     <!--Login-->
-    <string name="login_name">用户名</string>
+    <string name="login_name">账号</string>
     <string name="login_passw">密码</string>
     <string name="login_login">登录</string>
+    <string name="login_logon">注册</string>
     <string name="login_clear">清除</string>
     <!--Title按钮-->
     <string name="title_back"></string>
