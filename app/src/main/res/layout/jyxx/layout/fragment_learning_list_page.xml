@@ -21,13 +21,13 @@
             app:tabMaxWidth="0dp"
             app:tabBackground="@color/white"
             app:tabRippleColor="@color/white"
-            app:tabIndicatorColor="@color/green"
+            app:tabIndicatorColor="@color/blue1"
             app:tabIndicatorFullWidth="false"
             app:tabMode="fixed"
             app:tabMinWidth="40dp"
             app:tabPaddingStart="5dp"
             app:tabPaddingEnd="5dp"
-            app:tabSelectedTextColor="@color/green"
+            app:tabSelectedTextColor="@color/blue1"
             app:tabTextColor="@color/black"
             />
         <ImageButton
