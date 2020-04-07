@@ -16,6 +16,7 @@ import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.ImageAdapter;
 import com.sys8.sqjzapp.common.FaceVerifyActivity;
 import com.sys8.sqjzapp.subModule.onlineSignIn.OnlineSignInActivity;
+import com.sys8.sqjzapp.subModule.ycbf.YcbfActivity;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -132,17 +133,26 @@ public class FragHome extends Fragment {
     public void toSubModuleZjwbj(View view){
         Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putString("SubModuleName", "zjwbj"); //外出请假
+        bundle.putString("SubModuleName", "zjwbj"); //暂监外病检
         intent.putExtras(bundle);
         this.startActivity(intent);
     }
-    /* 暂监外病检 */
+    /* 居住地变更 */
     @OnClick(R.id.bt_home_jzdbg)
     public void toSubModuleJzdbg(View view){
         Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putString("SubModuleName", "jzdbg"); //外出请假
+        bundle.putString("SubModuleName", "jzdbg"); //居住地变更
         intent.putExtras(bundle);
+        this.startActivity(intent);
+    }
+    /* 远程帮扶 */
+    @OnClick(R.id.bt_home_ycbf)
+    public void toSubModuleYcbf(View view){
+        Intent intent = new Intent(this.getActivity(), YcbfActivity.class);
+//        Bundle bundle = new Bundle();
+//        bundle.putString("SubModuleName", "ycbf"); // 远程帮扶
+//        intent.putExtras(bundle);
         this.startActivity(intent);
     }
 
