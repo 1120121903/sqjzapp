@@ -8,10 +8,10 @@ import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.module.LearningVideoItem;
+import com.sys8.sqjzapp.module.LearningDetailListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 
-public class LearningVideoViewHolder extends BaseViewHolder  {
+public class LearningDetailListViewHolder extends BaseViewHolder  {
 
     private ImageView imageVideoThumbnail;//缩略图
     private TextView tvTitle;//标题
@@ -22,7 +22,7 @@ public class LearningVideoViewHolder extends BaseViewHolder  {
     private TextView tvCollectStatus;//收藏状态
     private ImageView imagePass;//通过图标
 
-    public LearningVideoViewHolder(@NonNull View itemView) {
+    public LearningDetailListViewHolder(@NonNull View itemView) {
         super(itemView);
         imageVideoThumbnail= itemView.findViewById(R.id.iv_learning_education_video_thumbnail);
         tvTitle = itemView.findViewById(R.id.item_learning__education_video_title);
@@ -36,18 +36,18 @@ public class LearningVideoViewHolder extends BaseViewHolder  {
 
     @Override
     void setData(TimelineItem item) {
-        LearningVideoItem learningVideoItem = item.getLearningVideoItem();
+        LearningDetailListItem learningDetailListItem = item.getLearningDetailListItem();
         //标题
-        tvTitle.setText(learningVideoItem.getTitle());
+        tvTitle.setText(learningDetailListItem.getTitle());
         //内容
-        tvContent.setText(learningVideoItem.getContent());
+        tvContent.setText(learningDetailListItem.getContent());
         //缩略图
-        Glide.with(itemView.getContext()).load(learningVideoItem.getImageVideoThumbnail()).into(imageVideoThumbnail);
+        Glide.with(itemView.getContext()).load(learningDetailListItem.getImageThumbnail()).into(imageVideoThumbnail);
         //学习人数
         Glide.with(itemView.getContext()).load(R.drawable.ic_learning_education_number).into(imageNumber);
-        tvNumber.setText(learningVideoItem.getLearningNumber()+"人已学习");
+        tvNumber.setText(learningDetailListItem.getLearningNumber()+"人已学习");
         //收藏状态
-        if(learningVideoItem.isCollect()){
+        if(learningDetailListItem.isCollect()){
             Glide.with(itemView.getContext()).load(R.drawable.ic_learning_education_collect).into(imageCollectStatus);
             tvCollectStatus.setText("已收藏");
         }else{
@@ -55,7 +55,7 @@ public class LearningVideoViewHolder extends BaseViewHolder  {
             tvCollectStatus.setText("收藏");
         }
         //通过状态
-        if(learningVideoItem.isPass()){
+        if(learningDetailListItem.isPass()){
             imagePass.setVisibility(View.VISIBLE);
         }else{
             imagePass.setVisibility(View.GONE);

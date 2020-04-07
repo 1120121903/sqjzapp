@@ -4,7 +4,8 @@ import com.sys8.sqjzapp.utils.Constant;
 
 public class TimelineItem {
     private LocationItem locationItem;
-    private LearningVideoItem learningVideoItem;
+    private LearningDetailListItem learningDetailListItem;
+    private LearningListItem learningListItem;
     private int viewType;
 
     public TimelineItem(LocationItem locationItem) {
@@ -12,9 +13,22 @@ public class TimelineItem {
         viewType = Constant.ITEM_LOCATION_VIEWTYPE;
     }
 
-    public TimelineItem(LearningVideoItem learningVideoItem) {
-        this.learningVideoItem = learningVideoItem;
-        viewType = Constant.ITEM_EDUCATION_LEARNING_VIDEO;
+    public TimelineItem(LearningDetailListItem learningDetailListItem) {
+        this.learningDetailListItem = learningDetailListItem;
+        viewType = Constant.ITEM_EDUCATION_LEARNING_DETAIL_LIST;
+    }
+
+    public TimelineItem(LearningListItem learningListItem) {
+        this.learningListItem = learningListItem;
+        viewType = Constant.ITEM_EDUCATION_LEARNING_LIST;
+    }
+
+    public LearningListItem getLearningListItem() {
+        return learningListItem;
+    }
+
+    public void setLearningListItem(LearningListItem learningListItem) {
+        this.learningListItem = learningListItem;
     }
 
     public LocationItem getLocationItem() {
@@ -25,12 +39,12 @@ public class TimelineItem {
         this.locationItem = locationItem;
     }
 
-    public LearningVideoItem getLearningVideoItem() {
-        return learningVideoItem;
+    public LearningDetailListItem getLearningDetailListItem() {
+        return learningDetailListItem;
     }
 
-    public void setLearningVideoItem(LearningVideoItem learningVideoItem) {
-        this.learningVideoItem = learningVideoItem;
+    public void setLearningDetailListItem(LearningDetailListItem learningDetailListItem) {
+        this.learningDetailListItem = learningDetailListItem;
     }
 
     public int getViewType() {

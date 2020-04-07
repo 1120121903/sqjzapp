@@ -5,6 +5,12 @@ android:layout_width="100dp"
 android:layout_height="120dp"
 android:orientation="vertical"
 android:background="@drawable/shape_shadow">
+    <Button
+        android:id="@+id/bt_educationlearning_ppw_all"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/educationlearning_media_type_all"
+        android:background="@drawable/shape_shadow_bottom"></Button>
 <Button
     android:id="@+id/bt_educationlearning_ppw_video"
     android:layout_width="match_parent"

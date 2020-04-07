@@ -4,27 +4,28 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
+import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.subModule.educationLearning.LearningClassificationBaseFragment;
 import com.sys8.sqjzapp.utils.DataSource;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_ALLMEDIA;
 import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_AUDIO;
 import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_PICTURE;
 import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_VIDEO;
-import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class AllFragment extends LearningClassificationBaseFragment {
 
@@ -59,8 +60,9 @@ public class AllFragment extends LearningClassificationBaseFragment {
     }
 
     private void getListData() {
-        mData = DataSource.getLearningEducationRvData();
+        mData = DataSource.getLearningEducationListData();
     }
+
     private void setupAdapter() {
         adapter = new TimeLineAdapter(view.getContext(), mData);
         recyclerLearningeducationPageAll.setAdapter(adapter);
@@ -74,15 +76,22 @@ public class AllFragment extends LearningClassificationBaseFragment {
     @Override
     public void FilterMediaType(int MediaType) {
         switch (MediaType) {
+            case MEDIA_TYPE_ALLMEDIA:
+                getListData();
+                break;
             case MEDIA_TYPE_VIDEO:
+                mData=DataSource.getLearningEducationListVideoData();
                 break;
             case MEDIA_TYPE_AUDIO:
+                mData=DataSource.getLearningEducationListAudioData();
                 break;
             case MEDIA_TYPE_PICTURE:
+                mData=DataSource.getLearningEducationListPictureData();
                 break;
             default:
                 break;
         }
+        setupAdapter();
 
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="160dp"
-    android:background="@drawable/shape_shadow">
+    android:background="@drawable/shape_shadow_bottom">
 
     <ImageView
         android:id="@+id/iv_learning_education_video_thumbnail"
@@ -88,9 +88,7 @@
     <ImageView
         android:id="@+id/item_learning_education_video_pass"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_learning_education_pass" />

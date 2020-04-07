@@ -1,11 +1,11 @@
 package com.sys8.sqjzapp.utils;
 
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.module.LearningVideoItem;
+import com.sys8.sqjzapp.module.LearningDetailListItem;
+import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,10 +36,10 @@ public class DataSource {
         return mdata;
     }
 
-    public static List<TimelineItem> getLearningEducationRvData(){
+    public static List<TimelineItem> getLearningEducationDetailRvData(){
         List<TimelineItem> mdata = new ArrayList<>();
         //video1
-        LearningVideoItem learningVideoItem = new LearningVideoItem(
+        LearningDetailListItem learningDetailListItem = new LearningDetailListItem(
                 R.drawable.legal_test_image,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
@@ -47,10 +47,10 @@ public class DataSource {
                 true,
                 false
                 );
-        TimelineItem timelineItem = new TimelineItem(learningVideoItem);
+        TimelineItem timelineItem = new TimelineItem(learningDetailListItem);
         mdata.add(timelineItem);
         //video2
-        learningVideoItem = new LearningVideoItem(
+        learningDetailListItem = new LearningDetailListItem(
                 R.drawable.legal_test_image,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
@@ -58,10 +58,10 @@ public class DataSource {
                 false,
                 true
         );
-        timelineItem = new TimelineItem(learningVideoItem);
+        timelineItem = new TimelineItem(learningDetailListItem);
         mdata.add(timelineItem);
         //video3
-        learningVideoItem = new LearningVideoItem(
+        learningDetailListItem = new LearningDetailListItem(
                 R.drawable.legal_test_image,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
@@ -69,12 +69,12 @@ public class DataSource {
                 true,
                 false
         );
-        timelineItem = new TimelineItem(learningVideoItem);
+        timelineItem = new TimelineItem(learningDetailListItem);
         mdata.add(timelineItem);
         //video4
         mdata.add(timelineItem);
         //video5
-        learningVideoItem = new LearningVideoItem(
+        learningDetailListItem = new LearningDetailListItem(
                 R.drawable.legal_test_image,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
@@ -82,8 +82,203 @@ public class DataSource {
                 false,
                 false
         );
-        timelineItem = new TimelineItem(learningVideoItem);
+        timelineItem = new TimelineItem(learningDetailListItem);
         mdata.add(timelineItem);
+        return mdata;
+    }
+
+
+    public static List<TimelineItem> getLearningEducationListData(){
+        List<TimelineItem> mdata = new ArrayList<>();
+        //视频
+        LearningListItem learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_VIDEO,
+                "一起学宪法",
+                12,
+                180,
+                23,
+                true,true,R.drawable.legal_test_image);
+        TimelineItem timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+        //音频1
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第一期",
+                15,
+                200,
+                101,
+                true,false);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+
+        //视频2
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_VIDEO,
+                "教你交通法",
+                15,
+                200,
+                11,
+                true,false,R.drawable.legal_test_image_2);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+        //图文
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_PICTURE,
+                "酒家醉驾法律常识",
+                51,
+                false,false,R.drawable.legal_test_image_3);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+        //音频2
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第二期",
+                15,
+                200,
+                37,
+                false,true);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+        //音频3
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第三期",
+                15,
+                200,
+                32,
+                false,false);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+        //音频4
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第四期",
+                15,
+                200,
+                22,
+                false,false);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+        //音频5
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第五期",
+                15,
+                180,
+                82,
+                false,false);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+        return mdata;
+    }
+
+    public static List<TimelineItem> getLearningEducationListAudioData(){
+        List<TimelineItem> mdata = new ArrayList<>();
+
+
+        //音频1
+        LearningListItem learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第一期",
+                15,
+                200,
+                101,
+                true,false);
+        TimelineItem timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+        //音频2
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第二期",
+                15,
+                200,
+                37,
+                false,true);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+        //音频3
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第三期",
+                15,
+                200,
+                32,
+                false,false);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+        //音频4
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第四期",
+                15,
+                200,
+                22,
+                false,false);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+        //音频5
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第五期",
+                15,
+                180,
+                82,
+                false,false);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+        return mdata;
+    }
+
+    public static List<TimelineItem> getLearningEducationListVideoData(){
+        List<TimelineItem> mdata = new ArrayList<>();
+        //视频
+        LearningListItem learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_VIDEO,
+                "一起学宪法",
+                12,
+                180,
+                23,
+                true,true,R.drawable.legal_test_image);
+        TimelineItem timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+
+
+        //视频2
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_VIDEO,
+                "教你交通法",
+                15,
+                200,
+                11,
+                true,false,R.drawable.legal_test_image_2);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+
+
+        return mdata;
+    }
+
+    public static List<TimelineItem> getLearningEducationListPictureData(){
+        List<TimelineItem> mdata = new ArrayList<>();
+
+        //图文
+        LearningListItem learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_PICTURE,
+                "酒家醉驾法律常识",
+                51,
+                false,false,R.drawable.legal_test_image_3);
+        TimelineItem timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+
         return mdata;
     }
 }

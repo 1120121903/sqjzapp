@@ -7,6 +7,7 @@
     <string name="educationlearning_classification_legal_knowledge">法律常识</string>
     <string name="educationlearning_classification_current_policy">时事政策</string>
     <!--多媒体分类-->
+    <string name="educationlearning_media_type_all">全部</string>
     <string name="educationlearning_media_type_video">视频</string>
     <string name="educationlearning_media_type_audio">音频</string>
     <string name="educationlearning_media_type_picture">图文</string>

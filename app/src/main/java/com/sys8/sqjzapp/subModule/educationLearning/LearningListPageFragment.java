@@ -1,8 +1,5 @@
 package com.sys8.sqjzapp.subModule.educationLearning;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,28 +7,24 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
 import com.google.android.material.tabs.TabLayout;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.subModule.educationLearning.learningClassification.AllFragment;
 import com.sys8.sqjzapp.subModule.educationLearning.learningClassification.CurrentPolicyFragment;
 import com.sys8.sqjzapp.subModule.educationLearning.learningClassification.LegalKnowledgeFragment;
 import com.sys8.sqjzapp.subModule.educationLearning.learningClassification.PublicMoralsFragment;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-
+import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_ALLMEDIA;
 import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_AUDIO;
 import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_PICTURE;
 import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_VIDEO;
@@ -125,9 +118,17 @@ public class LearningListPageFragment extends Fragment{
         pop.setOutsideTouchable(true);
 
         //布局内的按钮-视频、音频、图文
+        Button bt_all = (Button)contentView.findViewById(R.id.bt_educationlearning_ppw_all);
         Button bt_video = (Button)contentView.findViewById(R.id.bt_educationlearning_ppw_video);
         Button bt_audio = (Button)contentView.findViewById(R.id.bt_educationlearning_ppw_audio);
         Button bt_picture = (Button)contentView.findViewById(R.id.bt_educationlearning_ppw_picture);
+        bt_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.getItem(educationViewPage.getCurrentItem()).FilterMediaType(MEDIA_TYPE_ALLMEDIA);
+                pop.dismiss();
+            }
+        });
         bt_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

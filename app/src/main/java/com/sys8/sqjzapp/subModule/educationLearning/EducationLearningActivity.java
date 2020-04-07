@@ -23,7 +23,7 @@ public class EducationLearningActivity extends AppCompatActivity {
         setContentView(R.layout.activity_education_learning);
         ButterKnife.bind(this);
         ActivityCollector.TitleCilckListener(tbEducationlearningTitlebar, this);
-        replaceFragment(new LearningListPageFragment());
+        addFragment(new LearningListPageFragment());
     }
 
     /**
@@ -34,6 +34,15 @@ public class EducationLearningActivity extends AppCompatActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.frag_educationlearning_main_page, fragment);
         transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    /**
+     * description:替换Fragment
+     */
+    public void addFragment(Fragment fragment) {
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.frag_educationlearning_main_page, fragment);
         transaction.commit();
     }
 

@@ -1,15 +1,15 @@
 package com.sys8.sqjzapp.module;
 
-public class LearningVideoItem {
-    private int ImageVideoThumbnail;//视频缩略图
+public class LearningDetailListItem {
+    private int ImageThumbnail;//视频缩略图
     private String title;//标题
     private String content;//内容
     private int learningNumber;//学习人数
     private boolean isCollect;//收藏状态 true-已收藏   false-为收藏
     private boolean isPass;//通过状态  true-已通过  false-未通过
 
-    public LearningVideoItem(int imageVideoThumbnail, String title, String content,int learningNumber, boolean isCollect, boolean isPass) {
-        ImageVideoThumbnail = imageVideoThumbnail;
+    public LearningDetailListItem(int imageThumbnail, String title, String content, int learningNumber, boolean isCollect, boolean isPass) {
+        this.ImageThumbnail = imageThumbnail;
         this.learningNumber = learningNumber;
         this.title = title;
         this.content = content;
@@ -25,12 +25,12 @@ public class LearningVideoItem {
         this.learningNumber = learningNumber;
     }
 
-    public int getImageVideoThumbnail() {
-        return ImageVideoThumbnail;
+    public int getImageThumbnail() {
+        return ImageThumbnail;
     }
 
-    public void setImageVideoThumbnail(int imageVideoThumbnail) {
-        ImageVideoThumbnail = imageVideoThumbnail;
+    public void setImageThumbnail(int imageThumbnail) {
+        ImageThumbnail = imageThumbnail;
     }
 
     public String getTitle() {
