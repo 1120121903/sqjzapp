@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".subModule.ycbf.YcbfActivity">
@@ -23,9 +24,31 @@
         app:title="@string/ycbf_tb_title" />
     <!--中间内容-->
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <!--Tab标签页-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_ycbf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:tabGravity="fill"
+            app:tabMaxWidth="0dp"
+            app:tabBackground="@color/white"
+            app:tabRippleColor="@color/white"
+            app:tabIndicatorColor="@color/blue1"
+            app:tabIndicatorFullWidth="false"
+            app:tabMode="fixed"
+            app:tabMinWidth="40dp"
+            app:tabPaddingStart="5dp"
+            app:tabPaddingEnd="5dp"
+            app:tabSelectedTextColor="@color/blue1"
+            app:tabTextColor="@color/black"
+            />
+        <!--内容-->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_ycbf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
-
 </LinearLayout>
