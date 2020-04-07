@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.FragmentManager;
@@ -66,10 +68,12 @@ public class TztxMainListViewAdapter extends BaseAdapter
         if(convertView == null){
             viewHolder = new ViewHolder();
             convertView = inflater.inflate(R.layout.tzxx_list_item, null);
+            viewHolder.tzxx_title = convertView.findViewById(R.id.iv_tztx_title);
             viewHolder.tztx_type = convertView.findViewById(R.id.tv_tztx_type);
             viewHolder.tztx_time = convertView.findViewById(R.id.tv_tztx_time);
             viewHolder.tztx_cotent =  convertView.findViewById(R.id.tv_tztx_cotent);
             viewHolder.tzxx_detail = convertView.findViewById(R.id.bt_tzxx_detail);
+            viewHolder.ll_tzxx_detail = convertView.findViewById(R.id.ll_tzxx_detail);
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
@@ -77,8 +81,9 @@ public class TztxMainListViewAdapter extends BaseAdapter
         viewHolder.tztx_type.setText(tzxx.getType());
         viewHolder.tztx_time.setText(tzxx.getTime());
         if(tzxx.getType().substring(0,2).equals("通知")){
+            viewHolder.tzxx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tz));
             viewHolder.tztx_cotent.setText(tzxx.getContent());
-            viewHolder.tzxx_detail.setVisibility(View.VISIBLE);
+            viewHolder.ll_tzxx_detail.setVisibility(View.VISIBLE);
             viewHolder.tzxx_detail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -93,16 +98,20 @@ public class TztxMainListViewAdapter extends BaseAdapter
                 }
             });
         }else {
+            viewHolder.tzxx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tx));
             viewHolder.tztx_cotent.setText(tzxx.getContent());
-            viewHolder.tzxx_detail.setVisibility(View.GONE);
+            viewHolder.ll_tzxx_detail.setVisibility(View.INVISIBLE);
+
         }
 //        viewHolder.tztx_cotent.setTextSize(18);
         return convertView;
     }
     public static class ViewHolder{
+        public ImageView tzxx_title;
         public TextView tztx_type;
         public TextView tztx_time;
         public TextView tztx_cotent;
         public Button tzxx_detail;
+        public LinearLayout ll_tzxx_detail;
     }
 }

@@ -11,7 +11,7 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/green">
+        android:background="@drawable/mine_background">
         <com.sys8.sqjzapp.common.design.CommonShapeButton
             android:id="@+id/bt_mine_head"
             android:layout_width="120dp"

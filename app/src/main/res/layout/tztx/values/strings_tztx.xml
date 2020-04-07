@@ -2,7 +2,7 @@
 <resources>
     <string name="tztx_tz">通知消息</string>
     <string name="tztx_tx">提醒消息</string>
-    <string name="tztx_bt_detail">详情></string>
+    <string name="tztx_bt_detail">详情</string>
     <string name="tztx_bt_detail_back">返回</string>
     <string name="tztx_tb_detail_title">详细信息</string>
 </resources>

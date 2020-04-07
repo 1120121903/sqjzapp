@@ -61,7 +61,7 @@
         </LinearLayout>
         <Button
             android:id="@+id/bt_home_message_detail"
-            android:background="@drawable/home_jyxx_next"
+            android:background="@drawable/ic_next"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_width="16dp"
