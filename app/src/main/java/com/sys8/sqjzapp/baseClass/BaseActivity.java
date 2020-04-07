@@ -5,6 +5,10 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.sys8.sqjzapp.R;
+
+import static com.sys8.sqjzapp.utils.StatusBarUtils.setWindowStatusBarColor;
+
 public class BaseActivity extends AppCompatActivity {
     /**
      *description:重写活动创建方法
@@ -15,7 +19,7 @@ public class BaseActivity extends AppCompatActivity {
         /* 将当前正在创建的活动添加到活动管理器中 */
         ActivityCollector.addActivity(this);
         Log.d("BaseActivity",getClass().getSimpleName());
-
+        setWindowStatusBarColor(this, R.color.blue1);
     }
     /**
      *description:重写活动销毁方法

@@ -11,19 +11,20 @@
         android:id="@+id/tb_ycbf"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:background="@color/green"
-        app:titleColor="@null"
+        android:background="@color/blue1"
+        app:titleColor="@color/white"
         app:leftBackground="@null"
+        app:leftColor="@color/white"
         app:rightBackground="@null"
         app:barStyle="transparent"
         app:leftTitle="@string/title_back"
+
         app:rightSize="0dp"
         app:title="@string/ycbf_tb_title" />
     <!--中间内容-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent">
 
     </LinearLayout>
 

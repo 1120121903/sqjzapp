@@ -82,7 +82,6 @@ public class FragHome extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.frag_home, container, false);
         ButterKnife.bind(this, view);
-        setWindowStatusBarColor(getActivity(),R.color.blue1);
         List<Integer> list = new ArrayList<>();
         list.add(R.drawable.img1);
         list.add(R.drawable.img2);
