@@ -48,7 +48,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 return new LearningDetailListViewHolder(view);
             case(ITEM_EDUCATION_LEARNING_LIST):
                 view = LayoutInflater.from(mContext).inflate(R.layout.item_learning_list,parent,false);
-                final LearningListViewHolder holder=new LearningListViewHolder(view);
                 return new LearningListViewHolder(view);
             default:throw new IllegalArgumentException();
         }
@@ -58,13 +57,12 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
         holder.setData(mdata.get(position));
-
-
         //教育学习-主列表
         if(getItemViewType(position)==ITEM_EDUCATION_LEARNING_LIST){
             LearningListItem learningListItem = getItem(position).getLearningListItem();
             ImageButton imageCollectStatus = holder.itemView.findViewById(R.id.imageBt_learning_list_collect_statu);
             TextView tvCollectStatu = holder.itemView.findViewById(R.id.tv_learning_list_collect_statu);
+            //收藏按钮被点击
             imageCollectStatus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -76,6 +74,13 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                         tvCollectStatu.setText("已收藏");
                     }
                     learningListItem.setCollect(!learningListItem.isCollect());
+                }
+            });
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    System.out.println("整个view 被点击了");
                 }
             });
         }

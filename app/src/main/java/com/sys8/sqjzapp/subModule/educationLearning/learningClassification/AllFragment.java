@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.adapters.LearningListViewHolder;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
