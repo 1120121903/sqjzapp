@@ -1,6 +1,7 @@
 package com.sys8.sqjzapp.utils;
 
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.module.LearningVideoItem;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 
@@ -32,6 +33,57 @@ public class DataSource {
         locationTimelintItem = new TimelineItem(itemLocation);
         mdata.add(locationTimelintItem);
 
+        return mdata;
+    }
+
+    public static List<TimelineItem> getLearningEducationRvData(){
+        List<TimelineItem> mdata = new ArrayList<>();
+        //video1
+        LearningVideoItem learningVideoItem = new LearningVideoItem(
+                R.drawable.legal_test_image,
+                "教你学习交通法",
+                "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
+                23,
+                true,
+                false
+                );
+        TimelineItem timelineItem = new TimelineItem(learningVideoItem);
+        mdata.add(timelineItem);
+        //video2
+        learningVideoItem = new LearningVideoItem(
+                R.drawable.legal_test_image,
+                "教你学习交通法",
+                "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
+                112,
+                false,
+                true
+        );
+        timelineItem = new TimelineItem(learningVideoItem);
+        mdata.add(timelineItem);
+        //video3
+        learningVideoItem = new LearningVideoItem(
+                R.drawable.legal_test_image,
+                "教你学习交通法",
+                "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
+                21,
+                true,
+                false
+        );
+        timelineItem = new TimelineItem(learningVideoItem);
+        mdata.add(timelineItem);
+        //video4
+        mdata.add(timelineItem);
+        //video5
+        learningVideoItem = new LearningVideoItem(
+                R.drawable.legal_test_image,
+                "教你学习交通法",
+                "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
+                12,
+                false,
+                false
+        );
+        timelineItem = new TimelineItem(learningVideoItem);
+        mdata.add(timelineItem);
         return mdata;
     }
 }
