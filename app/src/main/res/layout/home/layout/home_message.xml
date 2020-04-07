@@ -7,7 +7,7 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="45dp">
+        android:layout_height="35dp">
         <ImageView
             android:id="@+id/iv_home_message"
             android:background="@drawable/ic_home_tztx"

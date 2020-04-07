@@ -31,10 +31,7 @@ public class YcbfActivity extends BaseActivity implements ViewPager.OnPageChange
     TabLayout tabYcbf;
     @BindView(R.id.vp_ycbf)
     ViewPager vpYcbf;
-    static final int NUM_ITEMS = 4;
     private List<Fragment> fragmentList=new ArrayList<Fragment>();
-    private String[] topTabs = new String[]{"社会保障","便民服务","生活服务","就业服务"};
-    private YcbfViewPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
