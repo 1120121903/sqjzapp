@@ -18,13 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <ImageView
-                android:background="@drawable/zjwbj"
+                android:background="@drawable/ic_homt_jzdbg"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
                 android:text="@string/jzdbg_tb_title"
+                android:textColor="@color/black"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"/>
@@ -75,7 +76,7 @@
             android:id="@+id/tv_jzdbg_listItem_state"
             android:layout_marginRight="10dp"
             android:gravity="right|center_vertical"
-            android:textColor="@color/green"
+            android:textColor="@color/blue1"
             android:layout_width="match_parent"
             android:layout_height="20dp"/>
     </LinearLayout>

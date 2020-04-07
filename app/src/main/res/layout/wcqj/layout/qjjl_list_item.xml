@@ -18,13 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <ImageView
-                android:background="@drawable/rcbg_list_title"
+                android:background="@drawable/ic_home_wcqj"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
                 android:id="@+id/tv_qjjl_listItem_title"
+                android:textColor="@color/black"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"/>
@@ -93,7 +94,7 @@
             android:id="@+id/tv_qjjl_listItem_state"
             android:layout_marginRight="10dp"
             android:gravity="right|center_vertical"
-            android:textColor="@color/green"
+            android:textColor="@color/blue1"
             android:layout_width="match_parent"
             android:layout_height="20dp"/>
     </LinearLayout>

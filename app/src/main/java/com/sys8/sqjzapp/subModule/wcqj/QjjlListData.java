@@ -24,18 +24,18 @@ public class QjjlListData {
 
     public static final List<TimelineItem> list_QjState1=new ArrayList<TimelineItem>(){
         {
-            add(new TimelineItem(new LocationItem("张海洋提交请假申请"+"\n2020-02-04", R.drawable.rcbg_list_title)));
-            add(new TimelineItem(new LocationItem("海淀区司法局审批通过"+"\n2020-02-05", R.drawable.rcbg_list_title)));
-            add(new TimelineItem(new LocationItem("海淀区学院路司法所审批通过"+"\n2020-02-05", R.drawable.rcbg_list_title)));
-            add(new TimelineItem(new LocationItem("张海洋已销假"+"\n2020-02-10", R.drawable.rcbg_list_title)));
+            add(new TimelineItem(new LocationItem("张海洋提交请假申请"+"\n2020-02-04", R.drawable.ic_home_wcqj)));
+            add(new TimelineItem(new LocationItem("海淀区司法局审批通过"+"\n2020-02-05", R.drawable.ic_home_wcqj)));
+            add(new TimelineItem(new LocationItem("海淀区学院路司法所审批通过"+"\n2020-02-05", R.drawable.ic_home_wcqj)));
+            add(new TimelineItem(new LocationItem("张海洋已销假"+"\n2020-02-10", R.drawable.ic_home_wcqj)));
         }
     };
     public static final List<TimelineItem> list_QjState2=new ArrayList<TimelineItem>(){
         {
-            add(new TimelineItem(new LocationItem("张海洋提交请假申请"+"\n2020-03-04", R.drawable.rcbg_list_title)));
-            add(new TimelineItem(new LocationItem("海淀区司法局审批通过"+"\n2020-03-05", R.drawable.rcbg_list_title)));
-            add(new TimelineItem(new LocationItem("海淀区学院路司法所审批通过"+"\n2020-03-05", R.drawable.rcbg_list_title)));
-            add(new TimelineItem(new LocationItem("张海洋请假中"+"\n2020-03-09", R.drawable.rcbg_list_title)));
+            add(new TimelineItem(new LocationItem("张海洋提交请假申请"+"\n2020-03-04", R.drawable.ic_home_wcqj)));
+            add(new TimelineItem(new LocationItem("海淀区司法局审批通过"+"\n2020-03-05", R.drawable.ic_home_wcqj)));
+            add(new TimelineItem(new LocationItem("海淀区学院路司法所审批通过"+"\n2020-03-05", R.drawable.ic_home_wcqj)));
+            add(new TimelineItem(new LocationItem("张海洋请假中"+"\n2020-03-09", R.drawable.ic_home_wcqj)));
         }
     };
     public static final List<TimelineItem> list_QjState3=new ArrayList<TimelineItem>(){

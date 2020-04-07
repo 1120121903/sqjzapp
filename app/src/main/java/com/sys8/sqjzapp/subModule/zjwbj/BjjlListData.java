@@ -23,9 +23,9 @@ public class BjjlListData {
 
     public static final List<TimelineItem> list_BjState1=new ArrayList<TimelineItem>(){
         {
-            add(new TimelineItem(new LocationItem("张海洋提交暂监外病检说明"+"\n2020-02-04", R.drawable.zjwbj)));
-            add(new TimelineItem(new LocationItem("海淀区司法局审批通过"+"\n2020-02-05", R.drawable.zjwbj)));
-            add(new TimelineItem(new LocationItem("海淀区学院路司法所审批通过"+"\n2020-02-05", R.drawable.zjwbj)));
+            add(new TimelineItem(new LocationItem("张海洋提交暂监外病检说明"+"\n2020-02-04", R.drawable.ic_homt_zjwbj)));
+            add(new TimelineItem(new LocationItem("海淀区司法局审批通过"+"\n2020-02-05", R.drawable.ic_homt_zjwbj)));
+            add(new TimelineItem(new LocationItem("海淀区学院路司法所审批通过"+"\n2020-02-05", R.drawable.ic_homt_zjwbj)));
         }
     };
     public static final List<TimelineItem> list_BjState2=new ArrayList<TimelineItem>(){

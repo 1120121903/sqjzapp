@@ -129,7 +129,7 @@ public class FragWcqj_wyqj extends Fragment {
                 etWcqjWyqjWcly.getText().toString(),
                 "审批中"
         ));
-        list_QjState3.add(new TimelineItem(new LocationItem("张海洋提交请假申请"+"\n"+getDate("yyyy-MM-dd"), R.drawable.rcbg_list_title)));
+        list_QjState3.add(new TimelineItem(new LocationItem("张海洋提交请假申请"+"\n"+getDate("yyyy-MM-dd"), R.drawable.ic_home_wcqj)));
         list_QjState.add(new QjState(getDate("yyyy-MM-dd"),list_QjState3));
         SAVE_CLICK_UNABLE = true;//保存按钮不可点击
         parentActivity.wcqjQjjlFragment();

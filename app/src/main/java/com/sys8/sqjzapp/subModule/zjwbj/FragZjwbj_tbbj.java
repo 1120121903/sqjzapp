@@ -89,7 +89,7 @@ public class FragZjwbj_tbbj extends Fragment {
                  etZjwbjTbbjBjsm.getText().toString(),
                 "审批中"
         ));
-        list_BjState2.add(new TimelineItem(new LocationItem("张海洋提交暂监外病检申请" + "\n" + getDate("yyyy-MM-dd"), R.drawable.zjwbj)));
+        list_BjState2.add(new TimelineItem(new LocationItem("张海洋提交暂监外病检申请" + "\n" + getDate("yyyy-MM-dd"), R.drawable.ic_homt_zjwbj)));
         list_BjState.add(new BjState(getDate("yyyy-MM-dd"), list_BjState2));
         SAVE_CLICK_UNABLE = true;//保存按钮不可点击
         parentActivity.zjwbjBjjlFragment();

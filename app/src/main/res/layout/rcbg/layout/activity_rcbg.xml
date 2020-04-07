@@ -12,7 +12,7 @@
         android:id="@+id/tb_rcbg"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:background="@color/green"
+        android:background="@color/blue1"
         app:titleColor="@null"
         app:leftBackground="@null"
         app:rightBackground="@null"
@@ -37,12 +37,12 @@
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/green">
+        android:background="@color/blue1">
         <Button
             android:id="@+id/bt_rcbg_txbg"
             android:text="@string/rcbg_bt_txbg"
             android:textColor="@color/white"
-            android:background="@color/green_select"
+            android:background="@color/blue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
@@ -54,7 +54,7 @@
             android:id="@+id/bt_rcbg_wdbg"
             android:text="@string/rcbg_bt_wdbg"
             android:textColor="@color/white"
-            android:background="@color/green"
+            android:background="@color/blue1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"/>

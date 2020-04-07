@@ -14,7 +14,7 @@
             android:id="@+id/tb_zjwbj_detail"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:background="@color/green"
+            android:background="@color/blue1"
             app:titleColor="@null"
             app:leftBackground="@null"
             app:rightBackground="@null"
@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp">
                 <ImageView
-                    android:background="@drawable/zjwbj"
+                    android:background="@drawable/ic_homt_zjwbj"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_width="20dp"

@@ -81,7 +81,6 @@ public class TztxMainListViewAdapter extends BaseAdapter
         viewHolder.tztx_type.setText(tzxx.getType());
         viewHolder.tztx_time.setText(tzxx.getTime());
         if(tzxx.getType().substring(0,2).equals("通知")){
-            viewHolder.tzxx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tz));
             viewHolder.tztx_cotent.setText(tzxx.getContent());
             viewHolder.ll_tzxx_detail.setVisibility(View.VISIBLE);
             viewHolder.tzxx_detail.setOnClickListener(new View.OnClickListener() {

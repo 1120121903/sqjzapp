@@ -40,15 +40,15 @@ public class JzdbgActivity extends BaseActivity {
 
     @OnClick(R.id.bt_jzdbg_sqbj)
     public void  jzdbgTbbjFragment(){
-        btJzdbgSqbj.setBackground(getDrawable(R.color.green_select));
-        btJzdbgLsbj.setBackground(getDrawable(R.color.green));
+        btJzdbgSqbj.setBackground(getDrawable(R.color.blue));
+        btJzdbgLsbj.setBackground(getDrawable(R.color.blue1));
         replaceFragment(FragJzdbg_bgsq.getInstance());
     }
 
     @OnClick(R.id.bt_jzdbg_lsbj)
     public void  jzdbgBgjlFragment(){
-        btJzdbgSqbj.setBackground(getDrawable(R.color.green_select));
-        btJzdbgLsbj.setBackground(getDrawable(R.color.green));
+        btJzdbgSqbj.setBackground(getDrawable(R.color.blue1));
+        btJzdbgLsbj.setBackground(getDrawable(R.color.blue));
         replaceFragment(FragJzdbg_bgjl.getInstance());
     }
 

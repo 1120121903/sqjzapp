@@ -37,14 +37,14 @@ public class RcbgActivity extends BaseActivity {
 
     @OnClick(R.id.bt_rcbg_txbg)
     public void rcbgTxbgFragment(){
-        btRcbgTxbg.setBackground(getDrawable(R.color.green_select));
-        btRcbgWdbg.setBackground(getDrawable(R.color.green));
+        btRcbgTxbg.setBackground(getDrawable(R.color.blue));
+        btRcbgWdbg.setBackground(getDrawable(R.color.blue1));
         replaceFragment(FragRcbg_txbg.getInstance());
     }
     @OnClick(R.id.bt_rcbg_wdbg)
     public void rcbgWdbgFragment(){
-        btRcbgTxbg.setBackground(getDrawable(R.color.green));
-        btRcbgWdbg.setBackground(getDrawable(R.color.green_select));
+        btRcbgTxbg.setBackground(getDrawable(R.color.blue1));
+        btRcbgWdbg.setBackground(getDrawable(R.color.blue));
         replaceFragment(FragRcbg_wdbg.getInstance());
     }
 
