@@ -60,7 +60,7 @@ dependencies {
     /*底部导航栏*/
     implementation 'com.google.android.material:material:1.1.0'
     /*图片循环播放*/
-    implementation 'com.youth.banner:banner:2.0.0-beta01'
+    implementation 'com.youth.banner:banner:2.0.2'
     /*Rxjava2异步*/
     implementation 'io.reactivex.rxjava2:rxjava:2.1.4'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'

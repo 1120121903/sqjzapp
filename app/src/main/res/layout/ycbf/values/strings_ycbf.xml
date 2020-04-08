@@ -1,0 +1,15 @@
+<resources>
+    <string name="ycbf_tb_title">远程帮扶</string>
+    <string name="ycbf__tb_detail">详细信息</string>
+    <!--社会保障-->
+    <string name="ycbf_et_shbz_title">申请名称：</string>
+    <string name="ycbf_et_shbz_bmtj">报名条件：</string>
+    <string name="ycbf_et_shbz_jzsj">截止时间：</string>
+    <string name="ycbf_et_shbz_bmjzsj">报名截止时间：</string>
+    <string name="ycbf_et_shbz_fbsj">发布时间：</string>
+    <string name="ycbf_bt_shbz_bm">申请报名</string>
+    <string name="ycbf_bt_shbz_ybm">已报名</string>
+    <string name="ycbf_bt_shbz_bm_list">我的申请</string>
+    <string name="ycbf_set_shbz_sqly">请填写理由（不超过300字）</string>
+
+</resources>

@@ -20,6 +20,7 @@ public class ImageAdapter extends BannerAdapter<Integer, ImageAdapter.BannerView
 
      public ImageAdapter(List<Integer> mDatas) {
          //设置数据，也可以调用banner提供的方法,或者自己在adapter中实现
+
          super(mDatas);
      }
 

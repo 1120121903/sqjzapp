@@ -10,6 +10,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.sys8.sqjzapp.utils.StatusBarUtils.setWindowStatusBarColor;
+
 /**
  * date:2020/3/27
  * author:wy
@@ -31,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        setWindowStatusBarColor(this, R.color.blue1);
     }
 
     @OnClick(R.id.bt_login_login)

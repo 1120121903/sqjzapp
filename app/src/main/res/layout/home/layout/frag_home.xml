@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:banner="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
@@ -23,12 +24,22 @@
             app:backButton = "false"
             app:title="@string/main_bottom_home" />
         <com.youth.banner.Banner
+            xmlns:banner="http://schemas.android.com/apk/res-auto"
             android:id="@+id/banner_home_top"
-            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="150dp" />
+            android:layout_marginTop="5dp"
+            banner:indicator_selected_color="@color/white" />
+        <com.youth.banner.indicator.RoundLinesIndicator
+            android:id="@+id/indicator_home_top"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            />
         <!--通知提醒-->
         <include layout="@layout/home_message" />
         <!--按钮列表-->
@@ -45,5 +56,4 @@
         <!--视频列表-->
         <include layout="@layout/home_jyxx"/>
     </LinearLayout>
-
 </LinearLayout>

@@ -13,4 +13,9 @@ public class Constant {
     public static final int MEDIA_TYPE_VIDEO=1;//视频
     public static final int MEDIA_TYPE_AUDIO=2;//音频
     public static final int MEDIA_TYPE_PICTURE=3;//图文
+
+    //远程帮扶
+    public static String[] topTabs_ycbf = new String[]{"社会保障","便民服务","生活服务","就业服务"};
+    public static String STATE_YCBF_SHBZ_BM = "0";
+    public static String STATE_YCBF_SHBZ_YBM = "1";
 }
