@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".subModule.gyhd.gyhdActivity">
+    tools:context=".subModule.gyhd.GyhdActivity">
     <!--顶部标题栏-->
     <com.hjq.bar.TitleBar
         android:visibility="visible"

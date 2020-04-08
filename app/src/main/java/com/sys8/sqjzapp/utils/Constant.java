@@ -16,6 +16,7 @@ public class Constant {
 
     //远程帮扶
     public static String[] topTabs_ycbf = new String[]{"社会保障","便民服务","生活服务","就业服务"};
+    public static String[] topTabs_gyhd = new String[]{"活动列表","我的活动"};
     public static String STATE_YCBF_SHBZ_BM = "0";
     public static String STATE_YCBF_SHBZ_YBM = "1";
 }

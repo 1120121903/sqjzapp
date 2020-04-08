@@ -44,7 +44,7 @@
         <activity android:name=".subModule.ycbf.jyfw.YcbfJyfwDetailActivity" />
         <activity android:name=".subModule.ycbf.shfw.YcbfShfwDetailActivity" />
         <activity android:name=".subModule.ycbf.shbz.YcbfShbzDetailActivity" />
-        <activity android:name=".subModule.gyhd.gyhdActivity" />
+        <activity android:name=".subModule.gyhd.GyhdActivity" />
         <activity android:name=".subModule.ycbf.YcbfActivity" />
         <activity android:name=".subModule.jzdbg.JzdbgDetailActivity" />
         <activity android:name=".subModule.jzdbg.JzdbgActivity" />
