@@ -4,10 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!--生活服务-->
-    <TextView
-        android:text="生活服务"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
     <ListView
         android:id="@+id/lv_ycbf_shfw"
         android:divider="#00000000"

@@ -15,6 +15,7 @@ import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.subModule.educationLearning.EducationLearningActivity;
 import com.sys8.sqjzapp.subModule.educationLearning.LearningClassificationBaseFragment;
+import com.sys8.sqjzapp.subModule.educationLearning.learningDetailList.LearningPictureDetailListActivity;
 import com.sys8.sqjzapp.subModule.educationLearning.learningDetailList.LearningVideoDetailListActivity;
 import com.sys8.sqjzapp.utils.DataSource;
 
@@ -82,18 +83,21 @@ public class AllFragment extends LearningClassificationBaseFragment {
     public void toDetailPage(int mediatype,String title){
         switch (mediatype){
             case MEDIA_TYPE_VIDEO:
-                Intent intent=new Intent(parentActivity, LearningVideoDetailListActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
-                Bundle bundle = new Bundle();
-                bundle.putString("title",title); //放入所需要传递的值
-                intent.putExtras(bundle);
-                parentActivity.startActivity(intent); //这里一定要获取到所在Activity再startActivity()；
-                System.out.println("VIDEO");
+                Intent intent_video=new Intent(parentActivity, LearningVideoDetailListActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+                Bundle bundle_video = new Bundle();
+                bundle_video.putString("title",title); //放入所需要传递的值
+                intent_video.putExtras(bundle_video);
+                parentActivity.startActivity(intent_video); //这里一定要获取到所在Activity再startActivity()；
                 break;
             case MEDIA_TYPE_AUDIO:
                 System.out.println("AUDIO");
                 break;
             case MEDIA_TYPE_PICTURE:
-                System.out.println("PICTUR");
+                Intent intent_picture=new Intent(parentActivity, LearningPictureDetailListActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+                Bundle bundle_picture = new Bundle();
+                bundle_picture.putString("title",title); //放入所需要传递的值
+                intent_picture.putExtras(bundle_picture);
+                parentActivity.startActivity(intent_picture); //这里一定要获取到所在Activity再startActivity()；
                 break;
                 default:break;
         }

@@ -26,10 +26,10 @@ public class YcbfShbzBmActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ycbf_shbz_bm);
+        setContentView(R.layout.activity_ycbf_shbz_apply);
         ButterKnife.bind(this);
         TitleCilckListener(tbYcbfShbzBm, this);/*title按钮监听*/
-        addFragment(FragYcbf_shbz_sqbm.getInstance());
+        addFragment(FragYcbfShbzSqbm.getInstance());
     }
 
     /**

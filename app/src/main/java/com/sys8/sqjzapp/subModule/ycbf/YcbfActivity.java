@@ -9,10 +9,10 @@ import com.google.android.material.tabs.TabLayout;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
-import com.sys8.sqjzapp.subModule.ycbf.bmfw.FragYcbf_bmfw;
-import com.sys8.sqjzapp.subModule.ycbf.jyfw.FragYcbf_jyfw;
-import com.sys8.sqjzapp.subModule.ycbf.shbz.FragYcbf_shbz;
-import com.sys8.sqjzapp.subModule.ycbf.shfw.FragYcbf_shfw;
+import com.sys8.sqjzapp.subModule.ycbf.bmfw.FragYcbfBmfw;
+import com.sys8.sqjzapp.subModule.ycbf.jyfw.FragYcbfJyfw;
+import com.sys8.sqjzapp.subModule.ycbf.shbz.FragYcbfShbz;
+import com.sys8.sqjzapp.subModule.ycbf.shfw.FragYcbfShfw;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +38,10 @@ public class YcbfActivity extends BaseActivity implements ViewPager.OnPageChange
         setContentView(R.layout.activity_ycbf);
         ButterKnife.bind(this);
         TitleCilckListener(tbYcbf, this);/*title按钮监听*/
-        fragmentList.add( FragYcbf_shbz.getInstance());
-        fragmentList.add(FragYcbf_bmfw.getInstance());
-        fragmentList.add(FragYcbf_shfw.getInstance());
-        fragmentList.add(FragYcbf_jyfw.getInstance());
+        fragmentList.add( FragYcbfShbz.getInstance());
+        fragmentList.add(FragYcbfBmfw.getInstance());
+        fragmentList.add(FragYcbfShfw.getInstance());
+        fragmentList.add(FragYcbfJyfw.getInstance());
         initView();
     }
 

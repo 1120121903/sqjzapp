@@ -19,7 +19,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"/>
         <TextView
-            android:id="@+id/tv_shbz_listItem_title"
+            android:id="@+id/tv_jyfw_listItem_title"
             android:textColor="@color/black"
             android:maxLines="1"
             android:ellipsize = "end"
@@ -27,14 +27,14 @@
             android:layout_weight="1"
             android:layout_height="20dp"/>
         <TextView
-            android:id="@+id/tv_shbz_listItem_time_fbsj"
+            android:id="@+id/tv_jyfw_listItem_fbsj"
             android:text="2020-02-03"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="20dp"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="20dp"/>
     </LinearLayout>
-    <!--报名条件-->
+    <!--薪资范围-->
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center_vertical"
@@ -42,17 +42,35 @@
         android:layout_width="match_parent"
         android:layout_height="30dp">
         <TextView
-            android:text="@string/ycbf_et_shbz_bmtj"
+            android:text="@string/ycbf_et_jyfw_xzfw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
         <TextView
-            android:id="@+id/tv_shbz_listItem_time_bmtj"
+            android:id="@+id/tv_jyfw_listItem_xzfw"
             android:layout_width="match_parent"
             android:layout_height="20dp"/>
     </LinearLayout>
-    <!--截止时间-->
+    <!--招聘人数-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:text="@string/ycbf_et_jyfw_zprs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+        <TextView
+            android:id="@+id/tv_jyfw_listItem_zprs"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+    </LinearLayout>
+    <!--工作地点-->
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center_vertical"
@@ -61,13 +79,13 @@
         android:layout_width="match_parent"
         android:layout_height="30dp">
         <TextView
-            android:text="@string/ycbf_et_shbz_jzsj"
+            android:text="@string/ycbf_et_jyfw_gzdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
         <TextView
-            android:id="@+id/tv_shbz_listItem_time_jzsj"
+            android:id="@+id/tv_jyfw_listItem_gzdd"
             android:layout_width="match_parent"
             android:layout_height="20dp"/>
     </LinearLayout>

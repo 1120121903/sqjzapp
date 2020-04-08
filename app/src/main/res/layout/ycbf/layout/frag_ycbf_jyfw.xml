@@ -4,10 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!--就业服务-->
-    <TextView
-        android:text="就业服务"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
     <ListView
         android:id="@+id/lv_ycbf_jyfw"
         android:divider="#00000000"
