@@ -33,7 +33,7 @@ public class YcbfShbzDetailActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ycbf_shbz);
+        setContentView(R.layout.activity_ycbf_shbz_detail);
         ButterKnife.bind(this);
         TitleCilckListener(tbYcbfShbz, this);/*title按钮监听*/
         bindData();

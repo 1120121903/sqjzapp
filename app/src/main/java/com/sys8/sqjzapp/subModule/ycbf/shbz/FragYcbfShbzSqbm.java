@@ -10,7 +10,6 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
-import com.hjq.bar.TitleBar;
 import com.kingja.supershapeview.view.SuperShapeEditText;
 import com.sys8.sqjzapp.R;
 
@@ -21,9 +20,9 @@ import butterknife.OnClick;
 import static com.sys8.sqjzapp.subModule.ycbf.shbz.ShbzlListData.list_Shbz;
 import static com.sys8.sqjzapp.subModule.ycbf.shbz.ShbzlListData.list_ShbzSq;
 
-public class FragYcbf_shbz_sqbm extends Fragment {
+public class FragYcbfShbzSqbm extends Fragment {
 
-    private static FragYcbf_shbz_sqbm fragInstanse = null;
+    private static FragYcbfShbzSqbm fragInstanse = null;
     @BindView(R.id.et_ycbf_shbz_title)
     EditText etYcbfShbzTitle;
     @BindView(R.id.et_ycbf_shbz_sqly)
@@ -67,16 +66,16 @@ public class FragYcbf_shbz_sqbm extends Fragment {
                 etYcbfShbzTitle.getText().toString(),
                 etYcbfShbzSqly.getText().toString(),
                 "已申请", list_Shbz.get(LOCATION)));
-        parentActivity.replaceFragment(FragYcbf_shbz_sqbm_list.getInstance());
+        parentActivity.replaceFragment(FragYcbfShbzSqbmList.getInstance());
         parentActivity.tbYcbfShbzBm.setTitle(R.string.ycbf_bt_shbz_bm_list);
     }
 
-    private FragYcbf_shbz_sqbm() {
+    private FragYcbfShbzSqbm() {
     }
 
-    public static FragYcbf_shbz_sqbm getInstance() {
+    public static FragYcbfShbzSqbm getInstance() {
         if (fragInstanse == null) {
-            fragInstanse = new FragYcbf_shbz_sqbm();
+            fragInstanse = new FragYcbfShbzSqbm();
         }
         return fragInstanse;
     }

@@ -1,4 +1,4 @@
-package com.sys8.sqjzapp.subModule.ycbf.shbz;
+package com.sys8.sqjzapp.subModule.ycbf.jyfw;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,15 +14,16 @@ import com.sys8.sqjzapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import static com.sys8.sqjzapp.subModule.ycbf.shbz.ShbzlListData.list_Shbz;
+
+import static com.sys8.sqjzapp.subModule.ycbf.jyfw.JyfwlListData.list_Jyfw;
 import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
-public class FragYcbf_shbz extends Fragment {
+public class FragYcbfJyfw extends Fragment {
 
-    private static FragYcbf_shbz fragInstanse = null;
-    private ShbzListViewAdapter adapter;
-    @BindView(R.id.lv_ycbf_shbz)
-    ListView lvYcbfShbz;
+    private static FragYcbfJyfw fragInstanse = null;
+    @BindView(R.id.lv_ycbf_jyfw)
+    ListView lvYcbfJyfw;
+    private JyfwListViewAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class FragYcbf_shbz extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_ycbf_shbz, container, false);
+        View view = inflater.inflate(R.layout.frag_ycbf_jyfw, container, false);
         // Inflate the layout for this fragment
         ButterKnife.bind(this, view);
         bindData();
@@ -40,19 +41,16 @@ public class FragYcbf_shbz extends Fragment {
     }
 
     private void bindData(){
-        adapter = new ShbzListViewAdapter(getView(),getContext(),list_Shbz,getActivity());
-        lvYcbfShbz.setAdapter(adapter);
+        adapter = new JyfwListViewAdapter(getView(),getContext(),list_Jyfw,getActivity());
+        lvYcbfJyfw.setAdapter(adapter);
         //设置列表监听事件
-        lvYcbfShbz.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvYcbfJyfw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=new Intent(getActivity(), YcbfShbzDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+                Intent intent=new Intent(getActivity(), YcbfJyfwDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
                 Bundle bundle = new Bundle();
-                Shbz shbz = (Shbz) getRevertTimeLineData(list_Shbz).get(position);
-                bundle.putString("title",shbz.getTitle() ); //放入所需要传递的值
-                bundle.putString("jzsj", shbz.getJzsj());
-                bundle.putString("content", shbz.getContent());
-                bundle.putString("state", shbz.getState());
+                Jyfw jyfw = (Jyfw) getRevertTimeLineData(list_Jyfw).get(position);
+                bundle.putString("title",jyfw.getTitle() ); //放入所需要传递的值
                 intent.putExtras(bundle);
                 getActivity().startActivity(intent);
             }
@@ -63,15 +61,15 @@ public class FragYcbf_shbz extends Fragment {
     public void onResume() {
         super.onResume();
         /* 刷新数据 */
-        lvYcbfShbz.setAdapter(adapter);
+//        lvQjjl.setAdapter(adapter);
     }
 
-    private FragYcbf_shbz() {
+    private FragYcbfJyfw() {
     }
 
-    public static FragYcbf_shbz getInstance() {
+    public static FragYcbfJyfw getInstance() {
         if (fragInstanse == null) {
-            fragInstanse = new FragYcbf_shbz();
+            fragInstanse = new FragYcbfJyfw();
         }
         return fragInstanse;
     }

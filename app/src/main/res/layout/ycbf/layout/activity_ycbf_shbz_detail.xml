@@ -21,7 +21,7 @@
         app:barStyle="transparent"
         app:leftTitle="@string/title_back"
         app:rightSize="0dp"
-        app:title="@string/ycbf__tb_detail" />
+        app:title="@string/ycbf_tb_detail" />
     <!--中间内容-->
     <LinearLayout
         android:orientation="vertical"
@@ -80,7 +80,7 @@
                 android:gravity="top"
                 android:paddingTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="match_parent"
                 app:super_dashWidth="2dp"
                 app:super_solidColor="@color/white"
                 app:super_strokeColor="@color/black"
