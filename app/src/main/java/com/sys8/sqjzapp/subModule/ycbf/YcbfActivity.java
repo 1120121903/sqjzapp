@@ -2,11 +2,7 @@ package com.sys8.sqjzapp.subModule.ycbf;
 
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -19,7 +15,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
 
@@ -39,10 +34,10 @@ public class YcbfActivity extends BaseActivity implements ViewPager.OnPageChange
         setContentView(R.layout.activity_ycbf);
         ButterKnife.bind(this);
         TitleCilckListener(tbYcbf, this);/*title按钮监听*/
-        fragmentList.add(new FragYcbf_shbz());
-        fragmentList.add(new FragYcbf_bmfw());
-        fragmentList.add(new FragYcbf_shfw());
-        fragmentList.add(new FragYcbf_jyfw());
+        fragmentList.add( FragYcbf_shbz.getInstance());
+        fragmentList.add(FragYcbf_bmfw.getInstance());
+        fragmentList.add(FragYcbf_shfw.getInstance());
+        fragmentList.add(FragYcbf_jyfw.getInstance());
         initView();
     }
 
@@ -52,20 +47,13 @@ public class YcbfActivity extends BaseActivity implements ViewPager.OnPageChange
         tabYcbf.setupWithViewPager(vpYcbf);
     }
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) { }
 
     @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
+    public void onPageSelected(int position) { }
 
     @Override
-    public void onPageSelected(int position) {
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
+    public void onPageScrollStateChanged(int state) { }
 
 }

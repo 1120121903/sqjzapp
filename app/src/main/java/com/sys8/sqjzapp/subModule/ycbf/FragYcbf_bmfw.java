@@ -13,6 +13,7 @@ import butterknife.ButterKnife;
 
 public class FragYcbf_bmfw extends Fragment {
 
+    private static FragYcbf_bmfw fragInstanse = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,15 @@ public class FragYcbf_bmfw extends Fragment {
         super.onResume();
         /* 刷新数据 */
 //        lvQjjl.setAdapter(adapter);
+    }
+
+    private FragYcbf_bmfw() { }
+
+    public static FragYcbf_bmfw getInstance() {
+        if (fragInstanse == null) {
+            fragInstanse = new FragYcbf_bmfw();
+        }
+        return fragInstanse;
     }
 
 }

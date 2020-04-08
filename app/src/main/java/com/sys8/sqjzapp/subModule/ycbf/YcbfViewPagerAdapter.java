@@ -6,9 +6,10 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
+import static com.sys8.sqjzapp.utils.Constant.topTabs_ycbf;
+
 public class YcbfViewPagerAdapter extends FragmentPagerAdapter {
 
-    private String[] topTabs = new String[]{"社会保障","便民服务","生活服务","就业服务"};
     List<Fragment> list;
 
     public YcbfViewPagerAdapter(FragmentManager fm) {
@@ -31,6 +32,6 @@ public class YcbfViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return topTabs[position];
+        return topTabs_ycbf[position];
     }
 }
