@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.ImageAdapter;
 import com.sys8.sqjzapp.common.FaceVerifyActivity;
+import com.sys8.sqjzapp.subModule.gyhd.GyhdActivity;
 import com.sys8.sqjzapp.subModule.ycbf.YcbfActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.indicator.CircleIndicator;
@@ -177,9 +178,13 @@ public class FragHome extends Fragment {
     @OnClick(R.id.bt_home_ycbf)
     public void toSubModuleYcbf(View view) {
         Intent intent = new Intent(this.getActivity(), YcbfActivity.class);
-//        Bundle bundle = new Bundle();
-//        bundle.putString("SubModuleName", "ycbf"); // 远程帮扶
-//        intent.putExtras(bundle);
+        this.startActivity(intent);
+    }
+
+    /* 公益活动 */
+    @OnClick(R.id.bt_home_gyhd)
+    public void toSubModuleGyhd(View view) {
+        Intent intent = new Intent(this.getActivity(), GyhdActivity.class);
         this.startActivity(intent);
     }
 
