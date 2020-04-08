@@ -1,4 +1,4 @@
-package com.sys8.sqjzapp.subModule.ycbf;
+package com.sys8.sqjzapp.subModule.ycbf.jyfw;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,9 +11,9 @@ import com.sys8.sqjzapp.R;
 
 import butterknife.ButterKnife;
 
-public class FragYcbf_shfw extends Fragment {
+public class FragYcbf_jyfw extends Fragment {
 
-    private static FragYcbf_shfw fragInstanse = null;
+    private static FragYcbf_jyfw fragInstanse = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class FragYcbf_shfw extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_ycbf_shfw, container, false);
+        View view = inflater.inflate(R.layout.frag_ycbf_jyfw, container, false);
         // Inflate the layout for this fragment
         ButterKnife.bind(this, view);
         return view;
@@ -36,11 +36,11 @@ public class FragYcbf_shfw extends Fragment {
 //        lvQjjl.setAdapter(adapter);
     }
 
-    private FragYcbf_shfw() {}
+    private FragYcbf_jyfw() { }
 
-    public static FragYcbf_shfw getInstance() {
+    public static FragYcbf_jyfw getInstance() {
         if (fragInstanse == null) {
-            fragInstanse = new FragYcbf_shfw();
+            fragInstanse = new FragYcbf_jyfw();
         }
         return fragInstanse;
     }

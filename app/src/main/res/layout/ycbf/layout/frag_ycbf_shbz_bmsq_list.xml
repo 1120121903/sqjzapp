@@ -3,9 +3,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <!--社会保障-->
+    <!--社会保障申请-->
     <ListView
-        android:id="@+id/lv_ycbf_shbz"
+        android:id="@+id/lv_ycbf_shbz_bmsq_list"
         android:divider="#00000000"
         android:dividerHeight="1.0dp"
         android:scrollbars="none"

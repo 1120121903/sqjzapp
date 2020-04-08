@@ -9,6 +9,10 @@ import com.google.android.material.tabs.TabLayout;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
+import com.sys8.sqjzapp.subModule.ycbf.bmfw.FragYcbf_bmfw;
+import com.sys8.sqjzapp.subModule.ycbf.jyfw.FragYcbf_jyfw;
+import com.sys8.sqjzapp.subModule.ycbf.shbz.FragYcbf_shbz;
+import com.sys8.sqjzapp.subModule.ycbf.shfw.FragYcbf_shfw;
 
 import java.util.ArrayList;
 import java.util.List;

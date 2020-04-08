@@ -25,6 +25,7 @@
     <!--中间内容-->
     <LinearLayout
         android:orientation="vertical"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <!--Tab标签页-->
@@ -45,6 +46,11 @@
             app:tabSelectedTextColor="@color/blue1"
             app:tabTextColor="@color/black"
             />
+        <View
+            android:background="@color/gray"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
         <!--内容-->
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_ycbf"
