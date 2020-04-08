@@ -4,25 +4,17 @@ public class LearningDetailListItem {
     private int ImageThumbnail;//视频缩略图
     private String title;//标题
     private String content;//内容
-    private int learningNumber;//学习人数
-    private boolean isCollect;//收藏状态 true-已收藏   false-为收藏
-    private boolean isPass;//通过状态  true-已通过  false-未通过
+    private boolean isStuded;//学习状态 true-已学习   false-未学习
+    private boolean isPass;//考试状态  true-已通过  false-未通过
+    private String updateTime;//更新时间
 
-    public LearningDetailListItem(int imageThumbnail, String title, String content, int learningNumber, boolean isCollect, boolean isPass) {
+    public LearningDetailListItem(int imageThumbnail, String title, String content, String updateTime, boolean isStuded, boolean isPass) {
         this.ImageThumbnail = imageThumbnail;
-        this.learningNumber = learningNumber;
         this.title = title;
         this.content = content;
-        this.isCollect = isCollect;
+        this.isStuded = isStuded;
         this.isPass = isPass;
-    }
-
-    public int getLearningNumber() {
-        return learningNumber;
-    }
-
-    public void setLearningNumber(int learningNumber) {
-        this.learningNumber = learningNumber;
+        this.updateTime = updateTime;
     }
 
     public int getImageThumbnail() {
@@ -52,12 +44,12 @@ public class LearningDetailListItem {
         this.content = content;
     }
 
-    public boolean isCollect() {
-        return isCollect;
+    public boolean isStuded() {
+        return isStuded;
     }
 
-    public void setCollect(boolean collect) {
-        isCollect = collect;
+    public void setStuded(boolean studed) {
+        isStuded = studed;
     }
 
     public boolean isPass() {
@@ -66,5 +58,13 @@ public class LearningDetailListItem {
 
     public void setPass(boolean pass) {
         isPass = pass;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 }

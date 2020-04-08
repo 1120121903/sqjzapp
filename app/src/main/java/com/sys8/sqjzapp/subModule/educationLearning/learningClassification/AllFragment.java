@@ -1,27 +1,23 @@
 package com.sys8.sqjzapp.subModule.educationLearning.learningClassification;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.adapters.LearningListViewHolder;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.subModule.educationLearning.EducationLearningActivity;
 import com.sys8.sqjzapp.subModule.educationLearning.LearningClassificationBaseFragment;
-import com.sys8.sqjzapp.subModule.educationLearning.learningDetailList.VideoDetailListFragment;
+import com.sys8.sqjzapp.subModule.educationLearning.learningDetailList.LearningVideoDetailListActivity;
 import com.sys8.sqjzapp.utils.DataSource;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -58,7 +54,6 @@ public class AllFragment extends LearningClassificationBaseFragment {
         intRv();
         getListData();
         setupAdapter();
-        System.out.println("AllFragment onCreateView");
 
         return view;
     }
@@ -87,8 +82,12 @@ public class AllFragment extends LearningClassificationBaseFragment {
     public void toDetailPage(int mediatype,String title){
         switch (mediatype){
             case MEDIA_TYPE_VIDEO:
+                Intent intent=new Intent(parentActivity, LearningVideoDetailListActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+                Bundle bundle = new Bundle();
+                bundle.putString("title",title); //放入所需要传递的值
+                intent.putExtras(bundle);
+                parentActivity.startActivity(intent); //这里一定要获取到所在Activity再startActivity()；
                 System.out.println("VIDEO");
-                parentActivity.replaceFragment(VideoDetailListFragment.newInstance(title));
                 break;
             case MEDIA_TYPE_AUDIO:
                 System.out.println("AUDIO");

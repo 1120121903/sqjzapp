@@ -1,5 +1,6 @@
 package com.sys8.sqjzapp.adapters;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,22 +17,18 @@ public class LearningDetailListViewHolder extends BaseViewHolder  {
     private ImageView imageVideoThumbnail;//缩略图
     private TextView tvTitle;//标题
     private TextView tvContent;//内容
-    private ImageView imageNumber;//学习图标
-    private TextView tvNumber;//学习人数
-    private ImageView imageCollectStatus;//图标-收藏状态
-    private TextView tvCollectStatus;//收藏状态
-    private ImageView imagePass;//通过图标
+    private TextView tvStudyStatus;//学习状态
+    private TextView tvExamStatus;//考试状态
+    private TextView tvUpdateTime;//更细时间
 
     public LearningDetailListViewHolder(@NonNull View itemView) {
         super(itemView);
         imageVideoThumbnail= itemView.findViewById(R.id.iv_learning_education_video_thumbnail);
         tvTitle = itemView.findViewById(R.id.item_learning__education_video_title);
         tvContent = itemView.findViewById(R.id.tv_item_learning_education_video_content);
-        tvNumber = itemView.findViewById(R.id.tv_item_learning_video_number);
-        imageCollectStatus = itemView.findViewById(R.id.ibt_item_learning_video_collect_statu);
-        tvCollectStatus = itemView.findViewById(R.id.tv_learning_education_video_collect_statu);
-        imagePass = itemView.findViewById(R.id.item_learning_education_video_pass);
-        imageNumber=itemView.findViewById(R.id.iv_item_learning_video_number);
+        tvStudyStatus = itemView.findViewById(R.id.tv_item_learning_video_detail_study_status);
+        tvExamStatus = itemView.findViewById(R.id.tv_learning_education_video_exam_status);
+        tvUpdateTime = itemView.findViewById(R.id.tv_item_learning_video_detail_update_time);
     }
 
     @Override
@@ -43,23 +40,18 @@ public class LearningDetailListViewHolder extends BaseViewHolder  {
         tvContent.setText(learningDetailListItem.getContent());
         //缩略图
         Glide.with(itemView.getContext()).load(learningDetailListItem.getImageThumbnail()).into(imageVideoThumbnail);
-        //学习人数
-        Glide.with(itemView.getContext()).load(R.drawable.ic_learning_education_number).into(imageNumber);
-        tvNumber.setText(learningDetailListItem.getLearningNumber()+"人已学习");
-        //收藏状态
-        if(learningDetailListItem.isCollect()){
-            Glide.with(itemView.getContext()).load(R.drawable.ic_learning_education_collect).into(imageCollectStatus);
-            tvCollectStatus.setText("已收藏");
+        //更新时间
+        tvUpdateTime.setText("更新时间："+learningDetailListItem.getUpdateTime());
+        if (learningDetailListItem.isPass()){
+            tvExamStatus.setText("考试合格");
+            tvExamStatus.setTextColor(Color.parseColor("#388E3C"));
         }else{
-            Glide.with(itemView.getContext()).load(R.drawable.ic_learning_education_not_collect).into(imageCollectStatus);
-            tvCollectStatus.setText("收藏");
+            tvExamStatus.setText("未考试");
         }
-        //通过状态
-        if(learningDetailListItem.isPass()){
-            imagePass.setVisibility(View.VISIBLE);
+        if (learningDetailListItem.isStuded()){
+            tvStudyStatus.setText("已学习");
         }else{
-            imagePass.setVisibility(View.GONE);
+            tvStudyStatus.setText("未学习");
         }
-
     }
 }

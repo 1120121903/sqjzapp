@@ -40,10 +40,10 @@ public class DataSource {
         List<TimelineItem> mdata = new ArrayList<>();
         //video1
         LearningDetailListItem learningDetailListItem = new LearningDetailListItem(
-                R.drawable.legal_test_image,
+                R.drawable.legal_test_image_2,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
-                23,
+                "2020-01-01",
                 true,
                 false
                 );
@@ -51,10 +51,10 @@ public class DataSource {
         mdata.add(timelineItem);
         //video2
         learningDetailListItem = new LearningDetailListItem(
-                R.drawable.legal_test_image,
+                R.drawable.legal_test_image_2,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
-                112,
+                "2020-01-03",
                 false,
                 true
         );
@@ -62,10 +62,10 @@ public class DataSource {
         mdata.add(timelineItem);
         //video3
         learningDetailListItem = new LearningDetailListItem(
-                R.drawable.legal_test_image,
+                R.drawable.legal_test_image_2,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
-                21,
+                "2020-01-05",
                 true,
                 false
         );
@@ -75,10 +75,10 @@ public class DataSource {
         mdata.add(timelineItem);
         //video5
         learningDetailListItem = new LearningDetailListItem(
-                R.drawable.legal_test_image,
+                R.drawable.legal_test_image_2,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
-                12,
+                "2020-02-01",
                 false,
                 false
         );
