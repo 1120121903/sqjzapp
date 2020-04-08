@@ -1,5 +1,6 @@
 package com.sys8.sqjzapp.subModule.educationLearning;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.sys8.sqjzapp.R;
@@ -43,9 +45,10 @@ public class LearningListPageFragment extends Fragment{
     MyAdapter adapter;
 
     static final int NUM_ITEMS = 4;
-    private List<LearningClassificationBaseFragment> fragmentList=new ArrayList<LearningClassificationBaseFragment>();
+    private List<LearningClassificationBaseFragment> fragmentList=new ArrayList<LearningClassificationBaseFragment>();;
     private String[] topTabs = new String[]{"全部","公共道德","法律常识","时事政治"};
     private Unbinder unbinder;
+    private View view;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +57,7 @@ public class LearningListPageFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view  =inflater.inflate(R.layout.fragment_learning_list_page, container, false);
+        view  =inflater.inflate(R.layout.fragment_learning_list_page, container, false);
         unbinder = ButterKnife.bind(this, view);
             fragmentList.add(new AllFragment());
             fragmentList.add(new PublicMoralsFragment());
@@ -64,14 +67,22 @@ public class LearningListPageFragment extends Fragment{
         return view;
     }
     public void initView(){
+        System.out.println("LearningListPageFragment initView");
+
+        //FragmentManager fragmentManager = this.getChildFragmentManager();//getActivity().getSupportFragmentManager();//
         adapter = new MyAdapter(getActivity().getSupportFragmentManager());
         educationViewPage.setAdapter(adapter);
         educationTopTabLayout.setupWithViewPager(educationViewPage);
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 
     public class MyAdapter extends FragmentPagerAdapter {
+
+
         public MyAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -91,6 +102,9 @@ public class LearningListPageFragment extends Fragment{
         public CharSequence getPageTitle(int position) {
             return topTabs[position];
         }
+
+
+
     }
     @Override
     public void onDestroyView() {

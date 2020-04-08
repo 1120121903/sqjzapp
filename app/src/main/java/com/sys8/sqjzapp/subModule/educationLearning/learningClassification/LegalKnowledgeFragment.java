@@ -14,7 +14,7 @@ import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.subModule.educationLearning.LearningClassificationBaseFragment;
 
 public class LegalKnowledgeFragment extends LearningClassificationBaseFragment {
-
+    View view;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,7 @@ public class LegalKnowledgeFragment extends LearningClassificationBaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_learning_content_legal_knowledge, container, false);
+        view = inflater.inflate(R.layout.fragment_learning_content_legal_knowledge, container, false);
         return view;
     }
 

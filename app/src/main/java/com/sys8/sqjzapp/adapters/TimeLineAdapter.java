@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sys8.sqjzapp.R;
@@ -29,7 +30,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     private Context mContext;
     private List<TimelineItem> mdata;
-
+    private OnItemClickListener mOnItemClickListener;
     public TimeLineAdapter(Context mContext, List<TimelineItem> mdata) {
         this.mContext = mContext;
         this.mdata = mdata;
@@ -57,6 +58,20 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
         holder.setData(mdata.get(position));
+
+        View itemView = holder.itemView;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = holder.getLayoutPosition();
+                    if(mOnItemClickListener!=null) {
+                        mOnItemClickListener.onItemClick(holder.itemView, position);
+                    }
+                }
+            });
+
+
         //教育学习-主列表
         if(getItemViewType(position)==ITEM_EDUCATION_LEARNING_LIST){
             LearningListItem learningListItem = getItem(position).getLearningListItem();
@@ -76,13 +91,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                     learningListItem.setCollect(!learningListItem.isCollect());
                 }
             });
-
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    System.out.println("整个view 被点击了");
-                }
-            });
         }
     }
 
@@ -95,9 +103,18 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public TimelineItem getItem(int position){
         return mdata.get(position);
     }
-    
+
+    /**
+     * 点击事件回调接口
+     */
+    public interface OnItemClickListener{
+        void onItemClick(View view,int position);
+    }
 
 
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+        mOnItemClickListener = onItemClickListener;
+    }
 
     @Override
     public int getItemCount() {

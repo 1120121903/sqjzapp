@@ -74,15 +74,13 @@
 
     <ImageButton
         android:id="@+id/imageBt_learning_list_collect_statu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/image_learning_list_people_number"
         app:layout_constraintStart_toEndOf="@+id/tv_learning_list_people_number"
-        app:layout_constraintTop_toBottomOf="@+id/tv_learning_list_title"
+        app:layout_constraintTop_toTopOf="@+id/image_learning_list_people_number"
         app:srcCompat="@drawable/ic_learning_education_not_collect" />
 
     <TextView

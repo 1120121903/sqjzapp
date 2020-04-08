@@ -11,6 +11,7 @@ import com.sys8.sqjzapp.subModule.educationLearning.LearningClassificationBaseFr
 
 public class CurrentPolicyFragment extends LearningClassificationBaseFragment {
 
+    View view;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +21,8 @@ public class CurrentPolicyFragment extends LearningClassificationBaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_learning_content_current_policy, container, false);
+        view = inflater.inflate(R.layout.fragment_learning_content_current_policy, container, false);
+        return view;
     }
 
     @Override
