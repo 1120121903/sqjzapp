@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_video" />
+        app:srcCompat="@drawable/ic_jyxx_video" />
 
     <TextView
         android:id="@+id/tv_learning_list_title"

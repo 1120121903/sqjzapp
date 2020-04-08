@@ -46,18 +46,18 @@ public class LearningListViewHolder extends BaseViewHolder {
 
         switch(learningListItem.getMediaType()){
             case(Constant.MEDIA_TYPE_VIDEO):
-                Glide.with(itemView.getContext()).load(R.drawable.ic_video).into(imageMediaType);
+                Glide.with(itemView.getContext()).load(R.drawable.ic_jyxx_video).into(imageMediaType);
                 tvCourseNumber.setText("共"+learningListItem.getCourseNumber()+"个视频");
                 tvCourseDuration.setText("共"+learningListItem.getCourseDuration()+"分钟");
                 Glide.with(itemView.getContext()).load(learningListItem.getImageThumbnail()).into(imageVideoThumbnail);
                 break;
             case(Constant.MEDIA_TYPE_AUDIO):
-                Glide.with(itemView.getContext()).load(R.drawable.ic_audio).into(imageMediaType);
+                Glide.with(itemView.getContext()).load(R.drawable.ic_jyxx_audio).into(imageMediaType);
                 tvCourseNumber.setText("共"+learningListItem.getCourseNumber()+"个音频");
                 tvCourseDuration.setText("共"+learningListItem.getCourseDuration()+"分钟");
                 break;
             case (Constant.MEDIA_TYPE_PICTURE):
-                Glide.with(itemView.getContext()).load(R.drawable.ic_picture).into(imageMediaType);
+                Glide.with(itemView.getContext()).load(R.drawable.ic_jyxx_picture).into(imageMediaType);
                 Glide.with(itemView.getContext()).load(learningListItem.getImageThumbnail()).into(imageVideoThumbnail);
                 break;
         }
