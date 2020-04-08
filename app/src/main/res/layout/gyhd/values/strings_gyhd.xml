@@ -1,7 +1,10 @@
 <resources>
     <string name="gyhd_tb_title">公益活动</string>
+    <string name="gyhd_tb_detail">详细信息</string>
+
     <string name="gyhd_et_kssj">开始时间：</string>
     <string name="gyhd_et_hddd">活动地点：</string>
     <string name="gyhd_et_bmrs">报名人数：</string>
+    <string name="gyhd_et_jtnr">活动要求：</string>
     <string name="gyhd_bt_bm">我要报名</string>
 </resources>

@@ -59,5 +59,6 @@ public class YcbfJyfwDetailActivity extends BaseActivity {
         tvYcbfJyfwGzdd.setText(jyfw.getGzdd());
         tvYcbfJyfwGwms.setText(jyfw.getGwms());
         tvYcbfJyfwGwyq.setText(jyfw.getGwyq());
+
     }
 }

@@ -38,7 +38,7 @@ public class YcbfActivity extends BaseActivity implements ViewPager.OnPageChange
         setContentView(R.layout.activity_ycbf);
         ButterKnife.bind(this);
         TitleCilckListener(tbYcbf, this);/*title按钮监听*/
-        fragmentList.add( FragYcbfShbz.getInstance());
+        fragmentList.add(FragYcbfShbz.getInstance());
         fragmentList.add(FragYcbfBmfw.getInstance());
         fragmentList.add(FragYcbfShfw.getInstance());
         fragmentList.add(FragYcbfJyfw.getInstance());
