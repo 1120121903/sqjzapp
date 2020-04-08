@@ -20,4 +20,17 @@
         app:leftTitle="@string/title_back"
         app:rightSize="0dp"
         app:title="@string/educationlearning_titlebar" />
+    <!--中部页面显示内容-->
+    <FrameLayout
+        android:id="@+id/frag_educationlearning_picture_detail_list_main_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/gray"
+        >
+    <WebView
+        android:id="@+id/wv_educationlearning_picture_detail_list_main_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    </FrameLayout>
 </LinearLayout>
