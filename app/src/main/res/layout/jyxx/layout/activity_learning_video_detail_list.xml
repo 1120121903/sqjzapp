@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".subModule.educationLearning.learningDetailList.LearningVideoDetailListActivity">
+    <!--顶部标题栏-->
+    <com.hjq.bar.TitleBar
+        android:visibility="visible"
+        android:id="@+id/tb_educationlearning_video_detail_list_titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/blue1"
+        app:titleColor="@null"
+        app:leftBackground="@null"
+        app:rightBackground="@null"
+        app:barStyle="transparent"
+        app:leftTitle="@string/title_back"
+        app:rightSize="0dp"
+        app:title="@string/educationlearning_titlebar" />
+    <!--中部页面显示内容-->
+    <FrameLayout
+        android:id="@+id/frag_educationlearning_video_detail_list_main_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/gray"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_educationlearning_video_detail_list_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
+</LinearLayout>
