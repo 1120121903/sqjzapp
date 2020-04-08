@@ -13,6 +13,7 @@ import com.sys8.sqjzapp.subModule.ycbf.bmfw.FragYcbfBmfw;
 import com.sys8.sqjzapp.subModule.ycbf.jyfw.FragYcbfJyfw;
 import com.sys8.sqjzapp.subModule.ycbf.shbz.FragYcbfShbz;
 import com.sys8.sqjzapp.subModule.ycbf.shfw.FragYcbfShfw;
+import com.sys8.sqjzapp.subModule.ycbf.wdbf.FragYcbfWdbf;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,7 @@ public class YcbfActivity extends BaseActivity implements ViewPager.OnPageChange
         fragmentList.add(FragYcbfBmfw.getInstance());
         fragmentList.add(FragYcbfShfw.getInstance());
         fragmentList.add(FragYcbfJyfw.getInstance());
+        fragmentList.add(FragYcbfWdbf.getInstance());
         initView();
     }
 

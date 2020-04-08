@@ -6,7 +6,7 @@ public class Shbz {
     String jzsj;//截止时间
     String fbsj;//发布时间
     String content;//内容
-    String state;//内容
+    String state;//状态
 
     public Shbz(String title, String bmtj, String jzsj, String fbsj, String content,String state) {
         this.title = title;

@@ -19,6 +19,7 @@ import butterknife.OnClick;
 
 import static com.sys8.sqjzapp.subModule.ycbf.shbz.ShbzlListData.list_Shbz;
 import static com.sys8.sqjzapp.subModule.ycbf.shbz.ShbzlListData.list_ShbzSq;
+import static com.sys8.sqjzapp.subModule.ycbf.shbz.ShbzlListData.list_ShbzYsq;
 
 public class FragYcbfShbzSqbm extends Fragment {
 
@@ -66,6 +67,7 @@ public class FragYcbfShbzSqbm extends Fragment {
                 etYcbfShbzTitle.getText().toString(),
                 etYcbfShbzSqly.getText().toString(),
                 "已申请", list_Shbz.get(LOCATION)));
+        list_ShbzYsq.add(list_Shbz.get(LOCATION));
         parentActivity.replaceFragment(FragYcbfShbzSqbmList.getInstance());
         parentActivity.tbYcbfShbzBm.setTitle(R.string.ycbf_bt_shbz_bm_list);
     }

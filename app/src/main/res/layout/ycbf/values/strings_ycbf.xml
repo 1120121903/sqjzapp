@@ -2,6 +2,7 @@
     <string name="ycbf_tb_title">远程帮扶</string>
     <string name="ycbf_tb_detail">详细信息</string>
     <!--社会保障-->
+    <string name="ycbf_bt_shbz_wdbf">我的帮扶</string>
     <string name="ycbf_et_shbz_title">申请名称：</string>
     <string name="ycbf_et_shbz_bmtj">报名条件：</string>
     <string name="ycbf_et_shbz_jzsj">截止时间：</string>
