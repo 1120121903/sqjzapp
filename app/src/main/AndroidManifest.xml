@@ -12,6 +12,8 @@
         <activity android:name=".subModule.educationLearning.learningDetailList.LearningPictureDetailListActivity"></activity>
         <activity android:name=".subModule.educationLearning.learningDetailList.LearningVideoDetailListActivity" />
         <activity android:name=".subModule.ycbf.shbz.YcbfShbzBmActivity" />
+        <activity android:name=".subModule.ycbf.jyfw.YcbfJyfwDetailActivity"></activity>
+        <activity android:name=".subModule.ycbf.shfw.YcbfShfwDetailActivity"></activity>
         <activity android:name=".subModule.ycbf.shbz.YcbfShbzDetailActivity" />
         <activity android:name=".subModule.gyhd.gyhdActivity" />
         <activity android:name=".subModule.ycbf.YcbfActivity" />
