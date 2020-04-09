@@ -1,11 +1,17 @@
 package com.sys8.sqjzapp.subModule.educationLearning.learningDetailList;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.FrameLayout;
+import android.util.Log;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.ActivityCollector;
@@ -13,13 +19,19 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class LearningPictureDetailListActivity extends AppCompatActivity {
+    final RxPermissions rxPermissions = new RxPermissions(this);
     @BindView(R.id.tb_educationlearning_picture_detail_list_titlebar)
     TitleBar tbEducationlearningPictureDetailListTitlebar;
     String title;
-    @BindView(R.id.frag_educationlearning_picture_detail_list_main_page)
-    FrameLayout fragEducationlearningPictureDetailListMainPage;
+    @BindView(R.id.wv_educationlearning_picture_detail_list_main_page)
+    WebView wvEducationlearningPictureDetailListMainPage;
+    @BindView(R.id.layout_educationlearning_picture_detail_list_main_page)
+    RelativeLayout layoutEducationlearningPictureDetailListMainPage;
+    @BindView(R.id.bt_learning_education_exam)
+    DragFloatActionButton btLearningEducationExam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +40,34 @@ public class LearningPictureDetailListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         ActivityCollector.TitleCilckListener(tbEducationlearningPictureDetailListTitlebar, this);
         bindData();
+        requestPremission();
 
+    }
+
+    public void requestPremission() {
+        rxPermissions.request(Manifest.permission.INTERNET)
+                .subscribe(granted -> {
+                    if (granted) {
+                        initWebView();
+                        System.out.println("  initWebView();");
+                    } else {
+                        Log.d("permissions", Manifest.permission.INTERNET + "：" + "获取失败");
+                        finish();
+                    }
+                });
+
+    }
+
+    public void initWebView() {
+
+
+        wvEducationlearningPictureDetailListMainPage.setHorizontalScrollBarEnabled(false);
+        WebSettings settings = wvEducationlearningPictureDetailListMainPage.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDefaultTextEncodingName("UTF-8");
+        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        wvEducationlearningPictureDetailListMainPage.setWebViewClient(new WebViewClient());
+        wvEducationlearningPictureDetailListMainPage.loadUrl("file:///android_asset/learning_education_picture_detail_display.html");
     }
 
 
@@ -36,5 +75,10 @@ public class LearningPictureDetailListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         title = intent.getStringExtra("title");
         tbEducationlearningPictureDetailListTitlebar.setTitle(title);
+    }
+
+    @OnClick(R.id.bt_learning_education_exam)
+    public void toExamPage(){
+
     }
 }

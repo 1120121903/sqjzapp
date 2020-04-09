@@ -61,7 +61,7 @@ public class LearningListItem {
      * @param isPass
      * @param imageThumbnail
      */
-    public LearningListItem(int mediaType, String title, int learningPeopleNumber, boolean isCollect, boolean isPass, int imageThumbnail) {
+    public LearningListItem(int mediaType, String title,int learningPeopleNumber, boolean isCollect, boolean isPass, int imageThumbnail) {
         MediaType = mediaType;
         this.title = title;
         this.learningPeopleNumber = learningPeopleNumber;

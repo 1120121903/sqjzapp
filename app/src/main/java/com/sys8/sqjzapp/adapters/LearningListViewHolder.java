@@ -59,6 +59,7 @@ public class LearningListViewHolder extends BaseViewHolder {
             case (Constant.MEDIA_TYPE_PICTURE):
                 Glide.with(itemView.getContext()).load(R.drawable.ic_jyxx_picture).into(imageMediaType);
                 Glide.with(itemView.getContext()).load(learningListItem.getImageThumbnail()).into(imageVideoThumbnail);
+                tvCourseNumber.setText("我国《车辆驾驶人员血液、呼气\n酒精含量阈值与检验》规定……");
                 break;
         }
         tvTitle.setText(learningListItem.getTitle());

@@ -52,25 +52,21 @@
         android:id="@+id/image_learning_list_people_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image_learning_list_medai_type"
-        app:layout_constraintTop_toBottomOf="@+id/tv_learning_list_title"
-        app:srcCompat="@drawable/ic_learning_education_number" />
+        app:srcCompat="@drawable/ic_learning_education_number_1" />
 
     <TextView
         android:id="@+id/tv_learning_list_people_number"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="16dp"
-        android:text=""
+        android:text="11111"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/image_learning_list_people_number"
         app:layout_constraintStart_toEndOf="@+id/image_learning_list_people_number"
-        app:layout_constraintTop_toBottomOf="@+id/tv_learning_list_title" />
+        app:layout_constraintTop_toTopOf="@+id/image_learning_list_people_number" />
 
     <ImageButton
         android:id="@+id/imageBt_learning_list_collect_statu"
@@ -78,35 +74,32 @@
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/image_learning_list_people_number"
-        app:layout_constraintStart_toEndOf="@+id/tv_learning_list_people_number"
-        app:layout_constraintTop_toTopOf="@+id/image_learning_list_people_number"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_learning_list_collect_statu"
+        app:layout_constraintEnd_toStartOf="@+id/tv_learning_list_collect_statu"
+        app:layout_constraintTop_toTopOf="@+id/tv_learning_list_collect_statu"
         app:srcCompat="@drawable/ic_learning_education_not_collect" />
 
     <TextView
         android:id="@+id/tv_learning_list_collect_statu"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
-        android:textColor="@color/black"
         android:text="收藏"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageBt_learning_list_collect_statu"
-        app:layout_constraintTop_toBottomOf="@+id/tv_learning_list_title" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/image_learning_list_thumbnail"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="16:9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
         tools:srcCompat="@drawable/video_bg" />
 
     <ImageView

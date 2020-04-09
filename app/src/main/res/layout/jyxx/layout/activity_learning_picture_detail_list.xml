@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".subModule.educationLearning.learningDetailList.LearningPictureDetailListActivity">
 
     <!--顶部标题栏-->
@@ -21,12 +22,25 @@
         app:rightSize="0dp"
         app:title="@string/educationlearning_titlebar" />
     <!--中部页面显示内容-->
-    <FrameLayout
-        android:id="@+id/frag_educationlearning_picture_detail_list_main_page"
+    <RelativeLayout
+        android:id="@+id/layout_educationlearning_picture_detail_list_main_page"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:background="@color/gray"
         >
-    </FrameLayout>
+        <WebView
+            android:id="@+id/wv_educationlearning_picture_detail_list_main_page"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+        <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton
+            android:id="@+id/bt_learning_education_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:src="@drawable/ic_learning_education_exam"
+            android:background="@drawable/button_bg"/>
+    </RelativeLayout>
 </LinearLayout>
