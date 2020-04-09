@@ -30,6 +30,13 @@ public class ShbzListViewAdapter extends BaseAdapter
         inflater = LayoutInflater.from(context);
     }
 
+    public ShbzListViewAdapter(Context context, List<Shbz> list, Activity activity)
+    {
+        this.list = getRevertTimeLineData(list);
+        this.activity = activity;
+        inflater = LayoutInflater.from(context);
+    }
+
     @Override
     public int getCount()
     {
@@ -66,6 +73,7 @@ public class ShbzListViewAdapter extends BaseAdapter
             viewHolder.shbz_bmtj = convertView.findViewById(R.id.tv_shbz_listItem_time_bmtj);
             viewHolder.shbz_jzsj =  convertView.findViewById(R.id.tv_shbz_listItem_time_jzsj);
             viewHolder.shbz_fbsj = convertView.findViewById(R.id.tv_shbz_listItem_time_fbsj);
+            viewHolder.shbz_state = convertView.findViewById(R.id.tv_shbz_listItem_time_state);
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
@@ -74,6 +82,9 @@ public class ShbzListViewAdapter extends BaseAdapter
         viewHolder.shbz_bmtj.setText(shbz.getBmtj());
         viewHolder.shbz_jzsj.setText(shbz.getJzsj());
         viewHolder.shbz_fbsj.setText(shbz.getFbsj());
+        if(shbz.getState().equals("1")){
+            viewHolder.shbz_state.setText("已申请");
+        }
 
         return convertView;
     }
@@ -83,5 +94,6 @@ public class ShbzListViewAdapter extends BaseAdapter
         public TextView shbz_bmtj;
         public TextView shbz_jzsj;
         public TextView shbz_fbsj;
+        public TextView shbz_state;
     }
 }

@@ -86,5 +86,6 @@ public class GyhdDetailActivity extends BaseActivity {
         list_Gyhd.get(gyhdDataLocation).setState("已报名");
         list_Gyhd.get(gyhdDataLocation).setBmrs("报名3/5人（未满）");
         list_GyhdYbm.add(list_Gyhd.get(gyhdDataLocation));
+        finish();
     }
 }
