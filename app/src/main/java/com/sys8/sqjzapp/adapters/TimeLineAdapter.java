@@ -1,16 +1,13 @@
 package com.sys8.sqjzapp.adapters;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sys8.sqjzapp.R;
@@ -18,11 +15,7 @@ import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.utils.Constant;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
-
-import butterknife.OnClick;
 
 import static com.sys8.sqjzapp.utils.Constant.ITEM_EDUCATION_LEARNING_LIST;
 
@@ -45,7 +38,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 view = LayoutInflater.from(mContext).inflate(R.layout.item_location,parent,false);
                 return new LocationViewHolder(view);
             case(Constant.ITEM_EDUCATION_LEARNING_DETAIL_LIST):
-                view = LayoutInflater.from(mContext).inflate(R.layout.item_learning_list_detail,parent,false);
+                view = LayoutInflater.from(mContext).inflate(R.layout.item_learning_list_detail_video,parent,false);
                 return new LearningDetailListViewHolder(view);
             case(ITEM_EDUCATION_LEARNING_LIST):
                 view = LayoutInflater.from(mContext).inflate(R.layout.item_learning_list,parent,false);

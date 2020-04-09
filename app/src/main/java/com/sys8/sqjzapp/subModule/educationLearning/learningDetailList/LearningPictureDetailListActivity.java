@@ -71,6 +71,8 @@ public class LearningPictureDetailListActivity extends BaseActivity {
         settings.setDefaultTextEncodingName("UTF-8");
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         wvEducationlearningPictureDetailListMainPage.setWebViewClient(new WebViewClient());
+        //wvEducationlearningPictureDetailListMainPage.loadUrl("https://mip.findlaw.cn/video/11708.html");
+
         wvEducationlearningPictureDetailListMainPage.loadUrl("file:///android_asset/learning_education_picture_detail_display.html");
     }
 

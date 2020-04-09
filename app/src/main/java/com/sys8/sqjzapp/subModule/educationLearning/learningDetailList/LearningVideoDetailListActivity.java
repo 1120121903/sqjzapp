@@ -2,9 +2,9 @@ package com.sys8.sqjzapp.subModule.educationLearning.learningDetailList;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.FrameLayout;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -47,6 +47,12 @@ public class LearningVideoDetailListActivity extends BaseActivity {
         setupAdapter();
     }
 
+    public void bindData() {
+        Intent intent = getIntent();
+        title= intent.getStringExtra("title");
+        tbEducationlearningVideoDetailListTitlebar.setTitle(title);
+    }
+
     public void intRv(){
         recyclerEducationlearningVideoDetailListPage.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -63,12 +69,23 @@ public class LearningVideoDetailListActivity extends BaseActivity {
 
     public void setupAdapter(){
         adapter = new TimeLineAdapter(this, mData);
+        adapter.setOnItemClickListener(new TimeLineAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                LearningDetailListItem learningDetailListItem = adapter.getItem(position).getLearningDetailListItem();
+                toVideoPlayPage(learningDetailListItem.getTitle());
+            }
+        });
         recyclerEducationlearningVideoDetailListPage.setAdapter(adapter);
     }
 
-    public void bindData() {
-        Intent intent = getIntent();
-        title= intent.getStringExtra("title");
-        tbEducationlearningVideoDetailListTitlebar.setTitle(title);
+    public void toVideoPlayPage(String title){
+        Intent intent =new Intent(this, LearningVideoPlayActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+        Bundle bundle = new Bundle();
+        bundle.putString("title",title); //放入所需要传递的值
+        intent.putExtras(bundle);
+        this.startActivity(intent); //这里一定要获取到所在Activity再startActivity()；
     }
+
+
 }
