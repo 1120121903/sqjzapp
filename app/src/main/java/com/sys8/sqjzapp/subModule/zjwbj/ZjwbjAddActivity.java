@@ -1,20 +1,18 @@
 package com.sys8.sqjzapp.subModule.zjwbj;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-
-import androidx.fragment.app.Fragment;
 
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.TimePickerView;
+import com.hjq.bar.TitleBar;
 import com.kingja.supershapeview.view.SuperShapeEditText;
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 
@@ -25,52 +23,40 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
+import static com.sys8.sqjzapp.baseClass.ActivityCollector.finishAll;
 import static com.sys8.sqjzapp.subModule.zjwbj.BjjlListData.list_BjState;
 import static com.sys8.sqjzapp.subModule.zjwbj.BjjlListData.list_BjState2;
 import static com.sys8.sqjzapp.subModule.zjwbj.BjjlListData.list_Bjjl;
 import static com.sys8.sqjzapp.utils.DataUtils.dateToString;
 import static com.sys8.sqjzapp.utils.DataUtils.getDate;
-import static com.sys8.sqjzapp.utils.DataUtils.getUserName;
+import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
-public class FragZjwbj_tbbj extends Fragment {
+public class ZjwbjAddActivity extends BaseActivity {
 
-    private static FragZjwbj_tbbj fragInstanse = null;
-    private static boolean SAVE_CLICK_UNABLE;//保存按钮的状态
-    private ZjwbjActivity parentActivity = null;
-    private Calendar bjsjCalendar;
+    @BindView(R.id.tb_zjwbj_add)
+    TitleBar tbZjwbjAdd;
     @BindView(R.id.et_zjwbj_tbbj_bjsj)
     EditText etZjwbjTbbjBjsj;
-    @BindView(R.id.bt_zjwbj_tbbj_save)
-    Button btZjwbjTbbjSave;
     @BindView(R.id.et_zjwbj_tbbj_bjsm)
     SuperShapeEditText etZjwbjTbbjBjsm;
+    @BindView(R.id.bt_zjwbj_tbbj_save)
+    Button btZjwbjTbbjSave;
+    private Calendar bjsjCalendar;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SAVE_CLICK_UNABLE = false;
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_zjwbj_tbbj, container, false);
-        // Inflate the layout for this fragment
-        ButterKnife.bind(this, view);
-        parentActivity = (ZjwbjActivity) getActivity();
-        etZjwbjTbbjBjsj.setInputType(InputType.TYPE_NULL);
-        if (SAVE_CLICK_UNABLE) {
-            btZjwbjTbbjSave.setText("已保存");
-            btZjwbjTbbjSave.setClickable(false);
-        }
-        return view;
+        setContentView(R.layout.activity_zjwbj_add);
+        ButterKnife.bind(this);
+        TitleCilckListener(tbZjwbjAdd, this);/*title按钮监听*/
     }
 
     @OnClick(R.id.et_zjwbj_tbbj_bjsj)
     public void getBjsj() {
         bjsjCalendar = Calendar.getInstance();
         bjsjCalendar.add(bjsjCalendar.YEAR, +1); //年份加1
-        TimePickerView pvTime = new TimePickerBuilder(getContext(), new OnTimeSelectListener() {
+        TimePickerView pvTime = new TimePickerBuilder(this, new OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {
                 etZjwbjTbbjBjsj.setText(dateToString(date, "yyyy-MM-dd"));
@@ -84,25 +70,21 @@ public class FragZjwbj_tbbj extends Fragment {
     @OnClick(R.id.bt_zjwbj_tbbj_save)
     public void saveData() {
         list_Bjjl.add(new Bjjl(
-                 getDate("yyyy-MM-dd"),
-                 etZjwbjTbbjBjsj .getText().toString(),
-                 etZjwbjTbbjBjsm.getText().toString(),
+                getDate("yyyy-MM-dd"),
+                etZjwbjTbbjBjsj .getText().toString(),
+                etZjwbjTbbjBjsm.getText().toString(),
                 "审批中"
         ));
         list_BjState2.add(new TimelineItem(new LocationItem("张海洋提交暂监外病检申请" + "\n" + getDate("yyyy-MM-dd"), R.drawable.ic_homt_zjwbj)));
         list_BjState.add(new BjState(getDate("yyyy-MM-dd"), list_BjState2));
-        SAVE_CLICK_UNABLE = true;//保存按钮不可点击
-        parentActivity.zjwbjBjjlFragment();
-    }
 
-    private FragZjwbj_tbbj() {
+        Intent intent = new Intent(ZjwbjAddActivity.this, ZjwbjDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+        Bundle bundle = new Bundle();
+        bundle.putString("timeApply", getDate("yyyy-MM-dd"));
+        bundle.putString("timeStart", etZjwbjTbbjBjsj .getText().toString());
+        bundle.putString("bjsm", etZjwbjTbbjBjsm.getText().toString());
+        intent.putExtras(bundle);
+        startActivity(intent);
+        finish();
     }
-
-    public static FragZjwbj_tbbj getInstance() {
-        if (fragInstanse == null) {
-            fragInstanse = new FragZjwbj_tbbj();
-        }
-        return fragInstanse;
-    }
-
 }

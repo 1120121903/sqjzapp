@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sys8.sqjzapp">
-    <!-- 用于申请调用A-GPS模块 -->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,9 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".subModule.educationLearning.learningExam.ExaminationActivity"></activity>
-        <activity android:name=".subModule.rcbg.RcbgAddActivity"></activity>
-        <activity android:name=".subModule.wcqj.WcqjAddActivity"></activity>
+        <activity android:name=".subModule.zjwbj.ZjwbjAddActivity"></activity>
+        <activity android:name=".subModule.educationLearning.learningExam.ExaminationActivity" />
+        <activity android:name=".subModule.rcbg.RcbgAddActivity" />
+        <activity android:name=".subModule.wcqj.WcqjAddActivity" />
         <activity android:name=".subModule.ycbf.wdbf.YcbfWdbfActivity" />
         <activity android:name=".subModule.gyhd.GyhdDetailActivity" />
         <activity android:name=".subModule.educationLearning.learningDetailList.LearningPictureDetailListActivity" />
@@ -55,14 +56,13 @@
             android:value="360" />
 
         <service android:name="com.amap.api.location.APSService" />
-
-    </application>
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 用于申请获取蓝牙信息进行室内定位 -->
+    </application> <!-- 用于申请获取蓝牙信息进行室内定位 -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 拍照权限获取 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 拍照权限获取 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -78,5 +78,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.CAMERA" />
+
 </manifest>

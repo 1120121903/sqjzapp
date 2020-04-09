@@ -27,7 +27,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_shadow">
+            android:background="@drawable/shape_shadow_bottom">
             <!--标题-->
             <LinearLayout
                 android:orientation="horizontal"
@@ -70,6 +70,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"/>
             </LinearLayout>
+            <!--证明文件-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical|top"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/zjwbj_tv_tbbj_zmwj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    />
+                <ImageView
+                    android:src="@drawable/ic_zmwj"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+                <ImageView
+                    android:src="@drawable/ic_zmwj"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+            </LinearLayout>
             <!--病检说明-->
             <LinearLayout
                 android:orientation="horizontal"
@@ -101,56 +126,15 @@
         <!--进度条-->
         <LinearLayout
             android:orientation="vertical"
+            android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape_shadow"
+            android:layout_height="match_parent"
             >
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_zjwbj_detail_history"
                 android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
-        </LinearLayout>
-        <!--证明文件-->
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/shape_shadow">
-            <!--证明文件-->
-            <LinearLayout
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="@string/zjwbj_tv_tbbj_zmwj"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    />
-            </LinearLayout>
-            <!--证明文件 图片-->
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:src="@drawable/ic_zmwj"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"/>
-                <ImageView
-                    android:src="@drawable/ic_zmwj"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"/>
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
