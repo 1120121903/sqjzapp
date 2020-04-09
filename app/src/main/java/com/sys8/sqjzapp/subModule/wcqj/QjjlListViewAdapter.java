@@ -33,6 +33,13 @@ public class QjjlListViewAdapter extends BaseAdapter
         inflater = LayoutInflater.from(context);
     }
 
+    public QjjlListViewAdapter(Context context, List<Qjjl> list, Activity activity)
+    {
+        this.list = getRevertTimeLineData(list);
+        this.activity = activity;
+        inflater = LayoutInflater.from(context);
+    }
+
     @Override
     public int getCount()
     {

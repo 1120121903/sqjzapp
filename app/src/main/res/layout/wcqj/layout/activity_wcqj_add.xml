@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_marginBottom="5dp"
-    android:background="@drawable/shape_shadow">
+    android:background="@color/white"
+    tools:context=".subModule.wcqj.WcqjAddActivity">
+    <!--顶部标题栏-->
+    <com.hjq.bar.TitleBar
+        android:visibility="visible"
+        android:id="@+id/tb_wcqj_add"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/blue1"
+        app:titleColor="@color/white"
+        app:leftBackground="@null"
+        app:leftColor="@color/white"
+        app:rightBackground="@null"
+        app:barStyle="transparent"
+        app:leftTitle="@string/title_back"
+        app:rightSize="0dp"
+        app:title="@string/wcqj_bt_wyqj"/>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -146,6 +162,7 @@
         android:layout_gravity="center"
         android:clickable="true"
         android:text="提交"
+        android:layout_marginBottom="5dp"
         android:layout_width="100dp"
         android:layout_height="50dp"/>
 </LinearLayout>

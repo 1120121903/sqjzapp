@@ -24,4 +24,5 @@ public class Constant {
 
     //通知提醒
     public static String STATE_TZTX_YD = "1";
+
 }

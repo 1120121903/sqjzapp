@@ -1,21 +1,20 @@
 package com.sys8.sqjzapp.subModule.wcqj;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
-
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.TimePickerView;
+import com.hjq.bar.TitleBar;
 import com.kingja.supershapeview.view.SuperShapeEditText;
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 
@@ -26,6 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
 import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_QjState;
 import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_QjState3;
 import static com.sys8.sqjzapp.subModule.wcqj.QjjlListData.list_Qjjl;
@@ -34,10 +34,10 @@ import static com.sys8.sqjzapp.utils.DataUtils.dateToString;
 import static com.sys8.sqjzapp.utils.DataUtils.getDate;
 import static com.sys8.sqjzapp.utils.DataUtils.getUserName;
 
-public class FragWcqj_wyqj extends Fragment {
+public class WcqjAddActivity extends BaseActivity {
 
-    private static FragWcqj_wyqj fragInstanse = null;
-    private static boolean SAVE_CLICK_UNABLE;//保存按钮的状态
+    @BindView(R.id.tb_wcqj_add)
+    TitleBar tbWcqjAdd;
     @BindView(R.id.et_wcqj_wyqj_kssj)
     EditText etWcqjWyqjKssj;
     @BindView(R.id.et_wcqj_wyqj_jssj)
@@ -49,72 +49,20 @@ public class FragWcqj_wyqj extends Fragment {
     @BindView(R.id.et_wcqj_wyqj_wcly)
     SuperShapeEditText etWcqjWyqjWcly;
     @BindView(R.id.bt_wcqj_wyqj_save)
-    Button btWcqjWyqjSaveAble;
-    private WcqjActivity parentActivity = null;
+    Button btWcqjWyqjSave;
     private Calendar kssjCalendarStart;
     private Calendar kssjCalendarEnd;
     private Calendar jssjCalendarStart;
     private Calendar jssjCalendarEnd;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SAVE_CLICK_UNABLE = false;
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_wcqj_wyqj, container, false);
-        // Inflate the layout for this fragment
-        ButterKnife.bind(this, view);
-        parentActivity = (WcqjActivity) getActivity();
+        setContentView(R.layout.activity_wcqj_add);
+        ButterKnife.bind(this);
+        TitleCilckListener(tbWcqjAdd, this);/*title按钮监听*/
         etWcqjWyqjKssj.setInputType(InputType.TYPE_NULL);
         etWcqjWyqjJssj.setInputType(InputType.TYPE_NULL);
-        if(SAVE_CLICK_UNABLE){
-            btWcqjWyqjSaveAble.setText("已保存");
-            btWcqjWyqjSaveAble.setClickable(false);
-        }
-        return view;
-    }
-
-    @OnClick(R.id.et_wcqj_wyqj_kssj)
-    public void getKssj() {
-        kssjCalendarStart = Calendar.getInstance();
-        kssjCalendarEnd = Calendar.getInstance();
-        kssjCalendarEnd.add(kssjCalendarStart.YEAR, +1); //年份加1
-        TimePickerView pvTime = new TimePickerBuilder(getContext(), new OnTimeSelectListener() {
-            @Override
-            public void onTimeSelect(Date date, View v) {
-                etWcqjWyqjKssj.setText(dateToString(date, "yyyy-MM-dd"));
-                jssjCalendarStart = Calendar.getInstance();
-                jssjCalendarStart.setTime(date);
-                etWcqjWyqjJssj.setText("");
-            }
-        })
-                .setRangDate(kssjCalendarStart, kssjCalendarEnd)//设置起始时间和结束时间
-                .build();
-        pvTime.show();
-    }
-
-    @OnClick(R.id.et_wcqj_wyqj_jssj)
-    public void getJssj() {
-        if (etWcqjWyqjKssj.getText().toString().equals("")) {
-            Toast.makeText(getActivity(), "请选择开始时间", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        jssjCalendarEnd = Calendar.getInstance();
-        jssjCalendarEnd.add(jssjCalendarStart.YEAR, +1); //年份加1
-        TimePickerView pvTime = new TimePickerBuilder(getContext(), new OnTimeSelectListener() {
-            @Override
-            public void onTimeSelect(Date date, View v) {
-                etWcqjWyqjJssj.setText(dateToString(date, "yyyy-MM-dd"));
-                etWcqjWyqjWcsc.setText(calculateDaysFromTwoDateString(etWcqjWyqjKssj.getText().toString(), etWcqjWyqjJssj.getText().toString(), "yyyy-MM-dd"));
-            }
-        })
-                .setRangDate(jssjCalendarStart, jssjCalendarEnd)//设置起始时间和结束时间
-                .build();
-        pvTime.show();
     }
 
     @OnClick(R.id.bt_wcqj_wyqj_save)
@@ -131,18 +79,58 @@ public class FragWcqj_wyqj extends Fragment {
         ));
         list_QjState3.add(new TimelineItem(new LocationItem("张海洋提交请假申请"+"\n"+getDate("yyyy-MM-dd"), R.drawable.ic_home_wcqj)));
         list_QjState.add(new QjState(getDate("yyyy-MM-dd"),list_QjState3));
-        SAVE_CLICK_UNABLE = true;//保存按钮不可点击
-        parentActivity.wcqjQjjlFragment();
+
+        Intent intent=new Intent(WcqjAddActivity.this,WcqjDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+        Bundle bundle = new Bundle();
+        bundle.putString("title",getUserName() + "提交的请假"); //放入所需要传递的值
+        bundle.putString("timeApply",getDate("yyyy-MM-dd"));
+        bundle.putString("timeStart",etWcqjWyqjKssj.getText().toString());
+        bundle.putString("timeEnd", etWcqjWyqjJssj.getText().toString());
+        bundle.putString("days",etWcqjWyqjWcsc.getText().toString());
+        bundle.putString("place", etWcqjWyqjWcdd.getText().toString());
+        bundle.putString("reason", etWcqjWyqjWcly.getText().toString());
+        intent.putExtras(bundle);
+        startActivity(intent);
+        finish();
     }
 
-    private FragWcqj_wyqj() {
+    @OnClick(R.id.et_wcqj_wyqj_kssj)
+    public void getKssj() {
+        kssjCalendarStart = Calendar.getInstance();
+        kssjCalendarEnd = Calendar.getInstance();
+        kssjCalendarEnd.add(kssjCalendarStart.YEAR, +1); //年份加1
+        TimePickerView pvTime = new TimePickerBuilder(this, new OnTimeSelectListener() {
+            @Override
+            public void onTimeSelect(Date date, View v) {
+                etWcqjWyqjKssj.setText(dateToString(date, "yyyy-MM-dd"));
+                jssjCalendarStart = Calendar.getInstance();
+                jssjCalendarStart.setTime(date);
+                etWcqjWyqjJssj.setText("");
+            }
+        })
+                .setRangDate(kssjCalendarStart, kssjCalendarEnd)//设置起始时间和结束时间
+                .build();
+        pvTime.show();
     }
 
-    public static FragWcqj_wyqj getInstance() {
-        if (fragInstanse == null) {
-            fragInstanse = new FragWcqj_wyqj();
+    @OnClick(R.id.et_wcqj_wyqj_jssj)
+    public void getJssj() {
+        if (etWcqjWyqjKssj.getText().toString().equals("")) {
+            Toast.makeText(this, "请选择开始时间", Toast.LENGTH_SHORT).show();
+            return;
         }
-        return fragInstanse;
+        jssjCalendarEnd = Calendar.getInstance();
+        jssjCalendarEnd.add(jssjCalendarStart.YEAR, +1); //年份加1
+        TimePickerView pvTime = new TimePickerBuilder(this, new OnTimeSelectListener() {
+            @Override
+            public void onTimeSelect(Date date, View v) {
+                etWcqjWyqjJssj.setText(dateToString(date, "yyyy-MM-dd"));
+                etWcqjWyqjWcsc.setText(calculateDaysFromTwoDateString(etWcqjWyqjKssj.getText().toString(), etWcqjWyqjJssj.getText().toString(), "yyyy-MM-dd"));
+            }
+        })
+                .setRangDate(jssjCalendarStart, jssjCalendarEnd)//设置起始时间和结束时间
+                .build();
+        pvTime.show();
     }
 
 }
