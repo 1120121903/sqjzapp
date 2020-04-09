@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/shape_shadow">
+    android:background="@drawable/shape_shadow_bottom">
     <LinearLayout
         android:orientation="vertical"
         android:padding="5dp"
@@ -65,15 +65,5 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
         </LinearLayout>
-        <!--详情-->
-        <Button
-            android:id="@+id/bt_rcbg_listItem_detail"
-            android:text="@string/tztx_bt_detail"
-            android:background="@null"
-            android:layout_marginRight="10dp"
-            android:gravity="right|center_vertical"
-            android:textColor="@color/black"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"/>
     </LinearLayout>
 </LinearLayout>

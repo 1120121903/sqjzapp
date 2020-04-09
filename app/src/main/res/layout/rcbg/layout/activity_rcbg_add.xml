@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="5dp"
-    android:background="@color/gray">
+    android:background="@color/white"
+    tools:context=".subModule.rcbg.RcbgAddActivity">
+    <!--顶部标题栏-->
+    <com.hjq.bar.TitleBar
+        android:visibility="visible"
+        android:id="@+id/tb_rcbg_add"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/blue1"
+        app:titleColor="@color/white"
+        app:leftBackground="@null"
+        app:leftColor="@color/white"
+        app:rightBackground="@null"
+        app:barStyle="transparent"
+        app:leftTitle="@string/title_back"
+        app:rightSize="0dp"
+        app:title="@string/rcbg_bt_txbg" />
     <LinearLayout
+        android:background="@drawable/shape_shadow_bottom"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/shape_shadow"
-        >
+        android:layout_weight="1">
         <!--标题-->
         <LinearLayout
             android:orientation="horizontal"
@@ -20,50 +35,40 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp">
             <ImageView
-                android:src="@drawable/rcbg_star"
+                android:src="@drawable/ic_home_rcbg"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <EditText
-                android:id="@+id/tv_rcbg_wdbg_title"
+                android:id="@+id/tv_rcbg_txbg_title"
                 android:hint="@string/rcbg_tv_wdbg_title"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:layout_marginLeft="10dp"/>
+                android:layout_height="wrap_content"/>
         </LinearLayout>
         <!--内容-->
         <LinearLayout
             android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-            <LinearLayout
-                android:orientation="horizontal"
+            <com.kingja.supershapeview.view.SuperShapeEditText
+                android:id="@+id/et_rcbg_txbg_content"
+                android:gravity="top"
+                android:hint="@string/rcbg_tv_wdbg_content"
                 android:layout_width="match_parent"
-                android:layout_margin="15dp"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:src="@drawable/rcbg_star"
-                    android:layout_margin="5dp"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"/>
-                <com.kingja.supershapeview.view.SuperShapeEditText
-                    android:id="@+id/et_rcbg_wdbg_content"
-                    android:gravity="top"
-                    android:hint="@string/rcbg_tv_wdbg_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="12dp"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/black"
-                    app:super_dashWidth="2dp"
-                    app:super_solidColor="@color/white"
-                    app:super_strokeColor="@color/black"
-                    app:super_strokeWidth="1dp"/>
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                app:super_dashWidth="2dp"
+                app:super_solidColor="@color/white"
+                app:super_strokeColor="@color/black"
+                app:super_strokeWidth="1dp"/>
         </LinearLayout>
         <Button
             android:id="@+id/bt_rcbg_txbg_save"
@@ -77,10 +82,8 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:background="@drawable/shape_shadow"
-        >
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
         <!--签到时间-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,7 +101,7 @@
                 android:layout_margin="5dp"
                 android:text="时间"/>
             <TextClock
-                android:id="@+id/tc_rcbg_wdbg_time"
+                android:id="@+id/tc_rcbg_txbg_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:format24Hour ="yyyy-MM-dd  HH:mm:ss"
@@ -123,7 +126,7 @@
                 android:layout_margin="5dp"
                 android:text="地点"/>
             <TextView
-                android:id="@+id/tv_rcbg_wdbg_place"
+                android:id="@+id/tv_rcbg_txbg_place"
                 android:textColor="@color/black"
                 android:text="华北计算技术研究所"
                 android:layout_marginLeft="10dp"
@@ -131,5 +134,4 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
