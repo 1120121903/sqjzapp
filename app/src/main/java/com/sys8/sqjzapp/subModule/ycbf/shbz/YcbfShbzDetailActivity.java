@@ -61,11 +61,12 @@ public class YcbfShbzDetailActivity extends BaseActivity {
 
     @OnClick(R.id.bt_ycbf_shbz_bm)
     public void shbzBm(){
-        Intent intent=new Intent(this,YcbfShbzBmActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+        Intent intent=new Intent(this, YcbfShbzApplyActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
         Bundle bundle = new Bundle();
         bundle.putString("title",tvYcbfShbzTitle.getText().toString()); //放入所需要传递的值
         intent.putExtras(bundle);
         this.startActivity(intent);
+        finish();
     }
 
 }

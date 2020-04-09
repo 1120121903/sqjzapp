@@ -22,39 +22,49 @@
 
         app:rightSize="0dp"
         app:title="@string/ycbf_tb_title" />
+    <!--Tab标签页-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_ycbf"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:tabGravity="fill"
+        app:tabMaxWidth="0dp"
+        app:tabBackground="@color/white"
+        app:tabRippleColor="@color/white"
+        app:tabIndicatorColor="@color/blue1"
+        app:tabIndicatorFullWidth="false"
+        app:tabMode="fixed"
+        app:tabMinWidth="40dp"
+        app:tabPaddingStart="5dp"
+        app:tabPaddingEnd="5dp"
+        app:tabSelectedTextColor="@color/blue1"
+        app:tabTextColor="@color/black"
+        />
+    <View
+        android:background="@color/gray"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <!--中间内容-->
-    <LinearLayout
+    <RelativeLayout
         android:orientation="vertical"
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <!--Tab标签页-->
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_ycbf"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            app:tabGravity="fill"
-            app:tabMaxWidth="0dp"
-            app:tabBackground="@color/white"
-            app:tabRippleColor="@color/white"
-            app:tabIndicatorColor="@color/blue1"
-            app:tabIndicatorFullWidth="false"
-            app:tabMode="fixed"
-            app:tabMinWidth="40dp"
-            app:tabPaddingStart="5dp"
-            app:tabPaddingEnd="5dp"
-            app:tabSelectedTextColor="@color/blue1"
-            app:tabTextColor="@color/black"
-            />
-        <View
-            android:background="@color/gray"
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
         <!--内容-->
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_ycbf"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-    </LinearLayout>
+        <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton
+            android:id="@+id/bt_ycbf_wdbf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:src="@drawable/ic_wdsq"
+            android:background="@drawable/button_bg"/>
+    </RelativeLayout>
 </LinearLayout>
