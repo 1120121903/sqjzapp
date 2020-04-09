@@ -19,8 +19,6 @@ public class TzxxDetailActivity extends BaseActivity {
 
     @BindView(R.id.tb_main_title)
     TitleBar tbMainTitle;
-    @BindView(R.id.tv_tzxx_detail_title)
-    TextView tvTzxxDetailTitle;
     @BindView(R.id.tv_tzxx_detail_content)
     TextView tvTzxxDetailContent;
     @BindView(R.id.tv_tzxx_detail_time)
@@ -51,7 +49,6 @@ public class TzxxDetailActivity extends BaseActivity {
                 break;
             }
         }
-        tvTzxxDetailTitle.setText(tzxx.getTitle());
         tvTzxxDetailContent.setText(tzxx.getContent());
         tvTzxxDetailTime.setText(tzxx.getTime());
         tvTzxxDetailDep.setText(tzxx.getDep());
