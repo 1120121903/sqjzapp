@@ -1,6 +1,7 @@
 package com.sys8.sqjzapp.subModule.educationLearning.learningDetailList;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,19 +10,22 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.ActivityCollector;
+import com.sys8.sqjzapp.baseClass.BaseActivity;
+import com.sys8.sqjzapp.subModule.educationLearning.learningExam.ExaminationActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LearningPictureDetailListActivity extends AppCompatActivity {
+public class LearningPictureDetailListActivity extends BaseActivity {
     final RxPermissions rxPermissions = new RxPermissions(this);
     @BindView(R.id.tb_educationlearning_picture_detail_list_titlebar)
     TitleBar tbEducationlearningPictureDetailListTitlebar;
@@ -77,8 +81,36 @@ public class LearningPictureDetailListActivity extends AppCompatActivity {
         tbEducationlearningPictureDetailListTitlebar.setTitle(title);
     }
 
-    @OnClick(R.id.bt_learning_education_exam)
-    public void toExamPage(){
 
+    /**
+     * 跳转到考试页面
+     */
+    public void toExamPage(){
+        Intent intent_exam=new Intent(this, ExaminationActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+        this.startActivity(intent_exam); //这里一定要获取到所在Activity再startActivity()；
+    }
+
+
+
+    /**
+     * 考试提醒
+     */
+    @OnClick(R.id.bt_learning_education_exam)
+    public void showExamHintDialog(){
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setMessage("确定开始考试吗？")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        toExamPage();
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+        dialog.show();
     }
 }

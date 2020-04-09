@@ -12,6 +12,7 @@ import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.baseClass.ActivityCollector;
+import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.module.LearningDetailListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.utils.DataSource;
@@ -21,7 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LearningVideoDetailListActivity extends AppCompatActivity {
+public class LearningVideoDetailListActivity extends BaseActivity {
 
     @BindView(R.id.tb_educationlearning_video_detail_list_titlebar)
     TitleBar tbEducationlearningVideoDetailListTitlebar;
