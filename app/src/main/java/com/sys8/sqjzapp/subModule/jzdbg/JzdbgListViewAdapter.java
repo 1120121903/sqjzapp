@@ -31,6 +31,13 @@ public class JzdbgListViewAdapter extends BaseAdapter
         inflater = LayoutInflater.from(context);
     }
 
+    public JzdbgListViewAdapter( Context context, List<Jzdbg> list, Activity activity)
+    {
+        this.list = getRevertTimeLineData(list);
+        this.activity = activity;
+        inflater = LayoutInflater.from(context);
+    }
+
     @Override
     public int getCount()
     {
