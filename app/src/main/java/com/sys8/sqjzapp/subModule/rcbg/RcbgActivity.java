@@ -1,12 +1,13 @@
 package com.sys8.sqjzapp.subModule.rcbg;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
+import com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
@@ -16,15 +17,18 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
+import static com.sys8.sqjzapp.subModule.rcbg.RcbgListData.list_RCBG;
+import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class RcbgActivity extends BaseActivity {
 
     @BindView(R.id.tb_rcbg)
     TitleBar tbRcbg;
     @BindView(R.id.bt_rcbg_txbg)
-    Button btRcbgTxbg;
-    @BindView(R.id.bt_rcbg_wdbg)
-    Button btRcbgWdbg;
+    DragFloatActionButton btRcbgTxbg;
+    @BindView(R.id.lv_rcbg)
+    ListView lvRcbg;
+    private   RcbgnListViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,38 +36,39 @@ public class RcbgActivity extends BaseActivity {
         setContentView(R.layout.activity_rcbg);
         ButterKnife.bind(this);
         TitleCilckListener(tbRcbg, this);/*title按钮监听*/
-        addFragment(FragRcbg_txbg.getInstance());
+        bindData();
+    }
+
+    @Override
+    protected void onPostResume() {
+        adapter = new RcbgnListViewAdapter(this,list_RCBG,this);
+        super.onPostResume();
+        lvRcbg.setAdapter(adapter);
+    }
+
+    private void bindData(){
+        adapter = new RcbgnListViewAdapter(this,list_RCBG,this);
+        lvRcbg.setAdapter(adapter);
+        lvRcbg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(RcbgActivity.this,RcbgDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+                Bundle bundle = new Bundle();
+                Rcbg rcbg = (Rcbg) getRevertTimeLineData(list_RCBG).get(position);
+                bundle.putString("title", rcbg.getTitle()); //放入所需要传递的值
+                bundle.putString("content", rcbg.getContent());
+                bundle.putString("time", rcbg.getTime());
+                bundle.putString("place", rcbg.getPlace());
+                intent.putExtras(bundle);
+                startActivity(intent); //这里一定要获取到所在Activity再startActivity()；
+            }
+        });
     }
 
     @OnClick(R.id.bt_rcbg_txbg)
-    public void rcbgTxbgFragment(){
-        btRcbgTxbg.setBackground(getDrawable(R.color.blue));
-        btRcbgWdbg.setBackground(getDrawable(R.color.blue1));
-        replaceFragment(FragRcbg_txbg.getInstance());
-    }
-    @OnClick(R.id.bt_rcbg_wdbg)
-    public void rcbgWdbgFragment(){
-        btRcbgTxbg.setBackground(getDrawable(R.color.blue1));
-        btRcbgWdbg.setBackground(getDrawable(R.color.blue));
-        replaceFragment(FragRcbg_wdbg.getInstance());
-    }
-
-    /**
-     * description:替换Fragment
-     */
-    public void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.fl_rcbg, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-    public void addFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.fl_rcbg, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
+    public void rcbgTxbg() {
+        Intent intent = new Intent(RcbgActivity.this,RcbgAddActivity.class);
+        startActivity(intent);
     }
 
 }
