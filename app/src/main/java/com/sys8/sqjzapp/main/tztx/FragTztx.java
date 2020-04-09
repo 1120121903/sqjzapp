@@ -34,6 +34,8 @@ public class FragTztx extends Fragment {
     @BindView(R.id.lv_tztx)
     ListView lvTztx;
 
+    private View view;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,9 @@ public class FragTztx extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.frag_tztx_main, container, false);
+        if(view == null){
+            view = inflater.inflate(R.layout.frag_tztx_main, container, false);
+        }
         ButterKnife.bind(this, view);
         bindListData();
         return view;

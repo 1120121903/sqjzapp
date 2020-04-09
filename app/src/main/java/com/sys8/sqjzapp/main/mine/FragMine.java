@@ -12,6 +12,8 @@ import butterknife.ButterKnife;
 
 public class FragMine extends Fragment {
 
+    private View view;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,9 @@ public class FragMine extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.frag_mine, container, false);
+        if(view == null){
+            view = inflater.inflate(R.layout.frag_mine, container, false);
+        }
         ButterKnife.bind(this, view);
         return view;
     }

@@ -83,7 +83,9 @@ public class FragHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.frag_home, container, false);
+        if(view == null){
+            view = inflater.inflate(R.layout.frag_home, container, false);
+        }
         ButterKnife.bind(this, view);
         initBannerAndIndicator();//初始化banner和指示器
         bannerHomeTop.start();//开始轮播

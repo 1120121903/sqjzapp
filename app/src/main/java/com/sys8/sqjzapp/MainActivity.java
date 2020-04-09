@@ -14,6 +14,7 @@ import com.hjq.bar.TitleBar;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.sys8.sqjzapp.adapters.MainFragmentAdapter;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
+import com.sys8.sqjzapp.common.design.CustomViewPager;
 import com.sys8.sqjzapp.main.home.FragHome;
 import com.sys8.sqjzapp.main.mine.FragMine;
 import com.sys8.sqjzapp.main.tztx.FragTztx;
@@ -31,7 +32,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends BaseActivity {
 
     @BindView(R.id.vp_main_pager)
-    ViewPager vpMainPager;
+    CustomViewPager vpMainPager;
     private ArrayList<Fragment> mMainFragmentList;
     @BindView(R.id.bottom_nav_view)
     BottomNavigationViewEx bnvMainBottom;
@@ -58,6 +59,7 @@ public class MainActivity extends BaseActivity {
         //viewpager初始化
         MainFragmentAdapter mainFragmentAdapter = new MainFragmentAdapter(getSupportFragmentManager(), mMainFragmentList);
         vpMainPager.setAdapter(mainFragmentAdapter);
+        vpMainPager.setScanScroll(false);//禁止页面滑动
 
         //获取底部导航图标颜色，根据图标颜色设置文字颜色
         Resources resource = getResources();
