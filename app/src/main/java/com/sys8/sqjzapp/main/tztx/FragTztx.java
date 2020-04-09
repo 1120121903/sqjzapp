@@ -1,39 +1,27 @@
 package com.sys8.sqjzapp.main.tztx;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.sys8.sqjzapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import static com.sys8.sqjzapp.main.tztx.ListData.list_TZTX;
+import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class FragTztx extends Fragment {
 
-    @BindView(R.id.bt_tztx_tz)
-    Button btTztxTz;
-    @BindView(R.id.bt_tztx_tx)
-    Button btTztxTx;
-    @BindView(R.id.fl_tztx)
-    FrameLayout flTztx;
-    @BindView(R.id.line_tztx_main_list)
-    LinearLayout lineTztxMainList;
     @BindView(R.id.lv_tztx)
     ListView lvTztx;
-
+    private TztxListViewAdapter adapter;
     private View view;
 
     @Override
@@ -46,42 +34,33 @@ public class FragTztx extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         if(view == null){
-            view = inflater.inflate(R.layout.frag_tztx_main, container, false);
+            view = inflater.inflate(R.layout.frag_tztx, container, false);
         }
         ButterKnife.bind(this, view);
-        bindListData();
+        bindData();
         return view;
     }
 
-    private void bindListData(){
-        TztxMainListViewAdapter adapter = new TztxMainListViewAdapter(getView(),getContext(),list_TZTX,"TZTX",getActivity());
+    private void bindData(){
+        adapter = new TztxListViewAdapter(getView(),getContext(),list_TZTX,getActivity());
         lvTztx.setAdapter(adapter);
+        lvTztx.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(),TzxxDetailActivity.class);
+                Bundle bundle = new Bundle();
+                Tzxx gyhdYbm = (Tzxx) getRevertTimeLineData(list_TZTX).get(position);
+                bundle.putString("title",gyhdYbm.getTitle() );
+                intent.putExtras(bundle);
+                getActivity().startActivity(intent);
+            }
+        });
     }
 
-    @OnClick(R.id.bt_tztx_tz)
-    public void tzFragment() {
-        btTztxTz.setTextSize(15);
-        btTztxTx.setTextSize(13);
-        lineTztxMainList.setVisibility(View.GONE);
-        replaceFragment(FragTztx_Tz.getInstance());
-    }
-
-    @OnClick(R.id.bt_tztx_tx)
-    public void txFragment() {
-        btTztxTz.setTextSize(13);
-        btTztxTx.setTextSize(15);
-        lineTztxMainList.setVisibility(View.GONE);
-        replaceFragment(FragTztx_Tx.getInstance());
-    }
-
-    /**
-     * description:替换Fragment
-     */
-    private void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.fl_tztx, fragment);
-        transaction.commit();
+    @Override
+    public void onResume() {
+        lvTztx.setAdapter(adapter);//刷新数据
+        super.onResume();
     }
 
 }

@@ -13,6 +13,8 @@ import com.sys8.sqjzapp.baseClass.BaseActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.sys8.sqjzapp.main.tztx.ListData.list_TZTX;
+
 public class TzxxDetailActivity extends BaseActivity {
 
     @BindView(R.id.tb_main_title)
@@ -33,7 +35,6 @@ public class TzxxDetailActivity extends BaseActivity {
         ButterKnife.bind(this);
         TitleCilckListenerTzxx(tbMainTitle);
         bindData();
-
     }
 
     /**
@@ -42,13 +43,18 @@ public class TzxxDetailActivity extends BaseActivity {
     private void bindData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
-        String content = intent.getStringExtra("content");
-        String time = intent.getStringExtra("time");
-        String dep = intent.getStringExtra("dep");
-        tvTzxxDetailTitle.setText(title);
-        tvTzxxDetailContent.setText(content);
-        tvTzxxDetailTime.setText(time);
-        tvTzxxDetailDep.setText(dep);
+        Tzxx tzxx = new Tzxx();
+        for(int i=0 ;i <list_TZTX.size();i++){
+            if(list_TZTX.get(i).getTitle().equals(title)){
+                list_TZTX.get(i).setState("1");
+                tzxx = list_TZTX.get(i);
+                break;
+            }
+        }
+        tvTzxxDetailTitle.setText(tzxx.getTitle());
+        tvTzxxDetailContent.setText(tzxx.getContent());
+        tvTzxxDetailTime.setText(tzxx.getTime());
+        tvTzxxDetailDep.setText(tzxx.getDep());
     }
 
     /**
