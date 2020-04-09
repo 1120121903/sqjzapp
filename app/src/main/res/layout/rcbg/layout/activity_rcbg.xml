@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".subModule.rcbg.RcbgActivity">
     <!--顶部标题栏-->
     <com.hjq.bar.TitleBar
