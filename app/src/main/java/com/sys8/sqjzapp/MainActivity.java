@@ -59,7 +59,7 @@ public class MainActivity extends BaseActivity {
         //viewpager初始化
         MainFragmentAdapter mainFragmentAdapter = new MainFragmentAdapter(getSupportFragmentManager(), mMainFragmentList);
         vpMainPager.setAdapter(mainFragmentAdapter);
-        vpMainPager.setScanScroll(false);//禁止页面滑动
+        vpMainPager.setScanScroll(true);//false:禁止页面滑动
 
         //获取底部导航图标颜色，根据图标颜色设置文字颜色
         Resources resource = getResources();

@@ -19,19 +19,20 @@ import androidx.fragment.app.FragmentTransaction;
 import com.sys8.sqjzapp.R;
 import java.util.List;
 
-public class TztxMainListViewAdapter extends BaseAdapter
+import static com.sys8.sqjzapp.utils.Constant.STATE_TZTX_YD;
+import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
+
+public class TztxListViewAdapter extends BaseAdapter
 {
     View view;
     private List<Tzxx> list;
     private LayoutInflater inflater;
-    private String listType;
     private Activity activity;
 
-    public TztxMainListViewAdapter(View view, Context context, List<Tzxx> list, String listType, Activity activity)
+    public TztxListViewAdapter(View view, Context context, List<Tzxx> list, Activity activity)
     {
         this.view = view;
-        this.list = list;
-        this.listType = listType;
+        this.list = getRevertTimeLineData(list);
         this.activity = activity;
         inflater = LayoutInflater.from(context);
     }
@@ -68,49 +69,36 @@ public class TztxMainListViewAdapter extends BaseAdapter
         if(convertView == null){
             viewHolder = new ViewHolder();
             convertView = inflater.inflate(R.layout.tzxx_list_item, null);
-            viewHolder.tzxx_title = convertView.findViewById(R.id.iv_tztx_title);
+            viewHolder.tztx_title = convertView.findViewById(R.id.iv_tztx_title);
             viewHolder.tztx_type = convertView.findViewById(R.id.tv_tztx_type);
             viewHolder.tztx_time = convertView.findViewById(R.id.tv_tztx_time);
             viewHolder.tztx_cotent =  convertView.findViewById(R.id.tv_tztx_cotent);
-            viewHolder.tzxx_detail = convertView.findViewById(R.id.bt_tzxx_detail);
-            viewHolder.ll_tzxx_detail = convertView.findViewById(R.id.ll_tzxx_detail);
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.tztx_type.setText(tzxx.getType());
         viewHolder.tztx_time.setText(tzxx.getTime());
+        viewHolder.tztx_cotent.setText(tzxx.getContent());
         if(tzxx.getType().substring(0,2).equals("通知")){
-            viewHolder.tztx_cotent.setText(tzxx.getContent());
-            viewHolder.ll_tzxx_detail.setVisibility(View.VISIBLE);
-            viewHolder.tzxx_detail.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(activity,TzxxDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
-                    Bundle bundle = new Bundle();
-                    bundle.putString("title", tzxx.getTitle()); //放入所需要传递的值
-                    bundle.putString("content", tzxx.getContent());
-                    bundle.putString("time", tzxx.getTime());
-                    bundle.putString("dep", tzxx.getDep());
-                    intent.putExtras(bundle);
-                    activity.startActivity(intent); //这里一定要获取到所在Activity再startActivity()；
-                }
-            });
+            if(tzxx.getState().equals(STATE_TZTX_YD)){
+                viewHolder.tztx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tz_yd));
+            }else{
+                viewHolder.tztx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tz));
+            }
         }else {
-            viewHolder.tzxx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tx));
-            viewHolder.tztx_cotent.setText(tzxx.getContent());
-            viewHolder.ll_tzxx_detail.setVisibility(View.INVISIBLE);
-
+            if(tzxx.getState().equals(STATE_TZTX_YD)){
+                viewHolder.tztx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tx_yd));
+            }else{
+                viewHolder.tztx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tx));
+            }
         }
-//        viewHolder.tztx_cotent.setTextSize(18);
         return convertView;
     }
     public static class ViewHolder{
-        public ImageView tzxx_title;
+        public ImageView tztx_title;
         public TextView tztx_type;
         public TextView tztx_time;
         public TextView tztx_cotent;
-        public Button tzxx_detail;
-        public LinearLayout ll_tzxx_detail;
     }
 }

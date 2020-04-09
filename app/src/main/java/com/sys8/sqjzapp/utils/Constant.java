@@ -21,4 +21,7 @@ public class Constant {
     //公益活动
     public static String[] topTabs_gyhd = new String[]{"活动列表","已参加"};
     public static String STATE_GYHD = "我要报名";
+
+    //通知提醒
+    public static String STATE_TZTX_YD = "1";
 }

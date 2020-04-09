@@ -18,6 +18,7 @@
     <color name="whiteTrans">#50FFFFFF</color>
     <color name="black">#000000</color>
     <color name="gray">#A9EEECEC</color>
+    <color name="gray1">#BFBFBF</color>
     <color name="grayDeep">#666666</color>
     <color name="blueDeep">#75859b</color>
     <color name="yello">#FFC107</color>
