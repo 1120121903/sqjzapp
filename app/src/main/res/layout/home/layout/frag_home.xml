@@ -1,59 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:banner="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <!--顶部标题栏-->
-    <LinearLayout
-        android:orientation="vertical"
-        android:background="@drawable/home_background"
+    <ScrollView
+        android:id="@+id/sl_home"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <com.hjq.bar.TitleBar
-            android:visibility="visible"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            app:titleColor="@color/white"
-            app:leftBackground="@null"
-            app:rightBackground="@null"
-            app:barStyle="transparent"
-            app:backButton = "false"
-            app:title="@string/main_bottom_home" />
-        <com.youth.banner.Banner
-            xmlns:banner="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/banner_home_top"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            banner:indicator_selected_color="@color/white" />
-        <com.youth.banner.indicator.RoundLinesIndicator
-            android:id="@+id/indicator_home_top"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            />
-        <!--通知提醒-->
-        <include layout="@layout/home_message" />
-        <!--按钮列表-->
-        <include layout="@layout/home_button"/>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="150dp">
-        <View
-            android:background="@color/gray"
-            android:layout_width="match_parent"
-            android:layout_height="5dp"/>
-        <!--视频列表-->
-        <include layout="@layout/home_jyxx"/>
-    </LinearLayout>
+            android:layout_height="900dp">
+            <!--内容-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/home_background"
+                android:layout_width="match_parent"
+                android:layout_height="500dp">
+                <!--顶部标题栏-->
+                <com.hjq.bar.TitleBar
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:titleColor="@color/white"
+                    app:leftBackground="@null"
+                    app:rightBackground="@null"
+                    app:barStyle="transparent"
+                    app:backButton = "false"
+                    app:title="@string/main_bottom_home" />
+                <!--宣传图片-->
+                <com.youth.banner.Banner
+                    xmlns:banner="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/banner_home_top"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    banner:indicator_selected_color="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp" />
+                <com.youth.banner.indicator.RoundLinesIndicator
+                    android:id="@+id/indicator_home_top"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    />
+                <!--按钮列表-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp">
+                    <include layout="@layout/home_button"/>
+                </LinearLayout>
+                <!--通知提醒-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <include layout="@layout/home_message" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--视频列表-->
+                <include layout="@layout/home_jyxx"/>
+                <include layout="@layout/home_jyxx"/>
+                <include layout="@layout/home_jyxx"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
+

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -72,6 +73,8 @@ public class FragHome extends Fragment {
     TextView tvHomeJyxx2Time;
     @BindView(R.id.indicator_home_top)
     RoundLinesIndicator indicatorHomeTop;
+    @BindView(R.id.sl_home)
+    ScrollView slHome;
     private View view;
 
     @Override
@@ -83,12 +86,13 @@ public class FragHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        if(view == null){
+        if (view == null) {
             view = inflater.inflate(R.layout.frag_home, container, false);
         }
         ButterKnife.bind(this, view);
         initBannerAndIndicator();//初始化banner和指示器
         bannerHomeTop.start();//开始轮播
+        slHome.scrollTo(0, 0);//.fullScroll(ScrollView.FOCUS_UP);
         return view;
     }
 
