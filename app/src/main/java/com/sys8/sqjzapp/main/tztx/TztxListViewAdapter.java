@@ -83,11 +83,13 @@ public class TztxListViewAdapter extends BaseAdapter
         if(tzxx.getType().substring(0,2).equals("通知")){
             if(tzxx.getState().equals(STATE_TZTX_YD)){
                 viewHolder.tztx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tz_yd));
+                viewHolder.tztx_type.setTextColor(activity.getColor(R.color.colorFontGray));
             }else{
                 viewHolder.tztx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tz));
             }
         }else {
             if(tzxx.getState().equals(STATE_TZTX_YD)){
+                viewHolder.tztx_type.setTextColor(activity.getColor(R.color.colorFontGray));
                 viewHolder.tztx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tx_yd));
             }else{
                 viewHolder.tztx_title.setBackground(activity.getDrawable(R.drawable.ic_tztx_tx));

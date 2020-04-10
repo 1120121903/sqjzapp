@@ -41,13 +41,14 @@
                     android:layout_height="20dp"/>
                 <TextView
                     android:id="@+id/tv_tzxx_detail_dep"
-                    android:text="xxx司法所"
+                    android:theme="@style/MyTextView_single_content"
                     android:gravity="center_vertical"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"/>
                 <TextView
                     android:id="@+id/tv_tzxx_detail_time"
+                    android:theme="@style/MyTextView_single_content"
                     android:text="2020-03-20 9:00"
                     android:gravity="center_vertical"
                     android:layout_marginRight="10dp"
@@ -57,6 +58,7 @@
             <!--内容-->
             <com.kingja.supershapeview.view.SuperShapeTextView
                 android:id="@+id/tv_tzxx_detail_content"
+                android:theme="@style/MyTextView_cotent"
                 android:text="哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或"
                 android:gravity="top"
                 android:padding="10dp"
