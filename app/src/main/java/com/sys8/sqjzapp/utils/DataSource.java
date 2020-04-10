@@ -36,6 +36,8 @@ public class DataSource {
         return mdata;
     }
 
+    public static String CurrentLocation = "";
+
     public static List<TimelineItem> getLearningEducationDetailRvData(){
         List<TimelineItem> mdata = new ArrayList<>();
         //video1
