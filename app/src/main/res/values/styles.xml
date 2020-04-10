@@ -16,6 +16,7 @@
         <item name="android:editTextColor">@color/black</item>
         <item name="android:editable">true</item>
         <item name="android:maxLines">1</item>
+        <item name="android:letterSpacing">0.03</item><!--字间距-->
     </style>
 
     <!--TextView 标题（单行，黑色，左右margin：10dp）-->
