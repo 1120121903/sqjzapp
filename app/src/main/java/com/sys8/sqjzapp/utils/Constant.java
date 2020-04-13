@@ -27,7 +27,7 @@ public class Constant {
     public static String STATE_GYHD = "我要报名";
 
     //通知提醒
-    public static String STATE_TZTX_YD = "1";
+    public static String STATE_TZTX_YD = "1";//已读
 
     //头像
     public static Bitmap userBitMap = null;
