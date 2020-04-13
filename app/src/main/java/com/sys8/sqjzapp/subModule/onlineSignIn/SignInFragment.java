@@ -1,6 +1,14 @@
 package com.sys8.sqjzapp.subModule.onlineSignIn;
 
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,16 +16,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
+import com.sys8.sqjzapp.common.FaceVerifyActivity;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.utils.DataSource;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import butterknife.BindView;
@@ -40,7 +52,7 @@ public class SignInFragment extends Fragment {
     RecyclerView recyclerOnlinesigninLocationHistory;
     @BindView(R.id.bt_onlinesignin_submit)
     Button btOnlinesigninSubmit;
-
+    private Uri imageUri;
     private String mSignInTime;
     private String mSignInAddress;
     View view;
@@ -97,6 +109,7 @@ public class SignInFragment extends Fragment {
     }
 
     private void getListData() {
+
         mData = DataSource.getTimelineData();
     }
 
@@ -106,7 +119,21 @@ public class SignInFragment extends Fragment {
 
     @OnClick(R.id.bt_onlinesignin_submit)
     public void submitSignInRecord(View v){
-        LocationItem itemLocation = new LocationItem(mSignInTime + "\n" + mSignInAddress, R.drawable.location_timeline_imguser);
+        Bitmap userBitmap = null;
+        File outputImage = new File(getActivity().getExternalCacheDir(), "output_image.jpg");
+         try {
+             if(outputImage.exists()){
+                 imageUri = FileProvider.getUriForFile(getActivity(), "com.sys8.sqjzapp.fileprovider", outputImage);
+                 userBitmap = BitmapFactory.decodeStream(getActivity().getContentResolver().openInputStream(imageUri));
+                 userBitmap = getCircularBitmap(userBitmap);
+                 System.out.println("imageUri"+imageUri);
+             }
+         }catch (IOException e){
+             e.printStackTrace();
+         }
+
+        LocationItem itemLocation = new LocationItem(mSignInTime + "\n" + mSignInAddress, userBitmap);
+        //
         TimelineItem locationTimelintItem = new TimelineItem(itemLocation);
         mData.add(locationTimelintItem);
         setupAdapter();
@@ -115,6 +142,28 @@ public class SignInFragment extends Fragment {
         //btOnlinesigninSubmit.setVisibility(View.GONE);
     }
 
+    /**
+     * 获取圆形图片
+     */
+    public  Bitmap getCircularBitmap(Bitmap square) {
+        if (square == null) return null;
+        Bitmap output = Bitmap.createBitmap(square.getWidth(), square.getHeight(), Bitmap.Config.ARGB_8888);
+
+        final Rect rect = new Rect(0, 0, square.getWidth(), square.getHeight());
+        Canvas canvas = new Canvas(output);
+
+        int halfWidth = square.getWidth() / 2;
+        int halfHeight = square.getHeight() / 2;
+
+        final Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setFilterBitmap(true);
+
+        canvas.drawCircle(halfWidth, halfHeight, Math.min(halfWidth, halfHeight), paint);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(square, rect, rect, paint);
+        return output;
+    }
 
     @Override
     public void onDestroyView() {

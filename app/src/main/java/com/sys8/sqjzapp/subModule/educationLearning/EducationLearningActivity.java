@@ -33,7 +33,6 @@ public class EducationLearningActivity extends BaseActivity {
     @BindView(R.id.tb_educationlearning_titlebar)
     TitleBar tbEducationlearningTitlebar;
 
-    String location = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +40,7 @@ public class EducationLearningActivity extends BaseActivity {
         ButterKnife.bind(this);
         ActivityCollector.TitleCilckListener(tbEducationlearningTitlebar, this);
         addFragment(new LearningListPageFragment());
-       LocationObserver().subscribe(new Consumer<String>() {
-           @Override
-           public void accept(String s) throws Exception {
-               System.out.println("地理位置"+s);
-           }
-       });
+
     }
 
     /**

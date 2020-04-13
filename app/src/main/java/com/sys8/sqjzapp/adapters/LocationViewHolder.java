@@ -25,6 +25,11 @@ public class LocationViewHolder extends BaseViewHolder {
     void setData(TimelineItem item) {
         LocationItem locationItem = item.getLocationItem();
         tvTimeLineText.setText(locationItem.getTimeLineText());
-        Glide.with(itemView.getContext()).load(locationItem.getImgUser()).into(imageUser);
+
+        if(locationItem.getImgUserBitMap()!=null){
+            imageUser.setImageBitmap(locationItem.getImgUserBitMap());
+        }else{
+            Glide.with(itemView.getContext()).load(locationItem.getImgUser()).into(imageUser);
+        }
     }
 }
