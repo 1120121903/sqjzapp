@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:banner="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ScrollView
@@ -32,7 +33,7 @@
                     app:rightBackground="@null"
                     app:barStyle="transparent"
                     app:backButton = "false"
-                    app:title="@string/main_bottom_home" />
+                    app:title="@string/app_name" />
                 <!--宣传图片-->
                 <com.youth.banner.Banner
                     xmlns:banner="http://schemas.android.com/apk/res-auto"
@@ -73,12 +74,32 @@
                 android:layout_height="5dp"/>
             <LinearLayout
                 android:orientation="vertical"
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <!--视频列表-->
-                <include layout="@layout/home_jyxx"/>
-                <include layout="@layout/home_jyxx"/>
-                <include layout="@layout/home_jyxx"/>
+                <!--最新课程-->
+                <FrameLayout
+                    android:id="@+id/fl_home_zxkc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:background="@color/gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+                <!--最新帮扶-->
+                <FrameLayout
+                    android:id="@+id/fl_home_zxbf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:background="@color/gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+                <!--最新公益-->
+                <FrameLayout
+                    android:id="@+id/fl_home_zxgy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

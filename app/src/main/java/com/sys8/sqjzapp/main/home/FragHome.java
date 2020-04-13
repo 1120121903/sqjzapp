@@ -6,18 +6,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.VideoView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.ImageAdapter;
 import com.sys8.sqjzapp.common.FaceVerifyActivity;
 import com.sys8.sqjzapp.subModule.gyhd.GyhdActivity;
+import com.sys8.sqjzapp.subModule.jzdbg.JzdbgActivity;
 import com.sys8.sqjzapp.subModule.ycbf.YcbfActivity;
+import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.indicator.CircleIndicator;
 import com.youth.banner.indicator.RoundLinesIndicator;
@@ -57,24 +60,20 @@ public class FragHome extends Fragment {
     Button btHomeJstx;
     @BindView(R.id.bt_home_xlzx)
     Button btHomeXlzx;
-    @BindView(R.id.bt_home_jyxx_next)
-    Button btHomeJyxxNext;
-    @BindView(R.id.vv_home_jyxx1)
-    VideoView vvHomeJyxx1;
-    @BindView(R.id.tv_home_jyxx1_cotent)
-    TextView tvHomeJyxx1Cotent;
-    @BindView(R.id.tv_home_jyxx1_time)
-    TextView tvHomeJyxx1Time;
-    @BindView(R.id.vv_home_jyxx2)
-    VideoView vvHomeJyxx2;
-    @BindView(R.id.tv_home_jyxx2_cotent)
-    TextView tvHomeJyxx2Cotent;
-    @BindView(R.id.tv_home_jyxx2_time)
-    TextView tvHomeJyxx2Time;
     @BindView(R.id.indicator_home_top)
     RoundLinesIndicator indicatorHomeTop;
     @BindView(R.id.sl_home)
     ScrollView slHome;
+    @BindView(R.id.bt_home_jzxz)
+    Button btHomeJzxz;
+    @BindView(R.id.bt_home_jzjl)
+    Button btHomeJzjl;
+    @BindView(R.id.fl_home_zxkc)
+    FrameLayout flHomeZxkc;
+    @BindView(R.id.fl_home_zxbf)
+    FrameLayout flHomeZxbf;
+    @BindView(R.id.fl_home_zxgy)
+    FrameLayout flHomeZxgy;
     private View view;
 
     @Override
@@ -93,7 +92,20 @@ public class FragHome extends Fragment {
         initBannerAndIndicator();//初始化banner和指示器
         bannerHomeTop.start();//开始轮播
         slHome.scrollTo(0, 0);//.fullScroll(ScrollView.FOCUS_UP);
+        replaceFragment();
         return view;
+    }
+
+    /**
+     *description:替换碎片
+     */
+    private void replaceFragment(){
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fl_home_zxkc,new FragHomeJyxx());
+        transaction.replace(R.id.fl_home_zxbf,new FragHomeYcbf());
+        transaction.replace(R.id.fl_home_zxgy,new FragHomeGyhd());
+        transaction.commit();
     }
 
     @Override
@@ -147,36 +159,35 @@ public class FragHome extends Fragment {
         bundle.putString("SubModuleName", "jyxx"); //教育学习
         intent.putExtras(bundle);
         this.startActivity(intent);
-
     }
 
     /* 外出请假 */
     @OnClick(R.id.bt_home_wcqj)
     public void toSubModuleWcqj(View view) {
-        Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("SubModuleName", "wcqj"); //外出请假
-        intent.putExtras(bundle);
+        Intent intent = new Intent(this.getActivity(), YcbfActivity.class);
+//        Bundle bundle = new Bundle();
+//        bundle.putString("SubModuleName", "wcqj"); //外出请假
+//        intent.putExtras(bundle);
         this.startActivity(intent);
     }
 
     /* 暂监外病检 */
     @OnClick(R.id.bt_home_zjwbj)
     public void toSubModuleZjwbj(View view) {
-        Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("SubModuleName", "zjwbj"); //暂监外病检
-        intent.putExtras(bundle);
+        Intent intent = new Intent(this.getActivity(), ZjwbjActivity.class);
+//        Bundle bundle = new Bundle();
+//        bundle.putString("SubModuleName", "zjwbj"); //暂监外病检
+//        intent.putExtras(bundle);
         this.startActivity(intent);
     }
 
     /* 居住地变更 */
     @OnClick(R.id.bt_home_jzdbg)
     public void toSubModuleJzdbg(View view) {
-        Intent intent = new Intent(this.getActivity(), FaceVerifyActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("SubModuleName", "jzdbg"); //居住地变更
-        intent.putExtras(bundle);
+        Intent intent = new Intent(this.getActivity(), JzdbgActivity.class);
+//        Bundle bundle = new Bundle();
+//        bundle.putString("SubModuleName", "jzdbg"); //居住地变更
+//        intent.putExtras(bundle);
         this.startActivity(intent);
     }
 

@@ -25,11 +25,16 @@
 
     <!--home教育学习数据-->
     <string name="home_tv_jyxx">最新课程</string>
-    <string name="home_bt_jyxx_next">全部课程></string>
+    <string name="home_bt_all">查看全部</string>
     <string name="home_jyxx1_cotent">交通法规系列讲座</string>
     <string name="home_jyxx1_time">学时：48分钟</string>
     <string name="home_jyxx2_cotent">社区矫正法系列讲座</string>
     <string name="home_jyxx2_time">学时：48分钟</string>
 
+    <!--远程帮扶-->
+    <string name="home_tv_zxbf">最新帮扶</string>
+
+    <!--公益活动-->
+    <string name="home_tv_zxgy">最新公益</string>
 
 </resources>

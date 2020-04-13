@@ -12,20 +12,20 @@
             android:layout_width="match_parent"
             android:layout_height="35dp">
             <ImageView
-                android:src="@drawable/ic_home_zxkc"
+                android:src="@drawable/ic_home_zxbf"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="5dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
-                android:text="@string/home_tv_jyxx"
+                android:text="@string/home_tv_zxbf"
                 android:textColor="@color/black"
                 android:textSize="14dp"
                 android:gravity="center_vertical|left"
                 android:layout_width="180dp"
                 android:layout_height="match_parent"/>
             <Button
-                android:id="@+id/bt_home_jyxx_next"
+                android:id="@+id/bt_home_ycbf_next"
                 android:text="@string/home_bt_all"
                 android:background="@null"
                 android:gravity="center_vertical|right"
@@ -39,48 +39,55 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="center"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="wrap_content">
+            <!--标题1-->
             <LinearLayout
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_width="150dp"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/vv_home_jyxx1"
-                    android:src="@drawable/legal_test_image_3"
-                    android:layout_width="100dp"
-                    android:layout_height="60dp" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
                 <TextView
-                    android:id="@+id/tv_home_jyxx1_cotent"
-                    android:gravity="center"
-                    android:text="@string/home_jyxx1_cotent"
+                    android:id="@+id/tv_zxbf_listItem_title1"
+                    android:text="最新帮扶标题1"
+                    android:layout_marginLeft="30dp"
                     android:theme="@style/MyTextView_single_content"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="20dp"/>
+                <TextView
+                    android:id="@+id/tv_zxbf_listItem_time_fbsj1"
+                    android:text="2020-02-03"
+                    android:theme="@style/MyTextView_single_content"
+                    android:textSize="12dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="20dp"/>
             </LinearLayout>
+            <!--标题2-->
             <LinearLayout
-                android:layout_marginLeft="30dp"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_width="150dp"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/vv_home_jyxx2"
-                    android:src="@drawable/legal_test_image"
-                    android:layout_width="100dp"
-                    android:layout_height="60dp" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
                 <TextView
-                    android:id="@+id/tv_home_jyxx2_cotent"
-                    android:gravity="center"
-                    android:text="@string/home_jyxx2_cotent"
+                    android:id="@+id/tv_zxbf_listItem_title2"
+                    android:text="最新帮扶标题2"
+                    android:layout_marginLeft="30dp"
                     android:theme="@style/MyTextView_single_content"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="20dp"/>
+                <TextView
+                    android:id="@+id/tv_zxbf_listItem_time_fbsj2"
+                    android:text="2020-03-03"
+                    android:theme="@style/MyTextView_single_content"
+                    android:textSize="12dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="20dp"/>
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 </LinearLayout>
