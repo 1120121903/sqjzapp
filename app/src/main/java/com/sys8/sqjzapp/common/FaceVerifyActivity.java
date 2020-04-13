@@ -88,7 +88,7 @@ public class FaceVerifyActivity extends BaseActivity {
         imageUri = FileProvider.getUriForFile(FaceVerifyActivity.this, "com.sys8.sqjzapp.fileprovider", outputImage);
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-        //                        intent.putExtra("android.intent.extras.CAMERA_FACING", 3);
+        intent.putExtra("android.intent.extras.CAMERA_FACING", 3);
         startActivityForResult(intent, TAKE_PHOTO);
     }
 
