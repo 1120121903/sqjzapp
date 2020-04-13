@@ -24,12 +24,14 @@
             app:title="@string/rcbg_bt_detail_title" />
         <LinearLayout
             android:orientation="vertical"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <!--标题-->
             <LinearLayout
                 android:orientation="horizontal"
                 android:gravity="center"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="40dp">
                 <ImageView
@@ -65,19 +67,17 @@
                     app:super_strokeColor="@color/black"
                     app:super_strokeWidth="0dp"/>
             </LinearLayout>
-
             <!--照片-->
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_margin="10dp"
-                android:background="@color/gray"
-                android:padding="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:background="@color/white"
+                android:layout_width="80dp"
+                android:layout_height="80dp">
                 <ImageView
-                    android:src="@drawable/zp"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"/>
+                    android:id="@+id/iv_rcbg_face"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
             <!--时间-->
             <LinearLayout

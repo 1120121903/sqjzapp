@@ -1,6 +1,7 @@
 package com.sys8.sqjzapp.main.home;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +40,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.sys8.sqjzapp.main.tztx.ListData.list_TZTX;
+import static com.sys8.sqjzapp.utils.Constant.userBitMap;
+import static com.sys8.sqjzapp.utils.Constant.userCircleBitmap;
 import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class FragHome extends Fragment {
@@ -95,7 +98,8 @@ public class FragHome extends Fragment {
             view = inflater.inflate(R.layout.frag_home, container, false);
         }
         ButterKnife.bind(this, view);
-
+        userBitMap = BitmapFactory.decodeResource(getResources(), R.drawable.location_timeline_imguser);
+        userCircleBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.location_timeline_imguser);
         initBannerAndIndicator();//初始化banner和指示器
         bannerHomeTop.start();//开始轮播
         homeTztx.start();//开始轮播
