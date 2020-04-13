@@ -5,4 +5,6 @@
     <string name="onlinesignin_tv_mylocation">我的位置:</string>
     <string name="onlinesignin_tv_signtime">签到时间：</string>
     <string name="onlinesignin_tv_signaddress">签到地点：</string>
+    <string name="onlinesignin_tv_current_sign_in">本次签到</string>
+    <string name="onlinesignin_tv_history_sign_in">历史记录</string>
 </resources>

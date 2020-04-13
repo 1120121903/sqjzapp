@@ -16,6 +16,12 @@
         android:paddingBottom="10dp"
         android:paddingRight="30dp"
         android:background="@drawable/shape_shadow">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="@string/onlinesignin_tv_current_sign_in"/>
         <!--签到时间-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,18 +62,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-        <Button
-            android:id="@+id/bt_onlinesignin_submit"
-            android:layout_gravity="center"
-            android:text="提交"
-            android:layout_width="100dp"
-            android:layout_height="50dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="vertical"
         android:background="@drawable/shape_shadow">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="@string/onlinesignin_tv_history_sign_in"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_onlinesignin_location_history"
             android:padding="5dp"

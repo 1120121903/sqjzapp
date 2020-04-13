@@ -1,5 +1,9 @@
 package com.sys8.sqjzapp.utils;
 
+import android.graphics.Bitmap;
+
+import com.sys8.sqjzapp.R;
+
 public class Constant {
     //RecyclerView-ViewType
     public static final int ITEM_LOCATION_VIEWTYPE=0;
@@ -24,5 +28,9 @@ public class Constant {
 
     //通知提醒
     public static String STATE_TZTX_YD = "1";
+
+    //头像
+    public static Bitmap userBitMap = null;
+    public static Bitmap userCircleBitmap = null;
 
 }

@@ -81,7 +81,7 @@
                 android:text="签 到"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                app:csb_fillColor="@color/green"
+                app:csb_fillColor="@color/blue1"
                 app:csb_cornerRadius="80dp"/>
         </LinearLayout>
         <LinearLayout

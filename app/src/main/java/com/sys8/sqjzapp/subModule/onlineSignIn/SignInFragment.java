@@ -26,6 +26,7 @@ import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.common.FaceVerifyActivity;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
+import com.sys8.sqjzapp.utils.Constant;
 import com.sys8.sqjzapp.utils.DataSource;
 
 import java.io.File;
@@ -50,9 +51,6 @@ public class SignInFragment extends Fragment {
     TextView tvOnlinesigninSignaddress;
     @BindView(R.id.recycler_onlinesignin_location_history)
     RecyclerView recyclerOnlinesigninLocationHistory;
-    @BindView(R.id.bt_onlinesignin_submit)
-    Button btOnlinesigninSubmit;
-    private Uri imageUri;
     private String mSignInTime;
     private String mSignInAddress;
     View view;
@@ -100,6 +98,7 @@ public class SignInFragment extends Fragment {
         intRv();
         getListData();
         setupAdapter();
+        submitSignInRecord();
         return view;
     }
 
@@ -117,29 +116,13 @@ public class SignInFragment extends Fragment {
         recyclerOnlinesigninLocationHistory.setLayoutManager(new LinearLayoutManager(view.getContext()));
     }
 
-    @OnClick(R.id.bt_onlinesignin_submit)
-    public void submitSignInRecord(View v){
-        Bitmap userBitmap = null;
-        File outputImage = new File(getActivity().getExternalCacheDir(), "output_image.jpg");
-         try {
-             if(outputImage.exists()){
-                 imageUri = FileProvider.getUriForFile(getActivity(), "com.sys8.sqjzapp.fileprovider", outputImage);
-                 userBitmap = BitmapFactory.decodeStream(getActivity().getContentResolver().openInputStream(imageUri));
-                 userBitmap = getCircularBitmap(userBitmap);
-                 System.out.println("imageUri"+imageUri);
-             }
-         }catch (IOException e){
-             e.printStackTrace();
-         }
+    public void submitSignInRecord(){
 
-        LocationItem itemLocation = new LocationItem(mSignInTime + "\n" + mSignInAddress, userBitmap);
+        LocationItem itemLocation = new LocationItem(mSignInTime + "\n" + mSignInAddress, Constant.userCircleBitmap);
         //
         TimelineItem locationTimelintItem = new TimelineItem(itemLocation);
         mData.add(locationTimelintItem);
         setupAdapter();
-        btOnlinesigninSubmit.setText("已提交");
-        btOnlinesigninSubmit.setEnabled(false);
-        //btOnlinesigninSubmit.setVisibility(View.GONE);
     }
 
     /**
