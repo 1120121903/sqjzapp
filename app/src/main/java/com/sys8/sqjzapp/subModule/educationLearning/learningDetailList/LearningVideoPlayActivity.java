@@ -7,6 +7,7 @@ import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,12 +16,13 @@ import com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton;
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.ActivityCollector;
+import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LearningVideoPlayActivity extends AppCompatActivity {
+public class LearningVideoPlayActivity extends BaseActivity {
     final RxPermissions rxPermissions = new RxPermissions(this);
     @BindView(R.id.tb_educationlearning_video_play_titlebar)
     TitleBar tbEducationlearningVideoPlayTitlebar;
@@ -28,7 +30,7 @@ public class LearningVideoPlayActivity extends AppCompatActivity {
     @BindView(R.id.wv_educationlearning_video_play_main_page)
     WebView wvEducationlearningVideoPlayMainPage;
     @BindView(R.id.bt_learning_education_video_exam)
-    DragFloatActionButton btLearningEducationVideoExam;
+    Button btLearningEducationVideoExam;
     @BindView(R.id.layout_educationlearning_video_play_main_page)
     RelativeLayout layoutEducationlearningVideoPlayMainPage;
 
@@ -61,7 +63,6 @@ public class LearningVideoPlayActivity extends AppCompatActivity {
     }
 
     public void initWebView() {
-
 
         wvEducationlearningVideoPlayMainPage.setHorizontalScrollBarEnabled(false);
         WebSettings settings = wvEducationlearningVideoPlayMainPage.getSettings();

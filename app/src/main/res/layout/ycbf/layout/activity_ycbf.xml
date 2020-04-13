@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".subModule.ycbf.YcbfActivity">
     <!--顶部标题栏-->
     <com.hjq.bar.TitleBar
@@ -19,7 +20,6 @@
         app:rightBackground="@null"
         app:barStyle="transparent"
         app:leftTitle="@string/title_back"
-
         app:rightSize="0dp"
         app:title="@string/ycbf_tb_title" />
     <!--Tab标签页-->

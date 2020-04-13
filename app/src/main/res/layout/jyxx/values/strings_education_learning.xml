@@ -14,5 +14,6 @@
 
    <!--考试-->
     <string name="educationlearning_exam_titlebar">考试</string>
+    <string name="educationlearning_exam_cjks">参加考试</string>
 
 </resources>

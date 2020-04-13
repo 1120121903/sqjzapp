@@ -31,15 +31,26 @@
             android:id="@+id/wv_educationlearning_video_play_main_page"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"/>
-        <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton
-            android:id="@+id/bt_learning_education_video_exam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:src="@drawable/ic_learning_education_exam"
-            android:background="@drawable/button_bg"/>
+            android:background="@color/blue1">
+            <Button
+                android:id="@+id/bt_learning_education_video_exam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_learning_education_exam"
+                android:drawablePadding="10dp"
+                android:text="@string/educationlearning_exam_cjks"
+                android:textColor="@color/white"
+                android:background="@null"/>
+        </LinearLayout>
+
     </RelativeLayout>
 </LinearLayout>
