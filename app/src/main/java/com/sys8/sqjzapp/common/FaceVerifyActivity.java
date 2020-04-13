@@ -133,6 +133,9 @@ public class FaceVerifyActivity extends BaseActivity {
 
 
                 }
+                else{
+                    finish();
+                }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
