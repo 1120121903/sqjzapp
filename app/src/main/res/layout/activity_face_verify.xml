@@ -23,13 +23,15 @@
         app:title="@string/title_face_verify" />
 
     <TextView
+        android:id="@+id/tv_faceverity_wait"
         android:gravity="center"
-        android:text="请您将脸移入框内"
+        android:text="人脸验证中请稍后"
         android:textSize="20dp"
         android:textColor="@color/white"
         android:layout_margin="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:visibility="visible"/>
     <com.cymaybe.foucsurfaceview.FocusSurfaceView
         android:id="@+id/preview_sv"
         android:layout_width="match_parent"
@@ -51,13 +53,20 @@
         app:focus_mode="circle"
         app:focus_overlay_color="#66000000"
         app:focus_touch_padding="8dp"/>
+    <ImageView
+        android:id="@+id/iv_faceVerify_preview"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="gone"/>
 
     <LinearLayout
+        android:id="@+id/ly_faceverify_pass"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_margin="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
         <ImageView
             android:src="@drawable/ic_ok"
             android:layout_width="30dp"
@@ -76,5 +85,6 @@
         android:textColor="@color/white"
         android:background="@null"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
 </LinearLayout>
