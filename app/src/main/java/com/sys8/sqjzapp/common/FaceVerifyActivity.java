@@ -29,6 +29,7 @@ import com.sys8.sqjzapp.subModule.onlineSignIn.OnlineSignInActivity;
 import com.sys8.sqjzapp.subModule.rcbg.RcbgActivity;
 import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
 import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjActivity;
+import com.sys8.sqjzapp.utils.Constant;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -102,6 +103,8 @@ public class FaceVerifyActivity extends BaseActivity {
                         Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
                         Bitmap bitmap2 = getCircularBitmap(bitmap);
                         ivFaceVerifyPreview.setImageBitmap(bitmap2);
+                        Constant.userBitMap = bitmap;
+                        Constant.userCircleBitmap = bitmap2;
                         ivFaceVerifyPreview.setVisibility(View.VISIBLE);
                         previewSv.setVisibility(View.GONE);
                         //一秒后显示通过人脸识别
