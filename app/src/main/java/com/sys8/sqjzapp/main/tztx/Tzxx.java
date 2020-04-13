@@ -8,7 +8,7 @@ public class Tzxx {
     String dep;//发送单位
     String state;//状态:1已读，0未读
 
-    public Tzxx(String type,String  time,String title,String content,String dep,String state){
+    public Tzxx(String type,String time,String title,String content,String dep,String state){
         this.time = time;
         this.type = type;
         this.title = title;

@@ -14,9 +14,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.ImageAdapter;
+import com.sys8.sqjzapp.adapters.TopLineAdapter;
 import com.sys8.sqjzapp.common.FaceVerifyActivity;
+import com.sys8.sqjzapp.main.tztx.Tzxx;
+import com.sys8.sqjzapp.main.tztx.TzxxDetailActivity;
 import com.sys8.sqjzapp.subModule.gyhd.GyhdActivity;
 import com.sys8.sqjzapp.subModule.jzdbg.JzdbgActivity;
 import com.sys8.sqjzapp.subModule.ycbf.YcbfActivity;
@@ -24,6 +28,7 @@ import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.indicator.CircleIndicator;
 import com.youth.banner.indicator.RoundLinesIndicator;
+import com.youth.banner.transformer.ZoomOutPageTransformer;
 import com.youth.banner.util.BannerUtils;
 
 import java.util.ArrayList;
@@ -33,13 +38,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.sys8.sqjzapp.main.tztx.ListData.list_TZTX;
+import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
+
 public class FragHome extends Fragment {
     @BindView(R.id.banner_home_top)
     Banner bannerHomeTop;
-    @BindView(R.id.iv_home_message)
-    ImageView ivHomeMessage;
-    @BindView(R.id.bt_home_message_detail)
-    Button btHomeMessageDetail;
     @BindView(R.id.bt_home_onlinesignin)
     Button btHomeOnlinesignin;
     @BindView(R.id.bt_home_rcbg)
@@ -74,6 +78,8 @@ public class FragHome extends Fragment {
     FrameLayout flHomeZxbf;
     @BindView(R.id.fl_home_zxgy)
     FrameLayout flHomeZxgy;
+    @BindView(R.id.home_tztx)
+    Banner homeTztx;
     private View view;
 
     @Override
@@ -89,22 +95,24 @@ public class FragHome extends Fragment {
             view = inflater.inflate(R.layout.frag_home, container, false);
         }
         ButterKnife.bind(this, view);
+
         initBannerAndIndicator();//初始化banner和指示器
         bannerHomeTop.start();//开始轮播
+        homeTztx.start();//开始轮播
         slHome.scrollTo(0, 0);//.fullScroll(ScrollView.FOCUS_UP);
         replaceFragment();
         return view;
     }
 
     /**
-     *description:替换碎片
+     * description:替换碎片
      */
-    private void replaceFragment(){
+    private void replaceFragment() {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.fl_home_zxkc,new FragHomeJyxx());
-        transaction.replace(R.id.fl_home_zxbf,new FragHomeYcbf());
-        transaction.replace(R.id.fl_home_zxgy,new FragHomeGyhd());
+        transaction.replace(R.id.fl_home_zxkc, new FragHomeJyxx());
+        transaction.replace(R.id.fl_home_zxbf, new FragHomeYcbf());
+        transaction.replace(R.id.fl_home_zxgy, new FragHomeGyhd());
         transaction.commit();
     }
 
@@ -129,6 +137,21 @@ public class FragHome extends Fragment {
         bannerHomeTop.setIndicatorNormalColor(getResources().getColor(R.color.white));//指示器的选中颜色
         bannerHomeTop.setIndicatorSelectedColor(getResources().getColor(R.color.red));//指示器的选中颜色
         bannerHomeTop.setBannerRound(BannerUtils.dp2px(20));//banner的圆角
+
+        //通知提醒滚动显示
+        homeTztx.setAdapter(new TopLineAdapter(getRevertTimeLineData(list_TZTX)))
+                .setOrientation(Banner.VERTICAL)
+                .setPageTransformer(new ZoomOutPageTransformer())
+                .setOnBannerListener((data, position) -> {
+//                    Snackbar.make(bannerHomeTop, ((Tzxx) data).getTitle(), Snackbar.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), TzxxDetailActivity.class);
+                    Bundle bundle = new Bundle();
+                    Tzxx tzxx = (Tzxx) getRevertTimeLineData(list_TZTX).get(position);
+                    System.out.println("title:"+tzxx.getTitle());
+                    bundle.putString("title",tzxx.getTitle() );
+                    intent.putExtras(bundle);
+                    getActivity().startActivity(intent);
+                });
     }
 
     /*网上签到*/

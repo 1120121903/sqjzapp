@@ -16,13 +16,13 @@
             android:descendantFocusability="blocksDescendants"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="900dp">
+            android:layout_height="match_parent">
             <!--内容-->
             <LinearLayout
                 android:orientation="vertical"
                 android:background="@drawable/home_background"
                 android:layout_width="match_parent"
-                android:layout_height="500dp">
+                android:layout_height="540dp">
                 <!--顶部标题栏-->
                 <com.hjq.bar.TitleBar
                     android:visibility="visible"
@@ -56,13 +56,13 @@
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="260dp">
+                    android:layout_height="wrap_content">
                     <include layout="@layout/home_button"/>
                 </LinearLayout>
                 <!--通知提醒-->
                 <LinearLayout
                     android:orientation="vertical"
-                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <include layout="@layout/home_message" />
