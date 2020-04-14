@@ -89,7 +89,7 @@
                     android:text="时间："
                     android:theme="@style/MyTextView_single_content"
                     android:gravity="center"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/tv_rcbg_detail_time"
@@ -107,7 +107,7 @@
                     android:text="地点："
                     android:theme="@style/MyTextView_single_content"
                     android:gravity="center"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/tv_rcbg_detail_place"
