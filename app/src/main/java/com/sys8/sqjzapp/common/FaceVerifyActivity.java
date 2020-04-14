@@ -1,16 +1,25 @@
 package com.sys8.sqjzapp.common;
 
 import android.Manifest;
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.media.ExifInterface;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +39,7 @@ import com.sys8.sqjzapp.subModule.rcbg.RcbgActivity;
 import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
 import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjActivity;
 import com.sys8.sqjzapp.utils.Constant;
+import com.sys8.sqjzapp.utils.ImageRotateUtils;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -100,7 +110,19 @@ public class FaceVerifyActivity extends BaseActivity {
             case TAKE_PHOTO:
                 if (resultCode == RESULT_OK) {
                     try {
-                        Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
+
+                        String path;
+
+                        if(Build.VERSION.SDK_INT >=24){
+                            path = ImageRotateUtils.getFilePathFromURI(getApplicationContext(),imageUri);
+                        }else{
+                            path = ImageRotateUtils.getPath(getApplicationContext(),imageUri);
+                        }
+                        System.out.println("path:"+path);
+                        int degress = ImageRotateUtils.getBitmapDegree(path);
+                        System.out.println("degress:"+degress);
+                        Bitmap rotateBitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
+                        Bitmap bitmap = ImageRotateUtils.rotateBitmap(rotateBitmap,degress);
                         Bitmap bitmap2 = getCircularBitmap(bitmap);
                         ivFaceVerifyPreview.setImageBitmap(bitmap2);
                         Constant.userBitMap = bitmap;
@@ -139,7 +161,6 @@ public class FaceVerifyActivity extends BaseActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
 
 
 
