@@ -29,7 +29,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".subModule.educationLearning.learningDetailList.LearningAudioPlayActivity"></activity>
+        <activity android:name=".main.mine.MyCollectActivity"></activity>
+        <activity android:name=".subModule.educationLearning.learningDetailList.LearningAudioPlayActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

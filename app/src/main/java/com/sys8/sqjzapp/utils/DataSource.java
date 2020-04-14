@@ -126,7 +126,46 @@ public class DataSource {
         return mdata;
     }
 
+    //我的收藏，数据初始化
+    public static List<TimelineItem> mCollectData  = DataSource.getMyCollectListData();
+    public static List<TimelineItem> getMyCollectListData(){
+        List<TimelineItem> mdata = new ArrayList<>();
+        //视频
+        LearningListItem learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_VIDEO,
+                "一起学宪法",
+                12,
+                180,
+                23,
+                true,true,R.drawable.legal_test_image);
+        TimelineItem timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
 
+        //音频1
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_AUDIO,
+                "法律大讲堂第一期",
+                15,
+                200,
+                101,
+                true,false);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+
+        //视频2
+        learningListItem = new LearningListItem(
+                Constant.MEDIA_TYPE_VIDEO,
+                "教你交通法",
+                15,
+                200,
+                11,
+                true,false,R.drawable.legal_test_image_2);
+        timelineItem = new TimelineItem(learningListItem);
+        mdata.add(timelineItem);
+
+        return mdata;
+    }
 
 
     public static List<TimelineItem> getLearningEducationListData(){

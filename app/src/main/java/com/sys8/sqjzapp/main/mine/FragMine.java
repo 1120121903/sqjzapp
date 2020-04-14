@@ -47,7 +47,8 @@ public class FragMine extends Fragment {
     //我的收藏
     @OnClick(R.id.cv_mine_wdsc)
     public void goWdsc() {
-
+        Intent intent = new Intent(this.getActivity(), MyCollectActivity.class);
+        this.startActivity(intent);
     }
 
     //我的签到

@@ -21,6 +21,7 @@ import static com.sys8.sqjzapp.utils.Constant.ITEM_EDUCATION_LEARNING_AUDIO_DETA
 import static com.sys8.sqjzapp.utils.Constant.ITEM_EDUCATION_LEARNING_LIST;
 import static com.sys8.sqjzapp.utils.Constant.ITEM_EDUCATION_LEARNING_VIDEO_DETAIL_LIST;
 import static com.sys8.sqjzapp.utils.Constant.ITEM_LOCATION_VIEWTYPE;
+import static com.sys8.sqjzapp.utils.DataSource.mCollectData;
 
 public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
@@ -83,9 +84,15 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                     if(learningListItem.isCollect()){
                         imageCollectStatus.setImageResource(R.drawable.ic_learning_education_not_collect);
                         tvCollectStatu.setText("收藏");
+                        //我的收藏中去除此数据
+                        mCollectData.removeIf(
+                                item -> item.getLearningListItem().getTitle().equals(learningListItem.getTitle())
+                        );
                     }else{
                         imageCollectStatus.setImageResource(R.drawable.ic_learning_education_collect);
                         tvCollectStatu.setText("已收藏");
+                        //我的收藏中添加这条数据
+                        mCollectData.add(getItem(position));
                     }
                     learningListItem.setCollect(!learningListItem.isCollect());
                 }
