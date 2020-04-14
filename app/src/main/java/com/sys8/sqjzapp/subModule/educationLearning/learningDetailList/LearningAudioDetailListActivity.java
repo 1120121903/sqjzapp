@@ -13,6 +13,7 @@ import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.baseClass.ActivityCollector;
+import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.module.LearningAudioDetailListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.utils.DataSource;
@@ -22,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LearningAudioDetailListActivity extends AppCompatActivity {
+public class LearningAudioDetailListActivity extends BaseActivity {
 
     @BindView(R.id.tb_educationlearning_audio_detail_list_titlebar)
     TitleBar tbEducationlearningAudioDetailListTitlebar;
@@ -73,7 +74,7 @@ public class LearningAudioDetailListActivity extends AppCompatActivity {
         recyclerEducationlearningAudioDetailListPage.setAdapter(adapter);
     }
     public void toAudioPlayPage(String title){
-        Intent intent =new Intent(this, LearningVideoPlayActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+        Intent intent =new Intent(this, LearningAudioPlayActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
         Bundle bundle = new Bundle();
         bundle.putString("title",title); //放入所需要传递的值
         intent.putExtras(bundle);

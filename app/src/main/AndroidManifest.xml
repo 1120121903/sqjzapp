@@ -29,18 +29,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".subModule.educationLearning.learningDetailList.LearningAudioPlayActivity"></activity>
+
         <provider
-            android:authorities="com.sys8.sqjzapp.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.sys8.sqjzapp.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
-        <activity android:name=".subModule.jstx.JstxDetailActivity"/>
-        <activity android:name=".subModule.jstx.JstxActivity"/>
-        <activity android:name=".subModule.educationLearning.learningDetailList.LearningAudioDetailListActivity"></activity>
+
+        <activity android:name=".subModule.jstx.JstxDetailActivity" />
+        <activity android:name=".subModule.jstx.JstxActivity" />
+        <activity android:name=".subModule.educationLearning.learningDetailList.LearningAudioDetailListActivity" />
         <activity android:name=".subModule.educationLearning.learningDetailList.LearningVideoPlayActivity" />
         <activity android:name=".subModule.jzdbg.JzdbgAddActivity" />
         <activity android:name=".subModule.zjwbj.ZjwbjAddActivity" />
