@@ -8,14 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.ScrollView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import com.google.android.material.snackbar.Snackbar;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.ImageAdapter;
 import com.sys8.sqjzapp.adapters.TopLineAdapter;
@@ -41,7 +38,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.sys8.sqjzapp.main.tztx.ListData.list_TZTX;
+import static com.sys8.sqjzapp.main.tztx.ListData.list_TZTX_WD;
 import static com.sys8.sqjzapp.utils.Constant.userBitMap;
 import static com.sys8.sqjzapp.utils.Constant.userCircleBitmap;
 import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
@@ -146,14 +143,14 @@ public class FragHome extends Fragment {
         bannerHomeTop.setBannerRound(BannerUtils.dp2px(20));//banner的圆角
 
         //通知提醒滚动显示
-        homeTztx.setAdapter(new TopLineAdapter(getRevertTimeLineData(list_TZTX)))
+        homeTztx.setAdapter(new TopLineAdapter(getRevertTimeLineData(list_TZTX_WD)))
                 .setOrientation(Banner.VERTICAL)
                 .setPageTransformer(new ZoomOutPageTransformer())
                 .setOnBannerListener((data, position) -> {
 //                    Snackbar.make(bannerHomeTop, ((Tzxx) data).getTitle(), Snackbar.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(), TzxxDetailActivity.class);
                     Bundle bundle = new Bundle();
-                    Tzxx tzxx = (Tzxx) getRevertTimeLineData(list_TZTX).get(position);
+                    Tzxx tzxx = (Tzxx) getRevertTimeLineData(list_TZTX_WD).get(position);
                     System.out.println("title:"+tzxx.getTitle());
                     bundle.putString("title",tzxx.getTitle() );
                     intent.putExtras(bundle);

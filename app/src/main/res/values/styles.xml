@@ -11,7 +11,7 @@
     </style>
 
     <!--单行EditText(单行，黑色)-->
-    <style name="MyEditText" parent="@android:style/Widget.EditText">
+    <style name="MyEditText_single" parent="@android:style/Widget.EditText">
         <item name="android:textSize">16dp</item>
         <item name="android:editTextColor">@color/black</item>
         <item name="android:editable">true</item>
@@ -25,6 +25,15 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:letterSpacing">0.03</item><!--字间距-->
+    </style>
+
+    <!--TextView 标题（多行，黑色，左右margin：10dp）-->
+    <style name="MyTextView_many_title" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:paddingRight">10dp</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:letterSpacing">0.03</item><!--字间距-->

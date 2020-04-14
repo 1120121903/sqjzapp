@@ -38,16 +38,12 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:background="@drawable/ic_home_ycbf"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
                 android:id="@+id/tv_ycbf_shbz_title"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:text="哈哈哈哈哈哈哈哈哈"
-                android:layout_marginRight="10dp"
+                android:theme="@style/MyTextView_single_title"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"/>
         </LinearLayout>
@@ -59,12 +55,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="@string/ycbf_et_shbz_bmjzsj"
+                android:theme="@style/MyTextView_single_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
                 android:id="@+id/tv_ycbf_shbz_jzsj"
+                android:theme="@style/MyTextView_single_title"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
@@ -77,6 +75,7 @@
             android:layout_weight="1">
             <com.kingja.supershapeview.view.SuperShapeTextView
                 android:id="@+id/tv_ycbf_shbz_content"
+                android:theme="@style/MyTextView_cotent"
                 android:gravity="top"
                 android:paddingTop="5dp"
                 android:layout_width="match_parent"

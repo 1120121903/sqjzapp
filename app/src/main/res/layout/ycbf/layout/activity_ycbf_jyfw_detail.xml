@@ -37,15 +37,11 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:background="@drawable/ic_home_ycbf"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
                 android:id="@+id/tv_ycbf_jyfw_title"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:layout_marginRight="10dp"
+                android:theme="@style/MyTextView_single_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -58,12 +54,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="@string/ycbf_et_jyfw_jzsj"
+                android:theme="@style/MyTextView_single_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
                 android:id="@+id/tv_ycbf_jyfw_jzsj"
+                android:theme="@style/MyTextView_single_title"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
@@ -76,12 +74,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="@string/ycbf_et_jyfw_xzfw"
+                android:theme="@style/MyTextView_cotent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
                 android:id="@+id/tv_ycbf_jyfw_xzfw"
+                android:theme="@style/MyTextView_cotent"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
@@ -94,12 +94,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="@string/ycbf_et_jyfw_zprs"
+                android:theme="@style/MyTextView_cotent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
                 android:id="@+id/tv_ycbf_jyfw_zprs"
+                android:theme="@style/MyTextView_cotent"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
@@ -112,12 +114,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="@string/ycbf_et_jyfw_gzdd"
+                android:theme="@style/MyTextView_cotent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
                 android:id="@+id/tv_ycbf_jyfw_gzdd"
+                android:theme="@style/MyTextView_cotent"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
@@ -130,12 +134,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="@string/ycbf_et_jyfw_gwms"
+                android:theme="@style/MyTextView_cotent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
                 android:id="@+id/tv_ycbf_jyfw_gwms"
+                android:theme="@style/MyTextView_cotent"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
@@ -147,12 +153,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="@string/ycbf_et_jyfw_gwyq"
+                android:theme="@style/MyTextView_cotent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <com.kingja.supershapeview.view.SuperShapeTextView
                 android:id="@+id/tv_ycbf_jyfw_gwyq"
+                android:theme="@style/MyTextView_cotent"
                 android:gravity="top"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"

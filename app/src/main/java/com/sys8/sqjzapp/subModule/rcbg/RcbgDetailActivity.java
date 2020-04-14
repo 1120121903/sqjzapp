@@ -47,7 +47,7 @@ public class RcbgDetailActivity extends BaseActivity {
         String time = intent.getStringExtra("time");
         String place = intent.getStringExtra("place");
         tvRcbgDetailTitle.setText(title);
-        etRcbgDetailContent.setText(content);
+        etRcbgDetailContent.setText("\u3000\u3000"+content);
         tvRcbgDetailTime.setText(time);
         tvRcbgDetailPlace.setText(place);
         ivRcbgFace.setImageBitmap(userBitMap);

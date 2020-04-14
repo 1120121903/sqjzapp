@@ -36,17 +36,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:background="@drawable/ic_home_ycbf"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
                 android:id="@+id/tv_ycbf_shfw_title"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:layout_marginRight="10dp"
-                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:theme="@style/MyTextView_many_title"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <!--内容-->
@@ -58,6 +54,7 @@
             android:layout_weight="1">
             <com.kingja.supershapeview.view.SuperShapeTextView
                 android:id="@+id/tv_ycbf_shfw_content"
+                android:theme="@style/MyTextView_cotent"
                 android:gravity="top"
                 android:paddingTop="5dp"
                 android:layout_width="match_parent"

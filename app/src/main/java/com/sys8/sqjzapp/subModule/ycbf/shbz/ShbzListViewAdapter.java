@@ -84,8 +84,9 @@ public class ShbzListViewAdapter extends BaseAdapter
         viewHolder.shbz_fbsj.setText(shbz.getFbsj());
         if(shbz.getState().equals("1")){
             viewHolder.shbz_state.setText("已申请");
+        }else if(shbz.getState().equals("2")){
+            viewHolder.shbz_state.setText("已结束");
         }
-
         return convertView;
     }
 

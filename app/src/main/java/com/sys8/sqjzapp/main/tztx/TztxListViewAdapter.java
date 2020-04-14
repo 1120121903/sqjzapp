@@ -77,7 +77,7 @@ public class TztxListViewAdapter extends BaseAdapter
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.tztx_type.setText(tzxx.getType());
+        viewHolder.tztx_type.setText(tzxx.getTitle());
         viewHolder.tztx_time.setText(tzxx.getTime());
         viewHolder.tztx_cotent.setText(tzxx.getContent());
         if(tzxx.getType().substring(0,2).equals("通知")){

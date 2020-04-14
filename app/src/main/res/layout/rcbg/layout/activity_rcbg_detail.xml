@@ -36,13 +36,12 @@
                 android:layout_height="40dp">
                 <ImageView
                     android:background="@drawable/ic_home_rcbg"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
                 <TextView
                     android:id="@+id/tv_rcbg_detail_title"
                     android:gravity="center"
+                    android:theme="@style/MyTextView_single_title"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"/>
             </LinearLayout>
@@ -60,6 +59,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:padding="12dp"
+                    android:theme="@style/MyTextView_cotent"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
                     app:super_dashWidth="2dp"
@@ -87,11 +87,13 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="时间："
+                    android:theme="@style/MyTextView_single_content"
                     android:gravity="center"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/tv_rcbg_detail_time"
+                    android:theme="@style/MyTextView_single_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -103,11 +105,13 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="地点："
+                    android:theme="@style/MyTextView_single_content"
                     android:gravity="center"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/tv_rcbg_detail_place"
+                    android:theme="@style/MyTextView_single_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
