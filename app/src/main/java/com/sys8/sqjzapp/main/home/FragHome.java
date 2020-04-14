@@ -23,6 +23,7 @@ import com.sys8.sqjzapp.common.FaceVerifyActivity;
 import com.sys8.sqjzapp.main.tztx.Tzxx;
 import com.sys8.sqjzapp.main.tztx.TzxxDetailActivity;
 import com.sys8.sqjzapp.subModule.gyhd.GyhdActivity;
+import com.sys8.sqjzapp.subModule.jstx.JstxActivity;
 import com.sys8.sqjzapp.subModule.jzdbg.JzdbgActivity;
 import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
 import com.sys8.sqjzapp.subModule.ycbf.YcbfActivity;
@@ -126,6 +127,7 @@ public class FragHome extends Fragment {
         super.onDestroyView();
         //结束轮播
         bannerHomeTop.stop();
+        homeTztx.stop();
     }
 
     private void initBannerAndIndicator() {
@@ -231,6 +233,25 @@ public class FragHome extends Fragment {
     public void toSubModuleGyhd(View view) {
         Intent intent = new Intent(this.getActivity(), GyhdActivity.class);
         this.startActivity(intent);
+    }
+
+    /* 即时通信 */
+    @OnClick(R.id.bt_home_jstx)
+    public void toSubModuleJstx(View view) {
+        Intent intent = new Intent(this.getActivity(), JstxActivity.class);
+        this.startActivity(intent);
+    }
+
+    /* 矫正小组 */
+    @OnClick(R.id.bt_home_jstx)
+    public void toSubModuleJzxz(View view) {
+
+    }
+
+    /* 矫正记录 */
+    @OnClick(R.id.bt_home_jstx)
+    public void toSubModuleJzjl(View view) {
+
     }
 
 }

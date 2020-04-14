@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".subModule.jstx.JstxDetailActivity">
+    <!--顶部标题栏-->
+    <com.hjq.bar.TitleBar
+        android:visibility="visible"
+        android:id="@+id/tb_jstx_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/blue1"
+        app:titleColor="@null"
+        app:leftBackground="@null"
+        app:rightBackground="@null"
+        app:barStyle="transparent"
+        app:leftTitle="@string/title_back"
+        app:rightSize="0dp"/>
+    <!--中间内容-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+</LinearLayout>
