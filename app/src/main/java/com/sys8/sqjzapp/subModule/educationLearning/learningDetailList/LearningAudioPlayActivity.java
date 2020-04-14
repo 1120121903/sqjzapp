@@ -40,7 +40,6 @@ public class LearningAudioPlayActivity extends BaseActivity {
         setContentView(R.layout.activity_learning_audio_play);
         ButterKnife.bind(this);
         ActivityCollector.TitleCilckListener(tbEducationlearningAudioPlayTitlebar, this);
-
         bindData();
         requestPremission();
     }

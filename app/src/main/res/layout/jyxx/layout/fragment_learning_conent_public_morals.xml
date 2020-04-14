@@ -5,9 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".subModule.educationLearning.learningClassification.PublicMoralsFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/educationlearning_classification_public_morals" />
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_learningeducation_page_public_morals"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
 </FrameLayout>

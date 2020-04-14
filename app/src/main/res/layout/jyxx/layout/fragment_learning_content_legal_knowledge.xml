@@ -5,9 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".subModule.educationLearning.learningClassification.LegalKnowledgeFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/educationlearning_classification_legal_knowledge" />
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_learningeducation_page_legal_knowledge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
 </FrameLayout>
