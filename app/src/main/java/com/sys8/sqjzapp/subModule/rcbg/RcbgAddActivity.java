@@ -11,6 +11,8 @@ import com.hjq.bar.TitleBar;
 import com.kingja.supershapeview.view.SuperShapeEditText;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
+import com.sys8.sqjzapp.utils.Constant;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,6 +40,7 @@ public class RcbgAddActivity extends BaseActivity {
         setContentView(R.layout.activity_rcbg_add);
         ButterKnife.bind(this);
         TitleCilckListener(tbRcbgAdd, this);/*title按钮监听*/
+        tvRcbgTxbgPlace.setText(Constant.CURRENT_LOCATION);
     }
 
     @OnClick(R.id.bt_rcbg_txbg_save)
