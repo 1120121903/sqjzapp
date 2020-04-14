@@ -14,6 +14,8 @@ public class Constant {
 
     public static String USER_NAME = "张海洋";
 
+    public static String CURRENT_LOCATION = "北京市海淀区华北所科技大厦";
+
     //教育学习，多媒体类型
     public static final int MEDIA_TYPE_ALLMEDIA=0;//全部
     public static final int MEDIA_TYPE_VIDEO=1;//视频
