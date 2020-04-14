@@ -24,6 +24,7 @@ import com.sys8.sqjzapp.main.tztx.Tzxx;
 import com.sys8.sqjzapp.main.tztx.TzxxDetailActivity;
 import com.sys8.sqjzapp.subModule.gyhd.GyhdActivity;
 import com.sys8.sqjzapp.subModule.jzdbg.JzdbgActivity;
+import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
 import com.sys8.sqjzapp.subModule.ycbf.YcbfActivity;
 import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjActivity;
 import com.youth.banner.Banner;
@@ -191,7 +192,7 @@ public class FragHome extends Fragment {
     /* 外出请假 */
     @OnClick(R.id.bt_home_wcqj)
     public void toSubModuleWcqj(View view) {
-        Intent intent = new Intent(this.getActivity(), YcbfActivity.class);
+        Intent intent = new Intent(this.getActivity(), WcqjActivity.class);
 //        Bundle bundle = new Bundle();
 //        bundle.putString("SubModuleName", "wcqj"); //外出请假
 //        intent.putExtras(bundle);
