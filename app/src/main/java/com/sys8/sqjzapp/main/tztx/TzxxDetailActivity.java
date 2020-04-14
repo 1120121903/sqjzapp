@@ -49,7 +49,7 @@ public class TzxxDetailActivity extends BaseActivity {
                 break;
             }
         }
-        tvTzxxDetailContent.setText(tzxx.getContent());
+        tvTzxxDetailContent.setText("\u3000\u3000"+tzxx.getContent());
         tvTzxxDetailTime.setText(tzxx.getTime());
         tvTzxxDetailDep.setText(tzxx.getDep());
     }
