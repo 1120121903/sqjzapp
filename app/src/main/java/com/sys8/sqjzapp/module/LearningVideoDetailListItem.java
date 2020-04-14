@@ -1,6 +1,6 @@
 package com.sys8.sqjzapp.module;
 
-public class LearningDetailListItem {
+public class LearningVideoDetailListItem {
     private int ImageThumbnail;//视频缩略图
     private String title;//标题
     private String content;//内容
@@ -8,7 +8,7 @@ public class LearningDetailListItem {
     private boolean isPass;//考试状态  true-已通过  false-未通过
     private String updateTime;//更新时间
 
-    public LearningDetailListItem(int imageThumbnail, String title, String content, String updateTime, boolean isStuded, boolean isPass) {
+    public LearningVideoDetailListItem(int imageThumbnail, String title, String content, String updateTime, boolean isStuded, boolean isPass) {
         this.ImageThumbnail = imageThumbnail;
         this.title = title;
         this.content = content;

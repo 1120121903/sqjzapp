@@ -4,8 +4,9 @@ import com.sys8.sqjzapp.utils.Constant;
 
 public class TimelineItem {
     private LocationItem locationItem;
-    private LearningDetailListItem learningDetailListItem;
+    private LearningVideoDetailListItem learningVideoDetailListItem;
     private LearningListItem learningListItem;
+    private LearningAudioDetailListItem learningAudioDetailListItem;
     private int viewType;
 
     public TimelineItem(LocationItem locationItem) {
@@ -13,14 +14,19 @@ public class TimelineItem {
         viewType = Constant.ITEM_LOCATION_VIEWTYPE;
     }
 
-    public TimelineItem(LearningDetailListItem learningDetailListItem) {
-        this.learningDetailListItem = learningDetailListItem;
-        viewType = Constant.ITEM_EDUCATION_LEARNING_DETAIL_LIST;
+    public TimelineItem(LearningVideoDetailListItem learningVideoDetailListItem) {
+        this.learningVideoDetailListItem = learningVideoDetailListItem;
+        viewType = Constant.ITEM_EDUCATION_LEARNING_VIDEO_DETAIL_LIST;
     }
 
     public TimelineItem(LearningListItem learningListItem) {
         this.learningListItem = learningListItem;
         viewType = Constant.ITEM_EDUCATION_LEARNING_LIST;
+    }
+
+    public TimelineItem(LearningAudioDetailListItem learningAudioDetailListItem){
+        this.learningAudioDetailListItem = learningAudioDetailListItem;
+        viewType = Constant.ITEM_EDUCATION_LEARNING_AUDIO_DETAIL_LIST;
     }
 
     public LearningListItem getLearningListItem() {
@@ -39,12 +45,20 @@ public class TimelineItem {
         this.locationItem = locationItem;
     }
 
-    public LearningDetailListItem getLearningDetailListItem() {
-        return learningDetailListItem;
+    public LearningVideoDetailListItem getLearningVideoDetailListItem() {
+        return learningVideoDetailListItem;
     }
 
-    public void setLearningDetailListItem(LearningDetailListItem learningDetailListItem) {
-        this.learningDetailListItem = learningDetailListItem;
+    public void setLearningVideoDetailListItem(LearningVideoDetailListItem learningVideoDetailListItem) {
+        this.learningVideoDetailListItem = learningVideoDetailListItem;
+    }
+
+    public LearningAudioDetailListItem getLearningAudioDetailListItem() {
+        return learningAudioDetailListItem;
+    }
+
+    public void setLearningAudioDetailListItem(LearningAudioDetailListItem learningAudioDetailListItem) {
+        this.learningAudioDetailListItem = learningAudioDetailListItem;
     }
 
     public int getViewType() {

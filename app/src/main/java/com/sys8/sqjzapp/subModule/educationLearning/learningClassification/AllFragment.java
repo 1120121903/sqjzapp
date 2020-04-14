@@ -15,6 +15,7 @@ import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.subModule.educationLearning.EducationLearningActivity;
 import com.sys8.sqjzapp.subModule.educationLearning.LearningClassificationBaseFragment;
+import com.sys8.sqjzapp.subModule.educationLearning.learningDetailList.LearningAudioDetailListActivity;
 import com.sys8.sqjzapp.subModule.educationLearning.learningDetailList.LearningPictureDetailListActivity;
 import com.sys8.sqjzapp.subModule.educationLearning.learningDetailList.LearningVideoDetailListActivity;
 import com.sys8.sqjzapp.utils.DataSource;
@@ -90,7 +91,11 @@ public class AllFragment extends LearningClassificationBaseFragment {
                 parentActivity.startActivity(intent_video); //这里一定要获取到所在Activity再startActivity()；
                 break;
             case MEDIA_TYPE_AUDIO:
-                System.out.println("AUDIO");
+                Intent intent_audio=new Intent(parentActivity, LearningAudioDetailListActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+                Bundle bundle_audio = new Bundle();
+                bundle_audio.putString("title",title); //放入所需要传递的值
+                intent_audio.putExtras(bundle_audio);
+                parentActivity.startActivity(intent_audio); //这里一定要获取到所在Activity再startActivity()；
                 break;
             case MEDIA_TYPE_PICTURE:
                 Intent intent_picture=new Intent(parentActivity, LearningPictureDetailListActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity

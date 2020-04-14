@@ -13,7 +13,7 @@ import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.baseClass.ActivityCollector;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
-import com.sys8.sqjzapp.module.LearningDetailListItem;
+import com.sys8.sqjzapp.module.LearningVideoDetailListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.utils.DataSource;
 
@@ -32,7 +32,6 @@ public class LearningVideoDetailListActivity extends BaseActivity {
     RecyclerView recyclerEducationlearningVideoDetailListPage;
     private List<TimelineItem> mData;
     private TimeLineAdapter adapter;
-
     String title;
 
     @Override
@@ -58,12 +57,12 @@ public class LearningVideoDetailListActivity extends BaseActivity {
     }
 
     public void getListData(){
-        mData= DataSource.getLearningEducationDetailRvData();
+        mData= DataSource.getLearningEducationVideoDetailRvData();
         //修改标题
         for(int i=0;i<mData.size();i++){
             TimelineItem item = mData.get(i);
-            LearningDetailListItem learningDetailListItem = item.getLearningDetailListItem();
-            learningDetailListItem.setTitle(title+"第"+(i+1)+"集");
+            LearningVideoDetailListItem learningVideoDetailListItem = item.getLearningVideoDetailListItem();
+            learningVideoDetailListItem.setTitle(title+"第"+(i+1)+"集");
         }
     }
 
@@ -72,8 +71,8 @@ public class LearningVideoDetailListActivity extends BaseActivity {
         adapter.setOnItemClickListener(new TimeLineAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                LearningDetailListItem learningDetailListItem = adapter.getItem(position).getLearningDetailListItem();
-                toVideoPlayPage(learningDetailListItem.getTitle());
+                LearningVideoDetailListItem learningVideoDetailListItem = adapter.getItem(position).getLearningVideoDetailListItem();
+                toVideoPlayPage(learningVideoDetailListItem.getTitle());
             }
         });
         recyclerEducationlearningVideoDetailListPage.setAdapter(adapter);

@@ -17,7 +17,10 @@ import com.sys8.sqjzapp.utils.Constant;
 
 import java.util.List;
 
+import static com.sys8.sqjzapp.utils.Constant.ITEM_EDUCATION_LEARNING_AUDIO_DETAIL_LIST;
 import static com.sys8.sqjzapp.utils.Constant.ITEM_EDUCATION_LEARNING_LIST;
+import static com.sys8.sqjzapp.utils.Constant.ITEM_EDUCATION_LEARNING_VIDEO_DETAIL_LIST;
+import static com.sys8.sqjzapp.utils.Constant.ITEM_LOCATION_VIEWTYPE;
 
 public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
@@ -34,15 +37,18 @@ public class TimeLineAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         switch (viewType){
-            case(Constant.ITEM_LOCATION_VIEWTYPE):
+            case(ITEM_LOCATION_VIEWTYPE):
                 view = LayoutInflater.from(mContext).inflate(R.layout.item_location,parent,false);
                 return new LocationViewHolder(view);
-            case(Constant.ITEM_EDUCATION_LEARNING_DETAIL_LIST):
+            case(ITEM_EDUCATION_LEARNING_VIDEO_DETAIL_LIST):
                 view = LayoutInflater.from(mContext).inflate(R.layout.item_learning_list_detail_video,parent,false);
-                return new LearningDetailListViewHolder(view);
+                return new LearningVideoDetailListViewHolder(view);
             case(ITEM_EDUCATION_LEARNING_LIST):
                 view = LayoutInflater.from(mContext).inflate(R.layout.item_learning_list,parent,false);
                 return new LearningListViewHolder(view);
+            case(ITEM_EDUCATION_LEARNING_AUDIO_DETAIL_LIST):
+                view = LayoutInflater.from(mContext).inflate(R.layout.item_learning_list_detail_audio,parent,false);
+                return new LearningAudioDetailListViewHolder(view);
             default:throw new IllegalArgumentException();
         }
 

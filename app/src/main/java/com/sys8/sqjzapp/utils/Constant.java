@@ -7,8 +7,10 @@ import com.sys8.sqjzapp.R;
 public class Constant {
     //RecyclerView-ViewType
     public static final int ITEM_LOCATION_VIEWTYPE=0;
-    public static final int ITEM_EDUCATION_LEARNING_DETAIL_LIST =1;
+    public static final int ITEM_EDUCATION_LEARNING_VIDEO_DETAIL_LIST =1;
     public static final int ITEM_EDUCATION_LEARNING_LIST=2;
+    public static final int ITEM_EDUCATION_LEARNING_AUDIO_DETAIL_LIST =3;
+
 
     public static String USER_NAME = "张海洋";
 

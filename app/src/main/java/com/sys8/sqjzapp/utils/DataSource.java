@@ -1,7 +1,8 @@
 package com.sys8.sqjzapp.utils;
 
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.module.LearningDetailListItem;
+import com.sys8.sqjzapp.module.LearningAudioDetailListItem;
+import com.sys8.sqjzapp.module.LearningVideoDetailListItem;
 import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
@@ -27,10 +28,10 @@ public class DataSource {
 
     public static String CurrentLocation = "";
 
-    public static List<TimelineItem> getLearningEducationDetailRvData(){
+    public static List<TimelineItem> getLearningEducationVideoDetailRvData(){
         List<TimelineItem> mdata = new ArrayList<>();
         //video1
-        LearningDetailListItem learningDetailListItem = new LearningDetailListItem(
+        LearningVideoDetailListItem learningVideoDetailListItem = new LearningVideoDetailListItem(
                 R.drawable.legal_test_image_2,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
@@ -38,10 +39,10 @@ public class DataSource {
                 true,
                 false
                 );
-        TimelineItem timelineItem = new TimelineItem(learningDetailListItem);
+        TimelineItem timelineItem = new TimelineItem(learningVideoDetailListItem);
         mdata.add(timelineItem);
         //video2
-        learningDetailListItem = new LearningDetailListItem(
+        learningVideoDetailListItem = new LearningVideoDetailListItem(
                 R.drawable.legal_test_image_2,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
@@ -49,10 +50,10 @@ public class DataSource {
                 false,
                 true
         );
-        timelineItem = new TimelineItem(learningDetailListItem);
+        timelineItem = new TimelineItem(learningVideoDetailListItem);
         mdata.add(timelineItem);
         //video3
-        learningDetailListItem = new LearningDetailListItem(
+        learningVideoDetailListItem = new LearningVideoDetailListItem(
                 R.drawable.legal_test_image_2,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
@@ -60,12 +61,12 @@ public class DataSource {
                 true,
                 false
         );
-        timelineItem = new TimelineItem(learningDetailListItem);
+        timelineItem = new TimelineItem(learningVideoDetailListItem);
         mdata.add(timelineItem);
         //video4
         mdata.add(timelineItem);
         //video5
-        learningDetailListItem = new LearningDetailListItem(
+        learningVideoDetailListItem = new LearningVideoDetailListItem(
                 R.drawable.legal_test_image_2,
                 "教你学习交通法",
                 "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
@@ -73,10 +74,59 @@ public class DataSource {
                 false,
                 false
         );
-        timelineItem = new TimelineItem(learningDetailListItem);
+        timelineItem = new TimelineItem(learningVideoDetailListItem);
         mdata.add(timelineItem);
         return mdata;
     }
+
+    public static List<TimelineItem> getLearningEducationAudioDetailRvData(){
+        List<TimelineItem> mdata = new ArrayList<>();
+        //video1
+        LearningAudioDetailListItem learningAudioDetailListItem = new LearningAudioDetailListItem(
+                "法律大讲堂",
+                "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
+                "2020-01-01",
+                true,
+                false
+        );
+        TimelineItem timelineItem = new TimelineItem(learningAudioDetailListItem);
+        mdata.add(timelineItem);
+        //video2
+        learningAudioDetailListItem = new LearningAudioDetailListItem(
+                "法律大讲堂",
+                "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
+                "2020-01-03",
+                false,
+                true
+        );
+        timelineItem = new TimelineItem(learningAudioDetailListItem);
+        mdata.add(timelineItem);
+        //video3
+        learningAudioDetailListItem = new LearningAudioDetailListItem(
+                "法律大讲堂",
+                "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
+                "2020-01-05",
+                true,
+                false
+        );
+        timelineItem = new TimelineItem(learningAudioDetailListItem);
+        mdata.add(timelineItem);
+        //video4
+        mdata.add(timelineItem);
+        //video5
+        learningAudioDetailListItem = new LearningAudioDetailListItem(
+                "法律大讲堂",
+                "为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。为进一步落实开展帮学、帮教、帮困“三帮”活动。",
+                "2020-02-01",
+                false,
+                false
+        );
+        timelineItem = new TimelineItem(learningAudioDetailListItem);
+        mdata.add(timelineItem);
+        return mdata;
+    }
+
+
 
 
     public static List<TimelineItem> getLearningEducationListData(){
