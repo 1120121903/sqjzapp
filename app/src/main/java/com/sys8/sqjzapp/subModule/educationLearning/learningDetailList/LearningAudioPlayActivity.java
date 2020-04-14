@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.hjq.bar.TitleBar;
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.baseClass.ActivityCollector;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -38,6 +39,8 @@ public class LearningAudioPlayActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learning_audio_play);
         ButterKnife.bind(this);
+        ActivityCollector.TitleCilckListener(tbEducationlearningAudioPlayTitlebar, this);
+
         bindData();
         requestPremission();
     }
