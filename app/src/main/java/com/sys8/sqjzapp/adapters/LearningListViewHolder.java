@@ -13,6 +13,8 @@ import com.sys8.sqjzapp.module.LearningListItem;
 import com.sys8.sqjzapp.module.TimelineItem;
 import com.sys8.sqjzapp.utils.Constant;
 
+import static com.sys8.sqjzapp.utils.DataSource.mCollectData;
+
 public class LearningListViewHolder extends BaseViewHolder {
 
     private ImageView imageMediaType;//图标-列表多媒体类型
@@ -67,7 +69,7 @@ public class LearningListViewHolder extends BaseViewHolder {
 
         if(learningListItem.isCollect()){
             Glide.with(itemView.getContext()).load(R.drawable.ic_learning_education_collect).into(imageCollectStatus);
-            tvCollectStatus.setText("已收藏");
+
         }else{
             Glide.with(itemView.getContext()).load(R.drawable.ic_learning_education_not_collect).into(imageCollectStatus);
             tvCollectStatus.setText("收藏");

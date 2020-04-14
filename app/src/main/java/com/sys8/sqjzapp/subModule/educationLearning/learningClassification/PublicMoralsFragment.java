@@ -30,6 +30,7 @@ import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_ALLMEDIA;
 import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_AUDIO;
 import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_PICTURE;
 import static com.sys8.sqjzapp.utils.Constant.MEDIA_TYPE_VIDEO;
+import static com.sys8.sqjzapp.utils.DataSource.mCollectData;
 
 public class PublicMoralsFragment extends LearningClassificationBaseFragment {
     @BindView(R.id.recycler_learningeducation_page_public_morals)

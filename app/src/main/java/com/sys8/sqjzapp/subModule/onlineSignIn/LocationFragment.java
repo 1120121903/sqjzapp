@@ -25,6 +25,7 @@ import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.MyLocationStyle;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.common.design.CommonShapeButton;
+import com.sys8.sqjzapp.utils.Constant;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -116,6 +117,7 @@ public class LocationFragment extends Fragment implements AMapLocationListener,
                 address += amapLocation.getAoiName();
                 Log.e("OnlineSignInActivity", "address:" + address);
                 tvOnlinesigninCurrentlocation.setText(address);
+                Constant.CURRENT_LOCATION= address;
             } else {
                 String errText = "定位失败," + amapLocation.getErrorCode() + ": " + amapLocation.getErrorInfo();
                 Log.e("AmapErr", errText);
