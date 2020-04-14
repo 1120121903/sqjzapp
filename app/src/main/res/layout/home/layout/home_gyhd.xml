@@ -50,7 +50,7 @@
                     android:layout_height="30dp">
                     <TextView
                         android:id="@+id/tv_zxgy_listItem_title1"
-                        android:text="最新公益标题1"
+                        android:text="幸福公园清洁卫生"
                         android:layout_marginLeft="30dp"
                         android:theme="@style/MyTextView_single_content"
                         android:layout_width="0dp"
@@ -58,7 +58,7 @@
                         android:layout_height="20dp"/>
                     <TextView
                         android:id="@+id/tv_zxgy_listItem_time_fbsj1"
-                        android:text="2020-02-03"
+                        android:text="2020-04-02"
                         android:textSize="12dp"
                         android:theme="@style/MyTextView_single_content"
                         android:layout_marginRight="10dp"
@@ -73,7 +73,7 @@
                     android:layout_height="30dp">
                     <TextView
                         android:id="@+id/tv_zxgy_listItem_title2"
-                        android:text="最新公益标题2"
+                        android:text="学院路清扫街道卫生"
                         android:layout_marginLeft="30dp"
                         android:theme="@style/MyTextView_single_content"
                         android:layout_width="0dp"
@@ -81,7 +81,7 @@
                         android:layout_height="20dp"/>
                     <TextView
                         android:id="@+id/tv_zxgy_listItem_time_fbsj2"
-                        android:text="2020-03-03"
+                        android:text="2020-03-20"
                         android:textSize="12dp"
                         android:theme="@style/MyTextView_single_content"
                         android:layout_marginRight="10dp"

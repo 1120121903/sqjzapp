@@ -59,7 +59,17 @@
                     android:text="@string/home_jyxx1_cotent"
                     android:theme="@style/MyTextView_single_content"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"/>
+                    android:layout_height="wrap_content"
+                   />
+                <TextView
+                    android:id="@+id/tv_home_jyxx1_time"
+                    android:gravity="center"
+                    android:text="2020-02-01"
+                    android:textSize="12dp"
+                    android:theme="@style/MyTextView_single_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_marginLeft="30dp"
@@ -78,9 +88,17 @@
                     android:text="@string/home_jyxx2_cotent"
                     android:theme="@style/MyTextView_single_content"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"/>
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tv_home_jyxx2_time"
+                    android:gravity="center"
+                    android:text="2020-02-01"
+                    android:textSize="12dp"
+                    android:theme="@style/MyTextView_single_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"/>
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 </LinearLayout>
