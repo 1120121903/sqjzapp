@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JstxListData {
+
+    public static final String JSTX_JZXZ = "矫正小组";
+    public static final String JSTX_JG1 = "张黎明警官";
+    public static final String JSTX_JG2 = "孙晓丽警官";
+    public static final String JSTX_JG3 = "葛建设警官";
+
     public static final List<Jstx> list_Jstx=new ArrayList<Jstx>(){
         {
             add(new Jstx(

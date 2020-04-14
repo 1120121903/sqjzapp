@@ -22,7 +22,38 @@
     <!--中间内容-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_jstx_detail_history"
+            android:paddingBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/gray2"
+        android:layout_width="match_parent"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:src="@drawable/ic_jstx_msg_inputtype"
+            android:background="#00000000"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <EditText
+            android:id="@+id/et_jstx_detail_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/bt_jstx_detail_send"
+            android:text="发送"
+            android:drawableLeft="@drawable/ic_jstx_msg_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </LinearLayout>
