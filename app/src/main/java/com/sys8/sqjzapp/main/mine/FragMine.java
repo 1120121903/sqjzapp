@@ -54,7 +54,8 @@ public class FragMine extends Fragment {
     //我的签到
     @OnClick(R.id.cv_mine_wdqd)
     public void goWdqd() {
-
+        Intent intent = new Intent(this.getActivity(), MySignInActivity.class);
+        this.startActivity(intent);
     }
 
     //我的请假

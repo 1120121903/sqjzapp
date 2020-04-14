@@ -12,10 +12,6 @@ public class LocationItem {
         return timeLineText;
     }
 
-    public void setTimeLineTex(String text) {
-        this.timeLineText = text;
-    }
-
 
     public int getImgUser() {
         return imgUser;

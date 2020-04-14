@@ -7,4 +7,5 @@
     <string name="bt_mine_jzjl">矫正记录</string>
     <string name="bt_mine_bbgx">版本更新</string>
     <string name="bt_mine_bbgx_detail">V1.0</string>
+    <string name="tv_mine_mysignin_history">签到记录</string>
 </resources>

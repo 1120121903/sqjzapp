@@ -38,6 +38,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+import static com.sys8.sqjzapp.utils.DataSource.myTodaySignInHistory;
 import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class SignInFragment extends Fragment {
@@ -101,20 +102,21 @@ public class SignInFragment extends Fragment {
         submitSignInRecord();
         return view;
     }
+    private void intRv() {
+        recyclerOnlinesigninLocationHistory.setLayoutManager(new LinearLayoutManager(view.getContext()));
+    }
+    private void getListData() {
 
+        mData = DataSource.getTimelineData();
+    }
     private void setupAdapter() {
         adapter = new TimeLineAdapter(view.getContext(), getRevertTimeLineData(mData));
         recyclerOnlinesigninLocationHistory.setAdapter(adapter);
     }
 
-    private void getListData() {
 
-        mData = DataSource.getTimelineData();
-    }
 
-    private void intRv() {
-        recyclerOnlinesigninLocationHistory.setLayoutManager(new LinearLayoutManager(view.getContext()));
-    }
+
 
     public void submitSignInRecord(){
 
@@ -122,6 +124,7 @@ public class SignInFragment extends Fragment {
         //
         TimelineItem locationTimelintItem = new TimelineItem(itemLocation);
         mData.add(locationTimelintItem);
+        myTodaySignInHistory.add(locationTimelintItem);
         setupAdapter();
     }
 

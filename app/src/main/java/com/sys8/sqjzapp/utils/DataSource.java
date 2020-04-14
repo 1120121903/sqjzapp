@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataSource {
+
+    public static List<TimelineItem> myTodaySignInHistory =new ArrayList<TimelineItem>();
     public static List<TimelineItem> getTimelineData(){
         List<TimelineItem> mdata = new ArrayList<>();
         //locationItem1
