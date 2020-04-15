@@ -22,6 +22,7 @@
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/tv_jstx_detail_item_left_msg"
+                android:text="你好"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -44,6 +45,7 @@
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/tv_jstx_detail_item_right_msg"
+                android:text="你好"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>

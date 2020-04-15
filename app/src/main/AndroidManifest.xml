@@ -29,7 +29,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".main.mine.MySignInActivity"></activity>
+        <activity android:name=".subModule.jzjl.JzjlActivity"></activity>
+        <activity android:name=".subModule.jzxz.JzxzActivity" />
+        <activity android:name=".main.mine.MySignInActivity" />
         <activity android:name=".main.mine.MyCollectActivity" />
         <activity android:name=".subModule.educationLearning.learningDetailList.LearningAudioPlayActivity" />
 

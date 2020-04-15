@@ -22,6 +22,8 @@ import com.sys8.sqjzapp.main.tztx.TzxxDetailActivity;
 import com.sys8.sqjzapp.subModule.gyhd.GyhdActivity;
 import com.sys8.sqjzapp.subModule.jstx.JstxActivity;
 import com.sys8.sqjzapp.subModule.jzdbg.JzdbgActivity;
+import com.sys8.sqjzapp.subModule.jzjl.JzjlActivity;
+import com.sys8.sqjzapp.subModule.jzxz.JzxzActivity;
 import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
 import com.sys8.sqjzapp.subModule.ycbf.YcbfActivity;
 import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjActivity;
@@ -242,13 +244,15 @@ public class FragHome extends Fragment {
     /* 矫正小组 */
     @OnClick(R.id.bt_home_jstx)
     public void toSubModuleJzxz(View view) {
-
+        Intent intent = new Intent(this.getActivity(), JzxzActivity.class);
+        this.startActivity(intent);
     }
 
     /* 矫正记录 */
     @OnClick(R.id.bt_home_jstx)
     public void toSubModuleJzjl(View view) {
-
+        Intent intent = new Intent(this.getActivity(), JzjlActivity.class);
+        this.startActivity(intent);
     }
 
 }
