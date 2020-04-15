@@ -26,13 +26,57 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/shape_shadow_bottom"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center_vertical|right"
+                android:layout_width="100dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/ic_jstx_msg_myhead"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="姓名：张海洋"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:text="剩余矫正期：55天"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"/>
+            </LinearLayout>
+        </LinearLayout>
+<!--        <View-->
+<!--            android:background="@color/green"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginBottom="3dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"/>-->
         <ListView
             android:id="@+id/lv_jzjl"
             android:divider="#00000000"
-            android:dividerHeight="1.0dp"
+            android:dividerHeight="0dp"
             android:scrollbars="none"
             android:cacheColorHint="@android:color/transparent"
             android:fadingEdge="none"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

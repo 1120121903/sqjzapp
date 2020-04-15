@@ -11,6 +11,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
+import static com.sys8.sqjzapp.subModule.jzjl.JzjlListData.list_Jzjl;
 
 public class JzjlActivity extends BaseActivity {
 
@@ -18,6 +19,7 @@ public class JzjlActivity extends BaseActivity {
     TitleBar tbJzjl;
     @BindView(R.id.lv_jzjl)
     ListView lvJzjl;
+    private JzjlListViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,5 +27,11 @@ public class JzjlActivity extends BaseActivity {
         setContentView(R.layout.activity_jzjl);
         ButterKnife.bind(this);
         TitleCilckListener(tbJzjl, this);/*title按钮监听*/
+        bindData();
+    }
+
+    private void bindData(){
+        adapter = new JzjlListViewAdapter(this, list_Jzjl,this);
+        lvJzjl.setAdapter(adapter);
     }
 }
