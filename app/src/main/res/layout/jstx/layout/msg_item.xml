@@ -12,8 +12,9 @@
         <ImageView
             android:id="@+id/iv_jstx_detail_item_left_head"
             android:background="@drawable/ic_jstx_head1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"/>
+            android:layout_gravity="top"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
         <LinearLayout
             android:id="@+id/line_jstx_detail_item_left"
             android:layout_gravity="left|bottom"
@@ -23,9 +24,9 @@
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/tv_jstx_detail_item_left_msg"
-                android:text="你好"
+                android:text="你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -48,10 +49,10 @@
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/tv_jstx_detail_item_right_msg"
-                android:text="你好"
+                android:text="你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好"
                 android:layout_marginStart="3dp"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -59,8 +60,9 @@
         <ImageView
             android:id="@+id/iv_jstx_detail_item_right_head"
             android:background="@drawable/ic_jstx_msg_myhead"
-            android:layout_width="50dp"
-            android:layout_height="50dp"/>
+            android:layout_gravity="top"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
     </LinearLayout>
 
 </LinearLayout>
