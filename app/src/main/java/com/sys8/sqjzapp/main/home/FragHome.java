@@ -242,14 +242,14 @@ public class FragHome extends Fragment {
     }
 
     /* 矫正小组 */
-    @OnClick(R.id.bt_home_jstx)
+    @OnClick(R.id.bt_home_jzxz)
     public void toSubModuleJzxz(View view) {
         Intent intent = new Intent(this.getActivity(), JzxzActivity.class);
         this.startActivity(intent);
     }
 
     /* 矫正记录 */
-    @OnClick(R.id.bt_home_jstx)
+    @OnClick(R.id.bt_home_jzjl)
     public void toSubModuleJzjl(View view) {
         Intent intent = new Intent(this.getActivity(), JzjlActivity.class);
         this.startActivity(intent);
