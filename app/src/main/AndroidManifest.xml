@@ -2,25 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sys8.sqjzapp">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 拍照权限获取 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_foreground"
@@ -29,22 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".subModule.jzjl.JzjlActivity"></activity>
+        <activity android:name=".subModule.xlzx.XlzxDetailActivity"></activity>
+        <activity android:name=".subModule.xlzx.XlzxActivity" />
+        <activity android:name=".subModule.jzjl.JzjlActivity" />
         <activity android:name=".subModule.jzxz.JzxzActivity" />
         <activity android:name=".main.mine.MySignInActivity" />
         <activity android:name=".main.mine.MyCollectActivity" />
         <activity android:name=".subModule.educationLearning.learningDetailList.LearningAudioPlayActivity" />
-
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.sys8.sqjzapp.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
-
         <activity android:name=".subModule.jstx.JstxDetailActivity" />
         <activity android:name=".subModule.jstx.JstxActivity" />
         <activity android:name=".subModule.educationLearning.learningDetailList.LearningAudioDetailListActivity" />
@@ -83,19 +55,48 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" /> <!-- 屏幕设配 -->
+        <activity android:name=".MainActivity" />
+
         <meta-data
             android:name="design_height_in_dp"
-            android:value="640" /> <!-- Activity -->
+            android:value="640" /> <!-- 屏幕设配 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="d51265fdc42816cc802e80d43fc2b693" /> <!-- wy:d51265fdc42816cc802e80d43fc2b693 -->
-        <!-- gxw:acb022577b77f33dc8c82261bc5f880e -->
+            android:value="d51265fdc42816cc802e80d43fc2b693" /> <!-- Activity -->
         <meta-data
             android:name="design_width_in_dp"
-            android:value="360" />
+            android:value="360" /> <!-- wy:d51265fdc42816cc802e80d43fc2b693 -->
+        <!-- gxw:acb022577b77f33dc8c82261bc5f880e -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.sys8.sqjzapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
         <service android:name="com.amap.api.location.APSService" />
-    </application>
+    </application> <!-- 拍照权限获取 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>
