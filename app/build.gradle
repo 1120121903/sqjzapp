@@ -90,4 +90,5 @@ dependencies {
     implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
     /*悬浮按钮【待定】*/
     implementation 'com.github.wangfeng19930909:DragFloatingActionButton:1.0.1'
+
 }
