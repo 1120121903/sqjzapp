@@ -25,6 +25,7 @@ import com.sys8.sqjzapp.subModule.jzdbg.JzdbgActivity;
 import com.sys8.sqjzapp.subModule.jzjl.JzjlActivity;
 import com.sys8.sqjzapp.subModule.jzxz.JzxzActivity;
 import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
+import com.sys8.sqjzapp.subModule.xlzx.XlzxActivity;
 import com.sys8.sqjzapp.subModule.ycbf.YcbfActivity;
 import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjActivity;
 import com.youth.banner.Banner;
@@ -252,6 +253,13 @@ public class FragHome extends Fragment {
     @OnClick(R.id.bt_home_jzjl)
     public void toSubModuleJzjl(View view) {
         Intent intent = new Intent(this.getActivity(), JzjlActivity.class);
+        this.startActivity(intent);
+    }
+
+    /* 心理咨询 */
+    @OnClick(R.id.bt_home_xlzx)
+    public void toSubModuleXlzx(View view) {
+        Intent intent = new Intent(this.getActivity(), XlzxActivity.class);
         this.startActivity(intent);
     }
 
