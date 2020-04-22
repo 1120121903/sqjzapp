@@ -13,7 +13,8 @@
     <string name="main_bottom_message">消息</string>
     <string name="main_bottom_mine">我的</string>
     <!--Title人脸识别-->
-    <string name="title_face_verify">人脸识别</string>
+    <string name="title_face_verify">身份验证</string>
+    <string name="bt_face_capture">拍照</string>
 </resources>
 
 

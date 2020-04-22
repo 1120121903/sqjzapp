@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sys8.sqjzapp">
-
+    <!-- 拍照权限获取 -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_foreground"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".subModule.xlzx.XlzxDetailActivity"></activity>
+        <activity android:name=".subModule.xlzx.XlzxDetailActivity" />
         <activity android:name=".subModule.xlzx.XlzxActivity" />
         <activity android:name=".subModule.jzjl.JzjlActivity" />
         <activity android:name=".subModule.jzxz.JzxzActivity" />
@@ -63,12 +63,15 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="d51265fdc42816cc802e80d43fc2b693" /> <!-- Activity -->
-			<!-- wy:d51265fdc42816cc802e80d43fc2b693 -->
+        <!-- wy:d51265fdc42816cc802e80d43fc2b693 -->
         <!-- gxw:acb022577b77f33dc8c82261bc5f880e -->
         <meta-data
             android:name="design_width_in_dp"
-            android:value="360" /> 
-		 <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing" android:value="true"/>
+            android:value="360" />
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="true" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.sys8.sqjzapp.fileprovider"
@@ -79,9 +82,8 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-
         <service android:name="com.amap.api.location.APSService" />
-    </application> <!-- 拍照权限获取 -->
+    </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -100,6 +102,11 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-permission android:name="android.permission.CAMERA" />
+    <!--自定义拍照权限-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true"/>
+    <uses-feature android:name="android.hardware.camera.flash"/>
 
 </manifest>
