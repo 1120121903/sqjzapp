@@ -123,20 +123,20 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/bt_home_jzxz"
-            android:text="@string/home_bt_jzxz"
+            android:id="@+id/bt_home_jzjl"
+            android:text="@string/home_bt_jzjl"
             android:textSize="14dp"
-            android:drawableTop="@drawable/ic_home_jzxz"
+            android:drawableTop="@drawable/ic_home_jzjl"
             android:drawablePadding="5dp"
             android:background="@null"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/bt_home_jzjl"
-            android:text="@string/home_bt_jzjl"
+            android:id="@+id/bt_home_tdqy"
+            android:text="@string/home_bt_tdqy"
             android:textSize="14dp"
-            android:drawableTop="@drawable/ic_home_jzjl"
+            android:drawableTop="@drawable/ic_home_tdqy"
             android:drawablePadding="5dp"
             android:background="@null"
             android:layout_weight="1"

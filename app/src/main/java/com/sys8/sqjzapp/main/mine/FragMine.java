@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 
 import com.lixiaohui8636.widget.ClauseView;
 import com.sys8.sqjzapp.R;
+import com.sys8.sqjzapp.subModule.jzxz.JzxzActivity;
 import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
 
 import butterknife.BindView;
@@ -26,6 +27,8 @@ public class FragMine extends Fragment {
     ClauseView cvMineWdqj;
     @BindView(R.id.cv_mine_bbgx)
     ClauseView cvMineBbgx;
+    @BindView(R.id.cv_mine_jzxz)
+    ClauseView cvMineJzxz;
     private View view;
 
     @Override
@@ -62,6 +65,13 @@ public class FragMine extends Fragment {
     @OnClick(R.id.cv_mine_wdqj)
     public void goWdqj() {
         Intent intent = new Intent(this.getActivity(), WcqjActivity.class);
+        this.startActivity(intent);
+    }
+
+    //矫正小组
+    @OnClick(R.id.cv_mine_jzxz)
+    public void goJzxz() {
+        Intent intent = new Intent(this.getActivity(), JzxzActivity.class);
         this.startActivity(intent);
     }
 

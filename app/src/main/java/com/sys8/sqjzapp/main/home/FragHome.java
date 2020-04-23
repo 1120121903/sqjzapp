@@ -24,6 +24,7 @@ import com.sys8.sqjzapp.subModule.jstx.JstxActivity;
 import com.sys8.sqjzapp.subModule.jzdbg.JzdbgActivity;
 import com.sys8.sqjzapp.subModule.jzjl.JzjlActivity;
 import com.sys8.sqjzapp.subModule.jzxz.JzxzActivity;
+import com.sys8.sqjzapp.subModule.tdqy.TdqyActivity;
 import com.sys8.sqjzapp.subModule.wcqj.WcqjActivity;
 import com.sys8.sqjzapp.subModule.xlzx.XlzxActivity;
 import com.sys8.sqjzapp.subModule.ycbf.YcbfActivity;
@@ -73,8 +74,8 @@ public class FragHome extends Fragment {
     RoundLinesIndicator indicatorHomeTop;
     @BindView(R.id.sl_home)
     ScrollView slHome;
-    @BindView(R.id.bt_home_jzxz)
-    Button btHomeJzxz;
+    @BindView(R.id.bt_home_tdqy)
+    Button btHomeTdqy;
     @BindView(R.id.bt_home_jzjl)
     Button btHomeJzjl;
     @BindView(R.id.fl_home_zxkc)
@@ -103,8 +104,8 @@ public class FragHome extends Fragment {
         userBitMap = BitmapFactory.decodeResource(getResources(), R.drawable.location_timeline_imguser);
         userCircleBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.location_timeline_imguser);
         initBannerAndIndicator();//初始化banner和指示器
-        bannerHomeTop.start();//开始轮播
-        homeTztx.start();//开始轮播
+//        bannerHomeTop.start();//开始轮播
+//        homeTztx.start();//开始轮播
         slHome.scrollTo(0, 0);//.fullScroll(ScrollView.FOCUS_UP);
         replaceFragment();
         return view;
@@ -126,8 +127,8 @@ public class FragHome extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         //结束轮播
-        bannerHomeTop.stop();
-        homeTztx.stop();
+//        bannerHomeTop.stop();
+//        homeTztx.stop();
     }
 
     private void initBannerAndIndicator() {
@@ -242,10 +243,10 @@ public class FragHome extends Fragment {
         this.startActivity(intent);
     }
 
-    /* 矫正小组 */
-    @OnClick(R.id.bt_home_jzxz)
-    public void toSubModuleJzxz(View view) {
-        Intent intent = new Intent(this.getActivity(), JzxzActivity.class);
+    /* 心理咨询 */
+    @OnClick(R.id.bt_home_xlzx)
+    public void toSubModuleXlzx(View view) {
+        Intent intent = new Intent(this.getActivity(), XlzxActivity.class);
         this.startActivity(intent);
     }
 
@@ -256,10 +257,10 @@ public class FragHome extends Fragment {
         this.startActivity(intent);
     }
 
-    /* 心理咨询 */
-    @OnClick(R.id.bt_home_xlzx)
-    public void toSubModuleXlzx(View view) {
-        Intent intent = new Intent(this.getActivity(), XlzxActivity.class);
+    /* 特定区域 */
+    @OnClick(R.id.bt_home_tdqy)
+    public void toSubModuleTdqy(View view) {
+        Intent intent = new Intent(this.getActivity(), TdqyActivity.class);
         this.startActivity(intent);
     }
 

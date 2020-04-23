@@ -18,20 +18,18 @@
         app:rightBackground="@null"
         app:barStyle="transparent"
         app:leftTitle="@string/title_back"
-        app:rightSize="0dp"
-        app:title="@string/correct_team_title" />
+        app:rightSize="0dp"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:background="@color/blue1">
+        android:layout_height="100dp"
+        android:background="@drawable/mine_background">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:text="张海洋的矫正小组"
             android:gravity="center"
-            android:textSize="20dp"/>
+            android:textSize="24dp"/>
     </LinearLayout>
 
     <LinearLayout
