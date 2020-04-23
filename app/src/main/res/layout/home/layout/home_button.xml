@@ -103,11 +103,11 @@
         android:layout_width="match_parent"
         android:layout_height="80dp">
         <Button
-            android:id="@+id/bt_home_jstx"
-            android:drawableTop="@drawable/ic_homt_jstx"
-            android:drawablePadding="5dp"
-            android:text="@string/home_bt_jstx"
+            android:id="@+id/bt_home_tdqy"
+            android:text="@string/home_bt_tdqy"
             android:textSize="14dp"
+            android:drawableTop="@drawable/ic_home_tdqy"
+            android:drawablePadding="5dp"
             android:background="@null"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -123,6 +123,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
         <Button
+            android:id="@+id/bt_home_jstx"
+            android:drawableTop="@drawable/ic_homt_jstx"
+            android:drawablePadding="5dp"
+            android:text="@string/home_bt_jstx"
+            android:textSize="14dp"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <Button
             android:id="@+id/bt_home_jzjl"
             android:text="@string/home_bt_jzjl"
             android:textSize="14dp"
@@ -132,15 +142,6 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/bt_home_tdqy"
-            android:text="@string/home_bt_tdqy"
-            android:textSize="14dp"
-            android:drawableTop="@drawable/ic_home_tdqy"
-            android:drawablePadding="5dp"
-            android:background="@null"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </LinearLayout>

@@ -1,8 +1,13 @@
 package com.sys8.sqjzapp.baseClass;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
@@ -44,6 +49,40 @@ public class BaseActivity extends AppCompatActivity  {
         super.onDestroy();
         ActivityCollector.removeActivity(this);
     }
+
+    /**
+     *
+    */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View currentFocus = getCurrentFocus();
+            if (IsShouldHideKeyboard(currentFocus, ev)) {
+                HideKeyboard(currentFocus);
+            }
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    private boolean IsShouldHideKeyboard(View view, MotionEvent event) {
+        if ((view instanceof EditText)) {
+            int[] coord = {0, 0};
+            view.getLocationInWindow(coord);
+            int left = coord[0], top = coord[1], right = left + view.getWidth(), bottom = top + view.getHeight();
+            int evX = (int) event.getRawX(), evY = (int) event.getRawY();
+            return !((left <= evX && evX <= right) && (top <= evY && evY <= bottom));
+        }
+        return false;
+    }
+
+    public void HideKeyboard(View v) {
+        InputMethodManager manager = ((InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE));
+
+        if (manager != null)
+            manager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        v.clearFocus();
+    }
+
     /**
      *description:隐藏底部虚拟手势栏，设置为全屏
      */
@@ -64,8 +103,5 @@ public class BaseActivity extends AppCompatActivity  {
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 //        }
 //    }
-
-
-
 
 }

@@ -18,24 +18,25 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <ImageView
-                android:background="@drawable/ic_home_wcqj"
+                android:background="@drawable/ic_home_tdqy"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
-                android:id="@+id/tv_qjjl_listItem_title"
+                android:id="@+id/tv_tdqy_listItem_title"
+                android:text="进入特定区域申请"
                 android:textColor="@color/black"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"/>
             <TextView
-                android:id="@+id/tv_qjjl_listItem_timeApply"
+                android:id="@+id/tv_tdqy_listItem_timeApply"
                 android:layout_marginRight="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
-        <!--开始时间-->
+        <!--进入时间-->
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"
@@ -43,17 +44,17 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <TextView
-                android:text="@string/wcqj_et_wyqj_kssj"
+                android:text="@string/tdqy_jrsj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
-                android:id="@+id/tv_qjjl_listItem_time_start"
+                android:id="@+id/tv_tdqy_listItem_jrsj"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
         </LinearLayout>
-        <!--结束时间-->
+        <!--申请原因-->
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"
@@ -61,37 +62,22 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <TextView
-                android:text="@string/wcqj_et_wyqj_jssj"
+                android:text="@string/tdqy_sqyy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
-                android:id="@+id/tv_qjjl_listItem_time_end"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"/>
-        </LinearLayout>
-        <!--外出地点-->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
-            <TextView
-                android:text="@string/wcqj_et_wyqj_wcdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                />
-            <TextView
-                android:id="@+id/tv_qjjl_listItem_place"
+                android:id="@+id/tv_tdqy_listItem_reason"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:theme="@style/MyTextView_single_content"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
         </LinearLayout>
         <!--审批状态-->
         <TextView
-            android:id="@+id/tv_qjjl_listItem_state"
+            android:id="@+id/tv_tdqy_listItem_state"
             android:layout_marginRight="10dp"
             android:gravity="right|center_vertical"
             android:textColor="@color/blue1"

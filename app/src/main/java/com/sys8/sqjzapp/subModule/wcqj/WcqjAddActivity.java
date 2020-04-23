@@ -96,6 +96,7 @@ public class WcqjAddActivity extends BaseActivity {
 
     @OnClick(R.id.et_wcqj_wyqj_kssj)
     public void getKssj() {
+        hideKeybord();
         kssjCalendarStart = Calendar.getInstance();
         kssjCalendarEnd = Calendar.getInstance();
         kssjCalendarEnd.add(kssjCalendarStart.YEAR, +1); //年份加1
@@ -115,6 +116,7 @@ public class WcqjAddActivity extends BaseActivity {
 
     @OnClick(R.id.et_wcqj_wyqj_jssj)
     public void getJssj() {
+        hideKeybord();
         if (etWcqjWyqjKssj.getText().toString().equals("")) {
             Toast.makeText(this, "请选择开始时间", Toast.LENGTH_SHORT).show();
             return;
@@ -133,4 +135,10 @@ public class WcqjAddActivity extends BaseActivity {
         pvTime.show();
     }
 
+    private void hideKeybord(){
+        etWcqjWyqjWcdd.clearFocus();
+        etWcqjWyqjWcly.clearFocus();
+        HideKeyboard(etWcqjWyqjWcdd);
+        HideKeyboard(etWcqjWyqjWcly);
+    }
 }

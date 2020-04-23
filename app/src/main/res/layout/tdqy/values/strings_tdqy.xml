@@ -1,3 +1,14 @@
 <resources>
     <string name="tdqy_title">特定区域</string>
+    <string name="tdqy_add_title">填写申请</string>
+    <string name="tdqy_jrsj">进入时间：</string>
+    <string name="tdqy_sqyy">申请原因：</string>
+
+    <string name="tdqy_tv_kssj">开始时间：</string>
+    <string name="tdqy_tv_jssj">结束时间：</string>
+    <string name="tdqy_tv_jrdd">进入地点：</string>
+    <string name="tdqy_tv_jrly">进入理由：</string>
+    <string name="tdqy_tv_reason">请填写进入理由(不少于300字)</string>
+    <string name="tdqy_tv_zmwj">证明文件</string>
+
 </resources>

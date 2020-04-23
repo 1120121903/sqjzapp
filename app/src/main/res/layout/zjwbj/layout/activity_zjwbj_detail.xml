@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/white"
     tools:context=".subModule.zjwbj.ZjwbjDetailActivity">
     <LinearLayout
         android:orientation="vertical"
@@ -38,11 +38,11 @@
                 <ImageView
                     android:background="@drawable/ic_homt_zjwbj"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
                 <TextView
                     android:text="@string/zjwbj_tb_title"
+                    android:theme="@style/MyTextView_single_title"
                     android:layout_width="0dp"
                     android:layout_height="20dp"
                     android:layout_weight="1"/>
@@ -70,11 +70,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"/>
             </LinearLayout>
+            <!--病检说明-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/zjwbj_tv_tbbj_bjsm"
+                    android:layout_gravity="top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    />
+                <com.kingja.supershapeview.view.SuperShapeTextView
+                    android:id="@+id/tv_zjwbj_detail_bjsm"
+                    android:text="哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或"
+                    android:gravity="top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:super_dashWidth="2dp"
+                    android:paddingTop="5dp"
+                    android:layout_marginRight="10dp"
+                    app:super_solidColor="@color/white"
+                    app:super_strokeColor="@color/black"
+                    app:super_strokeWidth="0dp"/>
+            </LinearLayout>
             <!--证明文件-->
             <LinearLayout
                 android:orientation="horizontal"
                 android:gravity="center_vertical|top"
                 android:layout_marginLeft="30dp"
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -93,33 +122,6 @@
                     android:layout_marginRight="10dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"/>
-            </LinearLayout>
-            <!--病检说明-->
-            <LinearLayout
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="@string/zjwbj_tv_tbbj_bjsm"
-                    android:layout_gravity="top"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    />
-                <com.kingja.supershapeview.view.SuperShapeTextView
-                    android:id="@+id/tv_zjwbj_detail_bjsm"
-                    android:text="哈哈哈"
-                    android:gravity="top"
-                    android:paddingTop="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:super_dashWidth="2dp"
-                    app:super_solidColor="@color/white"
-                    app:super_strokeColor="@color/black"
-                    app:super_strokeWidth="0dp"/>
             </LinearLayout>
         </LinearLayout>
         <!--进度条-->

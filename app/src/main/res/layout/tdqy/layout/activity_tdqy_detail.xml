@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".subModule.jzdbg.JzdbgDetailActivity">
+    tools:context=".subModule.tdqy.TdqyDetailActivity">
+    <!--顶部标题栏-->
     <com.hjq.bar.TitleBar
-        android:id="@+id/tb_jzdbg_detail"
+        android:visibility="visible"
+        android:id="@+id/tb_tdqy_detail_titlebar"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="@color/blue1"
@@ -18,8 +20,8 @@
         app:barStyle="transparent"
         app:leftTitle="@string/title_back"
         app:rightSize="0dp"
-        app:title="@string/zjwbj_bt_detail_title" />
-    <!--居住地变更-->
+        app:title="@string/tdqy_title" />
+    <!--内容-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -33,23 +35,23 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <ImageView
-                android:background="@drawable/ic_homt_jzdbg"
+                android:background="@drawable/ic_home_tdqy"
                 android:layout_marginLeft="10dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
-                android:text="@string/jzdbg_tb_title"
+                android:id="@+id/tv_tdqy_detail_title"
                 android:theme="@style/MyTextView_single_title"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"/>
             <TextView
-                android:id="@+id/tv_jzdbg_detail_timeApply"
+                android:id="@+id/tv_teqy_detail_timeApply"
                 android:layout_marginRight="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
-        <!--接收单位-->
+        <!--开始时间-->
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"
@@ -57,17 +59,17 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <TextView
-                android:text="@string/jzdbg_tv_sqbg_jsdw"
+                android:text="@string/tdqy_tv_kssj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
-                android:id="@+id/tv_jzdbg_detail_jsdw"
+                android:id="@+id/tv_tdqy_detail_timeStart"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
         </LinearLayout>
-        <!--新居住地-->
+        <!--结束时间-->
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"
@@ -75,17 +77,35 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <TextView
-                android:text="@string/jzdbg_tv_sqbg_xjzd"
+                android:text="@string/tdqy_jrsj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
-                android:id="@+id/tv_jzdbg_detail_xjzd"
+                android:id="@+id/tv_tdqy_detail_timeEnd"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
         </LinearLayout>
-        <!--变更原因-->
+        <!--进入地点-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+            <TextView
+                android:text="@string/tdqy_tv_jrdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                />
+            <TextView
+                android:id="@+id/tv_tdqy_detail_place"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+        </LinearLayout>
+        <!--理由-->
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"
@@ -94,21 +114,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:text="@string/jzdbg_tv_bgls_detail_bgyy"
+                android:text="@string/tdqy_tv_jrly"
                 android:layout_gravity="top"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <com.kingja.supershapeview.view.SuperShapeTextView
-                android:id="@+id/tv_jzdbg_detail_bgyy"
-                android:text="哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或"
+                android:id="@+id/tv_teqy_detail_reason"
                 android:gravity="top"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:super_dashWidth="2dp"
                 android:paddingTop="5dp"
                 android:layout_marginRight="10dp"
+                android:text="哈哈哈哈哈哈哈哈哈哈或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或"
                 app:super_solidColor="@color/white"
                 app:super_strokeColor="@color/black"
                 app:super_strokeWidth="0dp"/>
@@ -122,7 +142,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:text="@string/jzdbg_tv_sqbg_zmwj"
+                android:text="@string/wcqj_tv_wyqj_zmwj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -142,10 +162,11 @@
     <!--进度条-->
     <LinearLayout
         android:orientation="vertical"
+        android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_jzdbg_detail_history"
+            android:id="@+id/rv_tdqy_detail_history"
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

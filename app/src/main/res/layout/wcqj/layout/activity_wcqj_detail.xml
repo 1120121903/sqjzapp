@@ -38,11 +38,11 @@
                 <ImageView
                     android:background="@drawable/ic_home_wcqj"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
                 <TextView
                     android:id="@+id/tv_wcqj_detail_title"
+                    android:theme="@style/MyTextView_single_title"
                     android:layout_width="0dp"
                     android:layout_height="20dp"
                     android:layout_weight="1"/>
@@ -141,10 +141,13 @@
                     />
                 <com.kingja.supershapeview.view.SuperShapeTextView
                     android:id="@+id/tv_wcqj_detail_reason"
+                    android:text="哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或"
                     android:gravity="top"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:super_dashWidth="2dp"
+                    android:paddingTop="5dp"
+                    android:layout_marginRight="10dp"
                     app:super_solidColor="@color/white"
                     app:super_strokeColor="@color/black"
                     app:super_strokeWidth="0dp"/>
