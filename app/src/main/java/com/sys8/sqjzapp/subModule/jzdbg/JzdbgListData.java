@@ -3,8 +3,6 @@ package com.sys8.sqjzapp.subModule.jzdbg;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
-import com.sys8.sqjzapp.subModule.zjwbj.BjState;
-import com.sys8.sqjzapp.subModule.zjwbj.Bjjl;
 
 import java.util.ArrayList;
 import java.util.List;

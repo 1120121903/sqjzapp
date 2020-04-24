@@ -1,4 +1,4 @@
-package com.sys8.sqjzapp.subModule.zjwbj;
+package com.sys8.sqjzapp.subModule.zjwbj.data;
 
 public class Bjjl {
     String timeApply;

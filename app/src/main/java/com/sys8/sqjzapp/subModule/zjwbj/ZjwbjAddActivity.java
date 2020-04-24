@@ -15,6 +15,8 @@ import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
+import com.sys8.sqjzapp.subModule.zjwbj.data.BjState;
+import com.sys8.sqjzapp.subModule.zjwbj.data.Bjjl;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -24,13 +26,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
-import static com.sys8.sqjzapp.baseClass.ActivityCollector.finishAll;
-import static com.sys8.sqjzapp.subModule.zjwbj.BjjlListData.list_BjState;
-import static com.sys8.sqjzapp.subModule.zjwbj.BjjlListData.list_BjState2;
-import static com.sys8.sqjzapp.subModule.zjwbj.BjjlListData.list_Bjjl;
+import static com.sys8.sqjzapp.subModule.zjwbj.data.BjjlListData.list_BjState;
+import static com.sys8.sqjzapp.subModule.zjwbj.data.BjjlListData.list_BjState2;
+import static com.sys8.sqjzapp.subModule.zjwbj.data.BjjlListData.list_Bjjl;
 import static com.sys8.sqjzapp.utils.DataUtils.dateToString;
 import static com.sys8.sqjzapp.utils.DataUtils.getDate;
-import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class ZjwbjAddActivity extends BaseActivity {
 

@@ -52,7 +52,6 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
         Msg msg = mMsglist.get(position);
         if(msg.getType() == Msg.TYPE_RECEIVE){
             //收到的消息
-            System.out.println("1111111");
             holder.leftLayout.setVisibility(View.VISIBLE);
             holder.leftHead.setVisibility(View.VISIBLE);
             holder.rightLayout.setVisibility(View.GONE);
@@ -61,7 +60,6 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
             holder.leftHead.setBackground(activity.getDrawable(msg.getFromHead()));
         }else if(msg.getType() == Msg.TYPE_SENT){
             //发送的消息
-            System.out.println("222222");
             holder.leftLayout.setVisibility(View.GONE);
             holder.leftHead.setVisibility(View.GONE);
             holder.rightLayout.setVisibility(View.VISIBLE);

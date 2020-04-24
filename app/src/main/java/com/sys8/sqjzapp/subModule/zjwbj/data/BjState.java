@@ -1,4 +1,4 @@
-package com.sys8.sqjzapp.subModule.zjwbj;
+package com.sys8.sqjzapp.subModule.zjwbj.data;
 
 import com.sys8.sqjzapp.module.TimelineItem;
 

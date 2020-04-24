@@ -18,24 +18,24 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <ImageView
-                android:background="@drawable/ic_homt_jzdbg"
+                android:background="@drawable/ic_homt_zjwbj"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
-                android:text="@string/jzdbg_tb_title"
+                android:text="@string/zjwbj_tb_title"
                 android:textColor="@color/black"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"/>
             <TextView
-                android:id="@+id/tv_jzdbg_listItem_timeApply"
+                android:id="@+id/tv_zjwbj_listItem_timeApply"
                 android:layout_marginRight="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
-        <!--接收单位-->
+        <!--病检时间-->
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"
@@ -43,37 +43,19 @@
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <TextView
-                android:text="@string/jzdbg_tv_sqbg_jsdw"
+                android:text="@string/zjwbj_tv_tbbj_bjsj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
-                android:id="@+id/tv_jzdbg_listItem_jsdw"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"/>
-        </LinearLayout>
-        <!--新居住地-->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
-            <TextView
-                android:text="@string/jzdbg_tv_sqbg_xjzd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                />
-            <TextView
-                android:id="@+id/tv_jzdbg_listItem_xjzd"
+                android:id="@+id/tv_zjwbj_listItem_time"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
         </LinearLayout>
         <!--审批状态-->
         <TextView
-            android:id="@+id/tv_jzdbg_listItem_state"
+            android:id="@+id/tv_zjwbj_listItem_state"
             android:layout_marginRight="10dp"
             android:gravity="right|center_vertical"
             android:textColor="@color/blue1"

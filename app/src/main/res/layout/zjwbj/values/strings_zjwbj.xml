@@ -7,4 +7,8 @@
     <string name="zjwbj_tv_tbbj_bjsm">病检说明：</string>
     <string name="zjwbj_tv_tbbj_bjsj">病检时间：</string>
     <string name="zjwbj_bt_detail_title">详细信息</string>
+
+    <string name="zjwbj_delay_tb_title">病检报告延期申请</string>
+    <string name="zjwbj_delay_tv_delay_time">延期时间：</string>
+    <string name="zjwbj_delay_tv_delay_reason">延期原因：</string>
 </resources>

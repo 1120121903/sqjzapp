@@ -14,7 +14,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <ImageView
@@ -24,38 +24,56 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <TextView
-                android:text="@string/zjwbj_tb_title"
+                android:text="@string/zjwbj_delay_tb_title"
                 android:textColor="@color/black"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"/>
             <TextView
-                android:id="@+id/tv_zjwbj_listItem_timeApply"
+                android:id="@+id/tv_zjwbj_delay_listItem_timeApply"
                 android:layout_marginRight="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
         </LinearLayout>
-        <!--病检时间-->
+        <!--延期时间-->
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="30dp">
             <TextView
-                android:text="@string/zjwbj_tv_tbbj_bjsj"
+                android:text="@string/zjwbj_delay_tv_delay_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 />
             <TextView
-                android:id="@+id/tv_zjwbj_listItem_time"
+                android:id="@+id/tv_zjwbj_delay_listItem_timeDelay"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+        </LinearLayout>
+        <!--延期原因-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+            <TextView
+                android:text="@string/zjwbj_delay_tv_delay_reason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                />
+            <TextView
+                android:id="@+id/tv_zjwbj_delay_listItem_reasonDelay"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
         </LinearLayout>
         <!--审批状态-->
         <TextView
-            android:id="@+id/tv_zjwbj_listItem_state"
+            android:id="@+id/tv_zjwbj_delay_listItem_stateDelay"
             android:layout_marginRight="10dp"
             android:gravity="right|center_vertical"
             android:textColor="@color/blue1"

@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.subModule.zjwbj.Bjjl;
 
 import java.util.List;
 

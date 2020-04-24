@@ -30,6 +30,9 @@ public class Constant {
     public static String[] topTabs_gyhd = new String[]{"活动列表","已参加"};
     public static String STATE_GYHD = "我要报名";
 
+    //暂监外病检
+    public static String[] topTabs_zjwbj = new String[]{"健康情况","病检情况","延期记录"};
+
     //通知提醒
     public static String STATE_TZTX_YD = "1";//已读
 

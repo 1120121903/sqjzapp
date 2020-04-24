@@ -1,10 +1,8 @@
-package com.sys8.sqjzapp.subModule.zjwbj;
+package com.sys8.sqjzapp.subModule.zjwbj.data;
 
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.module.LocationItem;
 import com.sys8.sqjzapp.module.TimelineItem;
-import com.sys8.sqjzapp.subModule.wcqj.QjState;
-import com.sys8.sqjzapp.subModule.wcqj.Qjjl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +15,14 @@ public class BjjlListData {
     public static final List<Bjjl> list_Bjjl=new ArrayList<Bjjl>(){
         {
             add(new Bjjl("2020-02-04","2020-03-04", "手术","已通过"));
+        }
+    };
+    /**
+     *暂监外健康记录数据列表
+     */
+    public static final List<Bjjl> list_Bjjl_jk=new ArrayList<Bjjl>(){
+        {
+            add(new Bjjl("2020-02-04","2020-03-04", "本月身体健康","已通过"));
         }
     };
 

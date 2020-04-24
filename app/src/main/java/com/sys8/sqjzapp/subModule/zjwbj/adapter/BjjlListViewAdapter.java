@@ -1,4 +1,4 @@
-package com.sys8.sqjzapp.subModule.zjwbj;
+package com.sys8.sqjzapp.subModule.zjwbj.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.subModule.wcqj.Qjjl;
+import com.sys8.sqjzapp.subModule.zjwbj.data.Bjjl;
 
 import java.util.List;
 
@@ -69,7 +69,7 @@ public class BjjlListViewAdapter extends BaseAdapter
 
         if(convertView == null){
             viewHolder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.zjwbj_list_item, null);
+            convertView = inflater.inflate(R.layout.zjwbj_stqk_list_item, null);
             viewHolder.bjjl_timeApply = convertView.findViewById(R.id.tv_zjwbj_listItem_timeApply);
             viewHolder.bjjl_timeStart =  convertView.findViewById(R.id.tv_zjwbj_listItem_time);
             viewHolder.bjjl_state = convertView.findViewById(R.id.tv_zjwbj_listItem_state);

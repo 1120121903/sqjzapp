@@ -13,6 +13,7 @@ import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.adapters.TimeLineAdapter;
 import com.sys8.sqjzapp.baseClass.BaseActivity;
 import com.sys8.sqjzapp.module.TimelineItem;
+import com.sys8.sqjzapp.subModule.zjwbj.data.BjState;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.sys8.sqjzapp.baseClass.ActivityCollector.TitleCilckListener;
-import static com.sys8.sqjzapp.subModule.zjwbj.BjjlListData.list_BjState;
+import static com.sys8.sqjzapp.subModule.zjwbj.data.BjjlListData.list_BjState;
 import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
 public class ZjwbjDetailActivity extends BaseActivity {
