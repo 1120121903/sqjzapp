@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".subModule.tdqy.TdqyDetailActivity"></activity>
+        <activity android:name=".subModule.zjwbj.delayApplyList.ZjwbjDelayDetailActivity"></activity>
+        <activity android:name=".subModule.zjwbj.delayApplyList.ZjwbjDelayAddActivity" />
+        <activity android:name=".subModule.tdqy.TdqyDetailActivity" />
         <activity android:name=".subModule.tdqy.TdqyAddActivity" />
         <activity android:name=".subModule.tdqy.TdqyActivity" />
         <activity android:name=".subModule.xlzx.XlzxDetailActivity" />
@@ -101,9 +103,9 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 自定义拍照权限 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 自定义拍照权限 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />

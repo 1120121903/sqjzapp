@@ -10,18 +10,15 @@ import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
+import com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton;
 import com.sys8.sqjzapp.R;
-import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjAddActivity;
 import com.sys8.sqjzapp.subModule.zjwbj.ZjwbjDetailActivity;
-import com.sys8.sqjzapp.subModule.zjwbj.adapter.BjjlListViewAdapter;
 import com.sys8.sqjzapp.subModule.zjwbj.adapter.DelayApplyListViewAdapter;
-import com.sys8.sqjzapp.subModule.zjwbj.data.Bjjl;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.sys8.sqjzapp.subModule.zjwbj.data.BjjlListData.list_Bjjl;
 import static com.sys8.sqjzapp.subModule.zjwbj.delayApplyList.DelayApplyListData.list_DelayApply;
 import static com.sys8.sqjzapp.utils.DataUtils.getRevertTimeLineData;
 
@@ -30,6 +27,8 @@ public class FragDelayApplyList extends Fragment {
     private static FragDelayApplyList fragInstanse = null;
     @BindView(R.id.lv_delay_apply)
     ListView lvDelayApply;
+    @BindView(R.id.bt_zjwbj_delay_add)
+    DragFloatActionButton btZjwbjDelayAdd;
     private DelayApplyListViewAdapter adapter;
 
     @Override
@@ -54,7 +53,7 @@ public class FragDelayApplyList extends Fragment {
         lvDelayApply.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), ZjwbjDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
+                Intent intent = new Intent(getActivity(), ZjwbjDelayDetailActivity.class); //参数1:Fragment所依存的Activity,参数2：要跳转的Activity
                 Bundle bundle = new Bundle();
                 DelayApply delayApply = (DelayApply) getRevertTimeLineData(list_DelayApply).get(position);
                 bundle.putString("timeApply", delayApply.getTimeApply());
@@ -64,6 +63,12 @@ public class FragDelayApplyList extends Fragment {
                 startActivity(intent);
             }
         });
+    }
+
+    @OnClick(R.id.bt_zjwbj_delay_add)
+    public void delayApplyAdd(){
+        Intent intent = new Intent(getContext(), ZjwbjDelayAddActivity.class);
+        startActivity(intent);
     }
 
     @Override

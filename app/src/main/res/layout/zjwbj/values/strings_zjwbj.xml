@@ -1,6 +1,7 @@
 <resources>
     <string name="zjwbj_tb_title">暂监外病检</string>
     <string name="zjwbj_bt_tbbj">填报病检</string>
+    <string name="zjwbj_tb_delay_apply">延期申请</string>
     <string name="zjwbj_bt_bjjl">病检记录</string>
     <string name="zjwbj_set_tbbj_zjwbjsm">请填写暂监外病检说明(不超过300个字)</string>
     <string name="zjwbj_tv_tbbj_zmwj">证明文件：</string>
@@ -11,4 +12,5 @@
     <string name="zjwbj_delay_tb_title">病检报告延期申请</string>
     <string name="zjwbj_delay_tv_delay_time">延期时间：</string>
     <string name="zjwbj_delay_tv_delay_reason">延期原因：</string>
+    <string name="zjwbj_delay_tv_reason">请填写延期原因(不超过300个字)</string>
 </resources>
