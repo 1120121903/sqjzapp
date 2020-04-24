@@ -31,7 +31,7 @@ public class Constant {
     public static String STATE_GYHD = "我要报名";
 
     //暂监外病检
-    public static String[] topTabs_zjwbj = new String[]{"健康状况上报","季度病检上报","延期上报申请"};
+    public static String[] topTabs_zjwbj = new String[]{"每月健康上报","季度病检上报","上报申请"};
 
     //通知提醒
     public static String STATE_TZTX_YD = "1";//已读
