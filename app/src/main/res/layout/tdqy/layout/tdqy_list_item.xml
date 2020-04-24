@@ -71,7 +71,6 @@
                 android:id="@+id/tv_tdqy_listItem_reason"
                 android:maxLines="1"
                 android:ellipsize="end"
-                android:theme="@style/MyTextView_single_content"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
         </LinearLayout>

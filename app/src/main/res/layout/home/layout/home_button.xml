@@ -87,11 +87,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/bt_home_gyhd"
-            android:drawableTop="@drawable/ic_home_gyhd"
-            android:drawablePadding="5dp"
-            android:text="@string/home_bt_gyhd"
+            android:id="@+id/bt_home_tdqy"
+            android:text="@string/home_bt_tdqy"
             android:textSize="14dp"
+            android:drawableTop="@drawable/ic_home_tdqy"
+            android:drawablePadding="5dp"
             android:background="@null"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -103,20 +103,10 @@
         android:layout_width="match_parent"
         android:layout_height="80dp">
         <Button
-            android:id="@+id/bt_home_tdqy"
-            android:text="@string/home_bt_tdqy"
-            android:textSize="14dp"
-            android:drawableTop="@drawable/ic_home_tdqy"
+            android:id="@+id/bt_home_gyhd"
+            android:drawableTop="@drawable/ic_home_gyhd"
             android:drawablePadding="5dp"
-            android:background="@null"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/bt_home_xlzx"
-            android:drawableTop="@drawable/ic_home_xlzx"
-            android:drawablePadding="5dp"
-            android:text="@string/home_bt_xlzx"
+            android:text="@string/home_bt_gyhd"
             android:textSize="14dp"
             android:background="@null"
             android:layout_weight="1"
@@ -127,6 +117,16 @@
             android:drawableTop="@drawable/ic_homt_jstx"
             android:drawablePadding="5dp"
             android:text="@string/home_bt_jstx"
+            android:textSize="14dp"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/bt_home_xlzx"
+            android:drawableTop="@drawable/ic_home_xlzx"
+            android:drawablePadding="5dp"
+            android:text="@string/home_bt_xlzx"
             android:textSize="14dp"
             android:background="@null"
             android:layout_weight="1"
