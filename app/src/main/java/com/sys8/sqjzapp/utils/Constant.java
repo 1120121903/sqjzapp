@@ -12,7 +12,7 @@ public class Constant {
     public static final int ITEM_EDUCATION_LEARNING_AUDIO_DETAIL_LIST =3;
 
 
-    public static String USER_NAME = "张海洋";
+    public static String USER_NAME =     "张海洋";
 
     public static String CURRENT_LOCATION = "北京市海淀区华北所科技大厦";
 
