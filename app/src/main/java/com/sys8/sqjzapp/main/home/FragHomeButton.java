@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.sys8.sqjzapp.R;
 import com.sys8.sqjzapp.common.FaceVerifyActivity;
 import com.sys8.sqjzapp.subModule.gyhd.GyhdActivity;
+import com.sys8.sqjzapp.subModule.hksq.HksqActivity;
 import com.sys8.sqjzapp.subModule.jstx.JstxActivity;
 import com.sys8.sqjzapp.subModule.jzdbg.JzdbgActivity;
 import com.sys8.sqjzapp.subModule.jzjl.JzjlActivity;
@@ -133,17 +134,17 @@ public class FragHomeButton extends Fragment {
         this.startActivity(intent);
     }
 
-    /* 矫正记录 */
-    @OnClick(R.id.bt_home_jzjl)
-    public void toSubModuleJzjl(View view) {
-        Intent intent = new Intent(this.getActivity(), JzjlActivity.class);
-        this.startActivity(intent);
-    }
-
     /* 特定区域 */
     @OnClick(R.id.bt_home_tdqy)
     public void toSubModuleTdqy(View view) {
         Intent intent = new Intent(this.getActivity(), TdqyActivity.class);
+        this.startActivity(intent);
+    }
+
+    /* 会客申请 */
+    @OnClick(R.id.bt_home_hksq)
+    public void toSubModuleHksp(View view) {
+        Intent intent = new Intent(this.getActivity(), HksqActivity.class);
         this.startActivity(intent);
     }
 }

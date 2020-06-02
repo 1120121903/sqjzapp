@@ -1,0 +1,13 @@
+<resources>
+    <string name="hksp_tb_title">会客申请</string>
+    <string name="hksp_detail_tb_title">详细信息</string>
+
+    <string name="hksq_tv_time">会客时间：</string>
+    <string name="hksq_tv_name">会客人姓名：</string>
+    <string name="hksq_tv_place">会客地点：</string>
+    <string name="hksq_tv_reason">会客原因：</string>
+
+    <string name="hksq_bt_wysq">我要申请</string>
+    <string name="hksq_tv_wysq_zmwj">证明文件：</string>
+    <string name="hksq_tv_wysq_reason">请填写会客理由(不超过300个字)</string>
+</resources>
