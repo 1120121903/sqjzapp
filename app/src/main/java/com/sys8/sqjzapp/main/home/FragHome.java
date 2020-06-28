@@ -91,7 +91,7 @@ public class FragHome extends Fragment {
         bannerHomeTop.setIndicatorSelectedColor(getResources().getColor(R.color.red));//指示器的选中颜色
         bannerHomeTop.setBannerRound(BannerUtils.dp2px(20));//banner的圆角
 
-         bannerHomeTop.start();//开始轮播
+//         bannerHomeTop.start();//开始轮播
     }
 
 }

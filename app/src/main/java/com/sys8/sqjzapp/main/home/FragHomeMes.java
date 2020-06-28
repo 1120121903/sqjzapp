@@ -55,7 +55,7 @@ public class FragHomeMes extends Fragment {
         }
         ButterKnife.bind(this, view);
         initMesBanner();//初始化banner和指示器
-        homeTztx.start();//开始轮播
+//        homeTztx.start();//开始轮播
         return view;
     }
 

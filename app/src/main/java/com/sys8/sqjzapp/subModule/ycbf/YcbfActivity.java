@@ -46,7 +46,7 @@ public class YcbfActivity extends BaseActivity implements ViewPager.OnPageChange
         TitleCilckListener(tbYcbf, this);/*title按钮监听*/
         fragmentList.add(FragYcbfShbz.getInstance());
         fragmentList.add(FragYcbfBmfw.getInstance());
-        fragmentList.add(FragYcbfShfw.getInstance());
+//        fragmentList.add(FragYcbfShfw.getInstance());
         fragmentList.add(FragYcbfJyfw.getInstance());
         initView();
     }
