@@ -70,7 +70,7 @@ public class LearningVideoPlayActivity extends BaseActivity {
         settings.setDefaultTextEncodingName("UTF-8");
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         wvEducationlearningVideoPlayMainPage.setWebViewClient(new WebViewClient());
-        wvEducationlearningVideoPlayMainPage.loadUrl("http://124.205.50.122:18888/");
+        wvEducationlearningVideoPlayMainPage.loadUrl("https://mip.findlaw.cn/video/11708.html");
 //        wvEducationlearningVideoPlayMainPage.loadUrl("https://mip.findlaw.cn/video/11708.html");
         //wvEducationlearningVideoPlayMainPage.loadUrl("https://www.qingting.fm/channels/172736/programs/4998624");
 
