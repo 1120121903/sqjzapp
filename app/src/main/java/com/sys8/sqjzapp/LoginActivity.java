@@ -89,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+                                    tvLoginState.setText("网络验证成功");
                                     btLoginLogin.setClickable(true);
                                     btLoginLogin.setEnabled(true);
                                 }
