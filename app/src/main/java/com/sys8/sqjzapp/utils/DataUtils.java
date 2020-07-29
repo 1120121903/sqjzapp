@@ -1,6 +1,7 @@
 package com.sys8.sqjzapp.utils;
 
 import java.security.PublicKey;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -35,6 +36,26 @@ public class DataUtils {
         }
         return null;
     }
+
+    /**
+     * 比较两个时间的先后
+     */
+    public static boolean compareTwoDate(String firstDate, String secondDate, String formatType) {
+        SimpleDateFormat df = new SimpleDateFormat(formatType);
+        try {
+            Date firstDateD = df.parse(firstDate);
+            Date secondDateD = df.parse(secondDate);
+            if (firstDateD.before(secondDateD)) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
     /**
      *description:获取用户名
