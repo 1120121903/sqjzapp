@@ -56,7 +56,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         setWindowStatusBarColor(this, R.color.blue1);
-        deviceVerify();
+//        deviceVerify();
+        btLoginLogin.setClickable(true);
+        btLoginLogin.setEnabled(true);
     }
 
     private void deviceVerify() {
