@@ -70,7 +70,7 @@
             android:value="640" /> <!-- 屏幕设配 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="d51265fdc42816cc802e80d43fc2b693" /> <!-- Activity -->
+            android:value="acb022577b77f33dc8c82261bc5f880e" /> <!-- Activity -->
         <!-- wy:d51265fdc42816cc802e80d43fc2b693 -->
         <!-- gxw:acb022577b77f33dc8c82261bc5f880e -->
         <meta-data

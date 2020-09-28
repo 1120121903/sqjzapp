@@ -3,6 +3,7 @@ package com.sys8.sqjzapp.subModule.educationLearning.learningClassification;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -140,4 +141,12 @@ public class LegalKnowledgeFragment extends LearningClassificationBaseFragment {
         unbinder.unbind();
     }
 
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser){
+            Log.d("TAG", "setUserVisibleHint:  LegalKnowledgeFragment");
+        }
+    }
 }
