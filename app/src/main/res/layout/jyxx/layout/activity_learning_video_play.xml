@@ -27,7 +27,17 @@
         android:layout_height="match_parent"
         android:background="@color/gray"
         >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <VideoView
+            android:id="@+id/educationlearning_media_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        </LinearLayout>
         <WebView
+            android:visibility="gone"
             android:id="@+id/wv_educationlearning_video_play_main_page"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"/>

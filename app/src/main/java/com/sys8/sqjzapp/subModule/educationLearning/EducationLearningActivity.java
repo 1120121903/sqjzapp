@@ -39,7 +39,7 @@ public class EducationLearningActivity extends BaseActivity {
         setContentView(R.layout.activity_education_learning);
         ButterKnife.bind(this);
         ActivityCollector.TitleCilckListener(tbEducationlearningTitlebar, this);
-        addFragment(new LearningListPageFragment());
+            addFragment(new LearningListPageFragment());
 
     }
 
